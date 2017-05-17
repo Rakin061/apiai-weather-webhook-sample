@@ -90,7 +90,7 @@ def makeWebhookResult(data):
     print("Response:")
     print(speech)
 
-    return speech
+    return "ok"
 
 
 if __name__ == '__main__':
