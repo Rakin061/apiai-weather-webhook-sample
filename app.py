@@ -78,6 +78,37 @@ def processRequest(req):
             "source": "apiai-onlinestore-shipping"
         }
 
+    elif req.get("result").get("action") == "Application.status":
+
+        result = req.get("result")
+        parameters = result.get("parameters")
+        id = str(parameters.get("Numbers"))
+
+        id = id.strip()
+
+        baseurl = "http://10.11.201.93:8086/BotAPI/ApplicationStatus?"
+        yql_query="SELECT APPL_STATUS_DESC FROM ocasmn.vw_appl_sts_info WHERE APPLICATION_ID='"+id+"'"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
+
+        result = urlopen(yql_url).read()
+        data = json.loads(result)
+
+        speech = data['Status'][0]['result']
+
+
+
+        #print("Response:")
+        #print(speech)
+
+        return {
+            "speech": speech,
+            "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+            "source": "apiai-onlinestore-shipping"
+        }
+
     else:
         return {}
 
