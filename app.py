@@ -116,7 +116,7 @@ def makeWebhookResult(data):
 
     # print(json.dumps(item, indent=4))
 
-    temp=condition.get('temp')
+    temp= condition.get('temp')
     temp=int(temp)
     temp = ((temp-32)*5)/9
     temp=str(temp)
