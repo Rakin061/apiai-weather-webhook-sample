@@ -87,7 +87,7 @@ def processRequest(req):
 
 
         baseurl = "http://10.11.201.93:8086/BotAPI/ApplicationStatus?"
-        yql_query="SELECT APPL_STATUS_DESC FROM ocasmn.vw_appl_sts_info WHERE APPLICATION_ID='"+id+"'"
+        yql_query="SELECT APPL_STATUS_DESC FROM ocasmn.vw_appl_sts_info WHERE APPLICATION_ID='1'"
 
         yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
 
@@ -102,8 +102,8 @@ def processRequest(req):
         #print(speech)
 
         return {
-            "speech": id,
-            "displayText": id,
+            "speech": speech,
+            "displayText": speech,
             # "data": {},
             # "contextOut": [],
             "source": "application-status"
