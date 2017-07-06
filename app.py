@@ -47,6 +47,37 @@ def processRequest(req):
         data = json.loads(result)
         res = makeWebhookResult(data)
         return res
+
+    elif req.get("result").get("action") == "loan.eligibilty":
+
+        result = req.get("result")
+        parameters = result.get("parameters")
+        zone = str(parameters.get("Numbers"))
+
+        zone = zone.strip()
+        # zone= int(zone)
+        # val= int(zone)
+
+        # condition['zone'] = int(zone)
+
+        # cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
+        # if zone is not None and zone.isnumeric():
+        if int(zone) > 25000:
+            speech = "Congratulation, Sir. You are eligible for loan"
+        else:
+            speech = "We're Sorry, Sir. You are not eligible for loan"
+
+        print("Response:")
+        print(speech)
+
+        return {
+            "speech": speech,
+            "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+            "source": "apiai-onlinestore-shipping"
+        }
+
     else:
         return {}
 
