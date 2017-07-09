@@ -71,11 +71,11 @@ def processRequest(req):
         print(speech)
 
         return {
-            "speech": speech,
-            "displayText": speech,
+            #"speech": speech,
+            #"displayText": speech,
             # "data": {},
             # "contextOut": [],
-            "source": "apiai"
+            #"source": "apiai"
         }
 
 
