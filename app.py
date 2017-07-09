@@ -75,10 +75,10 @@ def processRequest(req):
             "displayText": speech,
             # "data": {},
             # "contextOut": [],
-            "source": "apiai-onlinestore-shipping"
+            "source": "apiai"
         }
 
-    
+
 
     else:
         return {}
