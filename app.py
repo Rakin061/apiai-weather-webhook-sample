@@ -78,6 +78,38 @@ def processRequest(req):
             #"source": "apiai-onlinestore-shipping"
         }
 
+    elif req.get("result").get("action") == "ApplicationStatus":
+
+
+        result = req.get("result")
+        parameters = result.get("parameters")
+        id = str(parameters.get("ID"))
+
+        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+        yql_query = "SELECT APPL_STATUS_DESC FROM ocasmn.vw_appl_sts_info WHERE APPLICATION_ID='" + id + "'"
+
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        a = data.get('Status')
+        b = str(a[0].get('result'))
+
+        # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
+
+        speech = b
+        return {
+            "speech": speech,
+            "displayText": speech,
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
+
 
 
     else:
@@ -124,7 +156,7 @@ def makeWebhookResult(data):
     temp=str(temp)
 
 
-    speech = " Hello!! Today the weather in " + location.get('city') + " is : " + condition.get('text') + \
+    speech = " Hello Shaun!! Today the weather in " + location.get('city') + " is : " + condition.get('text') + \
              ", and the temperature is " + temp + " " + "C" + ".  Thanks!!"
 
     print("Response:")
