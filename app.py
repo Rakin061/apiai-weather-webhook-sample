@@ -106,8 +106,8 @@ def processRequest(req):
 
         if b== None:
             speech="Sorry! Not a valid Application ID."
-
-        speech = b
+        else:   
+            speech = b
         return {
             "speech": speech,
             "displayText": speech,
