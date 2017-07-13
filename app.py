@@ -104,7 +104,7 @@ def processRequest(req):
 
         # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
 
-        if not b:
+        if  b=='None':
             speech="Sorry! Not a valid Application ID."
         else:
             speech = b
