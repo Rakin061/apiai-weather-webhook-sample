@@ -133,15 +133,15 @@ def processRequest(req):
 
             if (str1.upper() == "TODAY"):
 
-                date1 = datetime.datetime.now().strftime("%m/%d/%Y --%A")
-                date2 = datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                date1 = datetime.datetime.now().strftime("%m/%d/%Y")
+                date2 = datetime.datetime.now().strftime("%m/%d/%Y")
                 #print(tod)
-                return datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                return datetime.datetime.now().strftime("%m/%d/%Y")
 
             elif (str1.upper() == "YESTERDAY" or str1.upper() == "LAST DAY" or str1.upper() == "PREVIOUS DAY"):
 
                 yest = datetime.datetime.now() - datetime.timedelta(days=1)
-                yest = yest.strftime("%m/%d/%Y --%A")
+                yest = yest.strftime("%m/%d/%Y")
                 print(yest)
                 date1=yest
                 date2=yest
@@ -150,7 +150,7 @@ def processRequest(req):
             elif (str1.upper() == "DAY BEFORE YESTERDAY"):
 
                 yest = datetime.datetime.now() - datetime.timedelta(days=2)
-                yest = yest.strftime("%m/%d/%Y --%A")
+                yest = yest.strftime("%m/%d/%Y")
                 print(yest)
                 date1=yest
                 date2=yest
@@ -159,10 +159,10 @@ def processRequest(req):
             elif (str1.upper() == "THIS WEEK" or str1.upper() == "CURRENT WEEK"):
 
                 week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
-                week = week.strftime("%m/%d/%Y --%A")
+                week = week.strftime("%m/%d/%Y")
                 print(week)
-                print(datetime.datetime.now().strftime("%m/%d/%Y --%A"))
-                date1= datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                print(datetime.datetime.now().strftime("%m/%d/%Y"))
+                date1= datetime.datetime.now().strftime("%m/%d/%Y")
                 date2=week
                 return week
 
@@ -172,8 +172,8 @@ def processRequest(req):
                 week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
                 week_last = week - datetime.timedelta(days=7)
                 week1 = week_last + datetime.timedelta(days=6)
-                week_last = week_last.strftime("%m/%d/%Y --%A")
-                week1 = week1.strftime("%m/%d/%Y --%A")
+                week_last = week_last.strftime("%m/%d/%Y")
+                week1 = week1.strftime("%m/%d/%Y")
                 print(week_last)
                 print(week1)
                 date1=week_last
@@ -184,11 +184,11 @@ def processRequest(req):
 
                 month = datetime.datetime.now()
                 month = month.replace(day=1)
-                month = month.strftime("%m/%d/%Y --%A")
+                month = month.strftime("%m/%d/%Y")
                 print(month)
-                print(datetime.datetime.now().strftime("%m/%d/%Y --%A"))
+                print(datetime.datetime.now().strftime("%m/%d/%Y"))
                 date1=month
-                date2= datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                date2= datetime.datetime.now().strftime("%m/%d/%Y")
                 return month
 
             elif (str1.upper() == "LAST MONTH" or str1.upper() == "PREVIOUS MONTH"):
@@ -200,11 +200,11 @@ def processRequest(req):
                 # num = str(num_int - 1)
                 month = datetime.datetime.now()
                 month = month.replace(day=1, month=num_int)
-                month = month.strftime("%m/%d/%Y --%A")
+                month = month.strftime("%m/%d/%Y")
                 l_num = datetime.datetime.now()
                 l_num = l_num.replace(day=1)
                 l_num = l_num - datetime.timedelta(days=1)
-                l_num = l_num.strftime("%m/%d/%Y --%A")
+                l_num = l_num.strftime("%m/%d/%Y")
                 print(month)
                 print(l_num)
                 
@@ -217,11 +217,11 @@ def processRequest(req):
 
                 year = datetime.datetime.now()
                 year = year.replace(day=1, month=1)
-                year = year.strftime("%m/%d/%Y --%A")
+                year = year.strftime("%m/%d/%Y")
                 print(year)
-                print(datetime.datetime.now().strftime("%m/%d/%Y --%A"))
+                print(datetime.datetime.now().strftime("%m/%d/%Y"))
                 date1=year
-                date2=datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                date2=datetime.datetime.now().strftime("%m/%d/%Y")
                 return year
 
             elif (str1.upper() == "LAST YEAR" or str1.upper() == "PREVIOUS YEAR"):
