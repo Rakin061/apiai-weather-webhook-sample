@@ -10,6 +10,7 @@ from urllib.error import HTTPError
 
 import json
 import os
+import datetime
 
 from flask import Flask
 from flask import request
@@ -86,8 +87,6 @@ def processRequest(req):
         id = parameters.get("ID")
         # id=id.strip()
 
-
-
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
         yql_query = "SELECT APPL_STATUS_DESC FROM ocasmn.vw_appl_sts_info WHERE APPLICATION_ID='" + id + "'"
 
@@ -108,6 +107,277 @@ def processRequest(req):
             speech="Sorry! Not a valid Application ID."
         else:
             speech = b
+
+        return {
+            "speech": speech,
+            "displayText": speech,
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
+
+    elif req.get("result").get("action") == "Proposal.Count":
+
+
+        result = req.get("result")
+        parameters = result.get("parameters")
+        str1 = parameters.get("time")
+        date1=""
+        date2=""
+
+        #str1 = input("Enter the time frame\n")
+        flag = 0
+
+        def getDATE(str1):
+
+            if (str1.upper() == "TODAY"):
+
+                date1 = datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                date2 = datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                #print(tod)
+                return datetime.datetime.now().strftime("%m/%d/%Y --%A")
+
+            elif (str1.upper() == "YESTERDAY" or str1.upper() == "LAST DAY" or str1.upper() == "PREVIOUS DAY"):
+
+                yest = datetime.datetime.now() - datetime.timedelta(days=1)
+                yest = yest.strftime("%m/%d/%Y --%A")
+                print(yest)
+                date1=yest
+                date2=yest
+                return yest
+
+            elif (str1.upper() == "DAY BEFORE YESTERDAY"):
+
+                yest = datetime.datetime.now() - datetime.timedelta(days=2)
+                yest = yest.strftime("%m/%d/%Y --%A")
+                print(yest)
+                date1=yest
+                date2=yest
+                return yest
+
+            elif (str1.upper() == "THIS WEEK" or str1.upper() == "CURRENT WEEK"):
+
+                week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
+                week = week.strftime("%m/%d/%Y --%A")
+                print(week)
+                print(datetime.datetime.now().strftime("%m/%d/%Y --%A"))
+                date1= datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                date2=week
+                return week
+
+            elif (str1.upper() == "LAST WEEK" or str1.upper() == "PREVIOUS WEEK"):
+
+                flag = 1
+                week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
+                week_last = week - datetime.timedelta(days=7)
+                week1 = week_last + datetime.timedelta(days=6)
+                week_last = week_last.strftime("%m/%d/%Y --%A")
+                week1 = week1.strftime("%m/%d/%Y --%A")
+                print(week_last)
+                print(week1)
+                date1=week_last
+                date2=week1
+                return week_last
+
+            elif (str1.upper() == "THIS MONTH" or str1.upper() == "CURRENT MONTH"):
+
+                month = datetime.datetime.now()
+                month = month.replace(day=1)
+                month = month.strftime("%m/%d/%Y --%A")
+                print(month)
+                print(datetime.datetime.now().strftime("%m/%d/%Y --%A"))
+                date1=month
+                date2= datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                return month
+
+            elif (str1.upper() == "LAST MONTH" or str1.upper() == "PREVIOUS MONTH"):
+
+                flag = 1
+                num = datetime.datetime.now().strftime("%m")
+                num_int = int(num)
+                num_int = num_int - 1
+                # num = str(num_int - 1)
+                month = datetime.datetime.now()
+                month = month.replace(day=1, month=num_int)
+                month = month.strftime("%m/%d/%Y --%A")
+                l_num = datetime.datetime.now()
+                l_num = l_num.replace(day=1)
+                l_num = l_num - datetime.timedelta(days=1)
+                l_num = l_num.strftime("%m/%d/%Y --%A")
+                print(month)
+                print(l_num)
+                
+                date1=month
+                date2=l_num
+
+                return month
+
+            elif (str1.upper() == "THIS YEAR" or str1.upper() == "CURRENT YEAR"):
+
+                year = datetime.datetime.now()
+                year = year.replace(day=1, month=1)
+                year = year.strftime("%m/%d/%Y --%A")
+                print(year)
+                print(datetime.datetime.now().strftime("%m/%d/%Y --%A"))
+                date1=year
+                date2=datetime.datetime.now().strftime("%m/%d/%Y --%A")
+                return year
+
+            elif (str1.upper() == "LAST YEAR" or str1.upper() == "PREVIOUS YEAR"):
+
+                flag = 1
+                num = datetime.datetime.now().strftime("%Y")
+                num_int = int(num) - 1
+                year = datetime.datetime.now()
+                year = year.replace(day=1, month=1, year=num_int)
+                year = year.strftime("%m/%d/%Y")
+                y_num = datetime.datetime.now()
+                y_num = y_num.replace(day=1, month=1)
+                y_num = y_num - datetime.timedelta(days=1)
+                y_num = y_num.strftime("%m/%d/%Y")
+                print(year)
+                print(y_num)
+                date1=year
+                date2=y_num
+
+                return year
+
+            elif (str1.upper() == "FIRST QUARTER" or str1.upper() == "1ST QUARTER"):
+
+                quat = datetime.datetime.now()
+                quat = quat.replace(day=1, month=1)
+                quat = quat.strftime("%m/%d/%Y")
+                print(quat)
+                date1=quat
+
+                quat1 = datetime.datetime.now()
+                quat1 = quat1.replace(day=1, month=4)
+                quat1 = quat1 - datetime.timedelta(days=1)
+                quat1 = quat1.strftime("%m/%d/%Y")
+                print(quat1)
+                date2=quat1
+
+                return quat
+
+            elif (str1.upper() == "SECOND QUARTER" or str1.upper() == "2ND QUARTER"):
+
+                quat1 = datetime.datetime.now()
+                quat1 = quat1.replace(day=1, month=4)
+                # quat1 = quat1 - datetime.timedelta(days=1)
+                quat1 = quat1.strftime("%m/%d/%Y")
+                print(quat1)
+                
+                date1=quat1
+
+                quat2 = datetime.datetime.now()
+                quat2 = quat2.replace(day=1, month=7)
+                quat2 = quat2 - datetime.timedelta(days=1)
+                quat2 = quat2.strftime("%m/%d/%Y")
+                print(quat2)
+                
+                date2=quat2
+                return quat2
+
+            elif (str1.upper() == "THIRD QUARTER" or str1.upper() == "3RD QUARTER"):
+
+                quat1 = datetime.datetime.now()
+                quat1 = quat1.replace(day=1, month=7)
+                # quat1 = quat1 - datetime.timedelta(days=1)
+                quat1 = quat1.strftime("%m/%d/%Y")
+                print(quat1)
+                
+                date1=quat1
+
+                quat2 = datetime.datetime.now()
+                quat2 = quat2.replace(day=1, month=10)
+                quat2 = quat2 - datetime.timedelta(days=1)
+                quat2 = quat2.strftime("%m/%d/%Y")
+                print(quat2)
+                
+                date2=quat2
+                return quat2
+
+            elif (str1.upper() == "FOURTH QUARTER" or str1.upper() == "4TH QUARTER"):
+
+                quat1 = datetime.datetime.now()
+                quat1 = quat1.replace(day=1, month=10)
+                # quat1 = quat1 - datetime.timedelta(days=1)
+                quat1 = quat1.strftime("%m/%d/%Y")
+                print(quat1)
+                date1=quat1
+                year = datetime.datetime.now().strftime("%Y")
+                year_int = int(year) + 1
+                quat2 = datetime.datetime.now()
+                quat2 = quat2.replace(day=1, month=1, year=year_int)
+                quat2 = quat2 - datetime.timedelta(days=1)
+                quat2 = quat2.strftime("%m/%d/%Y")
+                print(quat2)
+                date2=quat2
+                return quat2
+
+            elif (str1.upper() == "HALF YEARLY"):
+
+                year = datetime.datetime.now().strftime("%m")
+                count = int(year)
+
+                if count > 6:
+                    quat1 = datetime.datetime.now()
+                    quat1 = quat1.replace(day=1, month=7)
+                    # quat1 = quat1 - datetime.timedelta(days=1)
+                    quat1 = quat1.strftime("%m/%d/%Y")
+                    print(quat1)
+                    date1=quat1
+
+                    year = datetime.datetime.now().strftime("%Y")
+                    year_int = int(year) + 1
+                    quat2 = datetime.datetime.now()
+                    quat2 = quat2.replace(day=1, month=1, year=year_int)
+                    quat2 = quat2 - datetime.timedelta(days=1)
+                    quat2 = quat2.strftime("%m/%d/%Y")
+                    print(quat2)
+                    date2=quat2
+                else:
+                    quat1 = datetime.datetime.now()
+                    quat1 = quat1.replace(day=1, month=1)
+                    # quat1 = quat1 - datetime.timedelta(days=1)
+                    quat1 = quat1.strftime("%m/%d/%Y")
+                    print(quat1)
+                    date1=quat1
+                    quat2 = datetime.datetime.now()
+                    quat2 = quat2.replace(day=1, month=7)
+                    quat2 = quat2 - datetime.timedelta(days=1)
+                    quat2 = quat2.strftime("%m/%d/%Y")
+                    print(quat2)
+                    date2=quat2
+                return quat2
+
+            else:
+                print("Not a known time frame...")
+
+        result = getDATE(str1)
+
+        # id=id.strip()
+
+        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+        yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY')"
+        action="Proposal.Count"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        yql_url = baseurl + urlencode({'q': yql_query})+ "&"+urlencode({'act': action}) + "&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        a = data.get('Status')
+        b = str(a[0].get('result'))
+
+        # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
+
+        if  b=='None':
+            speech="Sorry! Not a valid Application ID."
+        else:
+            speech = b+" proposals has been submitted."
 
         return {
             "speech": speech,
