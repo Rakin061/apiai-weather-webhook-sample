@@ -93,7 +93,8 @@ def processRequest(req):
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
-        yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
+        action="ApplicationStatus"
+        yql_url = baseurl + urlencode({'q': yql_query})+ "&"+urlencode({'act': action}) + "&format=json"
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
