@@ -123,6 +123,7 @@ def processRequest(req):
         result = req.get("result")
         parameters = result.get("parameters")
         str1 = parameters.get("time")
+        str1=str1.strip()
         date1=""
         date2=""
 
