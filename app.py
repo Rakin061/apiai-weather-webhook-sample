@@ -130,13 +130,38 @@ def processRequest(req):
         #str1 = input("Enter the time frame\n")
         flag = 0
 
+        if (str1.upper() == "TODAY"):
+            global date1,date2
+            date1 = datetime.datetime.now().strftime("%m/%d/%Y")
+            date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+
+        elif (str1.upper() == "THIS WEEK" or str1.upper() == "CURRENT WEEK"):
+            global date1,date2
+            week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
+            week = week.strftime("%m/%d/%Y")
+            print(week)
+            print(datetime.datetime.now().strftime("%m/%d/%Y"))
+            date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+            date1 = week
+        elif (str1.upper() == "THIS YEAR" or str1.upper() == "CURRENT YEAR"):
+            global date1,date2
+            year = datetime.datetime.now()
+            year = year.replace(day=1, month=1)
+            year = year.strftime("%m/%d/%Y")
+            print(year)
+            print(datetime.datetime.now().strftime("%m/%d/%Y"))
+            date1 = year
+            date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+        else:
+            print("Not a known time frame...")
 
 
 
 
 
 
-        res = getDATE(str1)
+
+        #res = getDATE(str1)
         # id=id.strip()
 
         #date1="01/01/2017"
