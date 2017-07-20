@@ -134,7 +134,7 @@ def processRequest(req):
         #date2="07/20/2017"
 
         #str1 = input("Enter the time frame\n")
-        flag = 0
+
 
         def getDATE(str1):
 
