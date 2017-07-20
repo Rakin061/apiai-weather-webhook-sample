@@ -224,9 +224,10 @@ def processRequest(req):
 
 def getDATE1(str1):
 
-            global date1, date2
+            global date1, date2,flag
             if (str1.upper() == "TODAY"):
 
+                flag=1
                 date1 = datetime.datetime.now().strftime("%m/%d/%Y")
                 date2 = datetime.datetime.now().strftime("%m/%d/%Y")
                 # print(tod)
@@ -234,6 +235,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "YESTERDAY" or str1.upper() == "LAST DAY" or str1.upper() == "PREVIOUS DAY"):
 
+                flag = 1
                 yest = datetime.datetime.now() - datetime.timedelta(days=1)
                 yest = yest.strftime("%m/%d/%Y")
                 print(yest)
@@ -243,6 +245,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "DAY BEFORE YESTERDAY"):
 
+                flag = 1
                 yest = datetime.datetime.now() - datetime.timedelta(days=2)
                 yest = yest.strftime("%m/%d/%Y")
                 print(yest)
@@ -252,6 +255,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "THIS WEEK" or str1.upper() == "CURRENT WEEK"):
 
+                flag = 1
                 week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
                 week = week.strftime("%m/%d/%Y")
                 print(week)
@@ -276,6 +280,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "THIS MONTH" or str1.upper() == "CURRENT MONTH"):
 
+                flag = 1
                 month = datetime.datetime.now()
                 month = month.replace(day=1)
                 month = month.strftime("%m/%d/%Y")
@@ -309,6 +314,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "THIS YEAR" or str1.upper() == "CURRENT YEAR"):
 
+                flag = 1
                 year = datetime.datetime.now()
                 year = year.replace(day=1, month=1)
                 year = year.strftime("%m/%d/%Y")
@@ -339,6 +345,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "FIRST QUARTER" or str1.upper() == "1ST QUARTER"):
 
+                flag = 1
                 quat = datetime.datetime.now()
                 quat = quat.replace(day=1, month=1)
                 quat = quat.strftime("%m/%d/%Y")
@@ -356,6 +363,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "SECOND QUARTER" or str1.upper() == "2ND QUARTER"):
 
+                flag = 1
                 quat1 = datetime.datetime.now()
                 quat1 = quat1.replace(day=1, month=4)
                 # quat1 = quat1 - datetime.timedelta(days=1)
@@ -375,6 +383,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "THIRD QUARTER" or str1.upper() == "3RD QUARTER"):
 
+                flag = 1
                 quat1 = datetime.datetime.now()
                 quat1 = quat1.replace(day=1, month=7)
                 # quat1 = quat1 - datetime.timedelta(days=1)
@@ -394,6 +403,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "FOURTH QUARTER" or str1.upper() == "4TH QUARTER"):
 
+                flag = 1
                 quat1 = datetime.datetime.now()
                 quat1 = quat1.replace(day=1, month=10)
                 # quat1 = quat1 - datetime.timedelta(days=1)
@@ -412,6 +422,7 @@ def getDATE1(str1):
 
             elif (str1.upper() == "HALF YEARLY"):
 
+                flag = 1
                 year = datetime.datetime.now().strftime("%m")
                 count = int(year)
 
@@ -447,7 +458,6 @@ def getDATE1(str1):
                 return quat2
 
             else:
-                global flag
                 flag=0
                 print("Not a known time frame...")
 
