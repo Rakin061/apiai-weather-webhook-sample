@@ -152,6 +152,23 @@ def processRequest(req):
             print(datetime.datetime.now().strftime("%m/%d/%Y"))
             date1 = year
             date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+        elif (str1.upper() == "LAST YEAR" or str1.upper() == "PREVIOUS YEAR"):
+
+            global date1,date2
+            flag = 1
+            num = datetime.datetime.now().strftime("%Y")
+            num_int = int(num) - 1
+            year = datetime.datetime.now()
+            year = year.replace(day=1, month=1, year=num_int)
+            year = year.strftime("%m/%d/%Y")
+            y_num = datetime.datetime.now()
+            y_num = y_num.replace(day=1, month=1)
+            y_num = y_num - datetime.timedelta(days=1)
+            y_num = y_num.strftime("%m/%d/%Y")
+            print(year)
+            print(y_num)
+            date1 = year
+            date2 = y_num
         else:
             print("Not a known time frame...")
 
