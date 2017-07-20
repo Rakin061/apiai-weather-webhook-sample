@@ -130,6 +130,8 @@ def processRequest(req):
         #str1 = input("Enter the time frame\n")
         flag = 0
 
+
+
         def getDATE(str1):
 
             global date1,date2
@@ -357,8 +359,9 @@ def processRequest(req):
             else:
                 print("Not a known time frame...")
 
-        result = getDATE(str1)
+                
 
+        res = getDATE(str1)
         # id=id.strip()
 
         #date1="01/01/2017"
