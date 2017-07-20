@@ -131,6 +131,7 @@ def processRequest(req):
 
         def getDATE(str1):
 
+            global date1,date2
             if (str1.upper() == "TODAY"):
 
                 date1 = datetime.datetime.now().strftime("%m/%d/%Y")
