@@ -181,11 +181,6 @@ def processRequest(req):
                 print("Not a known time frame...")
 
 
-
-
-
-
-
         res=getDATE1(str1)
         # id=id.strip()
 
@@ -211,7 +206,7 @@ def processRequest(req):
         if  b=='None':
             speech="Sorry! Not a valid Application ID."
         else:
-            speech = b+" proposals has been submitted."
+            speech = " Nummber of proposals that have been submitted in " +str1+ " is: "+b
 
         return {
             "speech": speech,
