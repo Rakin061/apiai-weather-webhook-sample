@@ -124,8 +124,8 @@ def processRequest(req):
         parameters = result.get("parameters")
         str1 = parameters.get("time")
         #str1=str1.strip()
-        date1=""
-        date2=""
+        date1="01/01/2017"
+        date2="07/20/2017"
 
         #str1 = input("Enter the time frame\n")
         flag = 0
