@@ -163,8 +163,8 @@ def processRequest(req):
                 week = week.strftime("%m/%d/%Y")
                 print(week)
                 print(datetime.datetime.now().strftime("%m/%d/%Y"))
-                date1= datetime.datetime.now().strftime("%m/%d/%Y")
-                date2=week
+                date2= datetime.datetime.now().strftime("%m/%d/%Y")
+                date1=week
                 return week
 
             elif (str1.upper() == "LAST WEEK" or str1.upper() == "PREVIOUS WEEK"):
