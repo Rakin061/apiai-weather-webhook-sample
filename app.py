@@ -122,27 +122,27 @@ def processRequest(req):
 
         result = req.get("result")
         parameters = result.get("parameters")
-        str1 = parameters.get("time")
+        str1= parameters.get("time")
         #str1=str1.strip()
-        date1="01/01/2017"
-        date2="07/20/2017"
+        #date1=""
+        #date2=""
 
         #str1 = input("Enter the time frame\n")
         flag = 0
 
 
 
-        def getDATE(str1):
+        #def getDATE(str1):
 
-            global date1,date2
-            if (str1.upper() == "TODAY"):
+        global date1,date2
+        if (str1.upper() == "TODAY"):
 
-                date1 = datetime.datetime.now().strftime("%m/%d/%Y")
-                date2 = datetime.datetime.now().strftime("%m/%d/%Y")
-                #print(tod)
-                return datetime.datetime.now().strftime("%m/%d/%Y")
+            date1 = datetime.datetime.now().strftime("%m/%d/%Y")
+            date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+            #print(tod)
+            return datetime.datetime.now().strftime("%m/%d/%Y")
 
-            elif (str1.upper() == "YESTERDAY" or str1.upper() == "LAST DAY" or str1.upper() == "PREVIOUS DAY"):
+        elif (str1.upper() == "YESTERDAY" or str1.upper() == "LAST DAY" or str1.upper() == "PREVIOUS DAY"):
 
                 yest = datetime.datetime.now() - datetime.timedelta(days=1)
                 yest = yest.strftime("%m/%d/%Y")
@@ -151,7 +151,7 @@ def processRequest(req):
                 date2=yest
                 return yest
 
-            elif (str1.upper() == "DAY BEFORE YESTERDAY"):
+        elif (str1.upper() == "DAY BEFORE YESTERDAY"):
 
                 yest = datetime.datetime.now() - datetime.timedelta(days=2)
                 yest = yest.strftime("%m/%d/%Y")
@@ -160,7 +160,7 @@ def processRequest(req):
                 date2=yest
                 return yest
 
-            elif (str1.upper() == "THIS WEEK" or str1.upper() == "CURRENT WEEK"):
+        elif (str1.upper() == "THIS WEEK" or str1.upper() == "CURRENT WEEK"):
 
                 week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
                 week = week.strftime("%m/%d/%Y")
@@ -170,7 +170,7 @@ def processRequest(req):
                 date1=week
                 return week
 
-            elif (str1.upper() == "LAST WEEK" or str1.upper() == "PREVIOUS WEEK"):
+        elif (str1.upper() == "LAST WEEK" or str1.upper() == "PREVIOUS WEEK"):
 
                 flag = 1
                 week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
@@ -184,7 +184,7 @@ def processRequest(req):
                 date2=week1
                 return week_last
 
-            elif (str1.upper() == "THIS MONTH" or str1.upper() == "CURRENT MONTH"):
+        elif (str1.upper() == "THIS MONTH" or str1.upper() == "CURRENT MONTH"):
 
                 month = datetime.datetime.now()
                 month = month.replace(day=1)
@@ -195,7 +195,7 @@ def processRequest(req):
                 date2= datetime.datetime.now().strftime("%m/%d/%Y")
                 return month
 
-            elif (str1.upper() == "LAST MONTH" or str1.upper() == "PREVIOUS MONTH"):
+        elif (str1.upper() == "LAST MONTH" or str1.upper() == "PREVIOUS MONTH"):
 
                 flag = 1
                 num = datetime.datetime.now().strftime("%m")
@@ -217,7 +217,7 @@ def processRequest(req):
 
                 return month
 
-            elif (str1.upper() == "THIS YEAR" or str1.upper() == "CURRENT YEAR"):
+        elif (str1.upper() == "THIS YEAR" or str1.upper() == "CURRENT YEAR"):
 
                 year = datetime.datetime.now()
                 year = year.replace(day=1, month=1)
@@ -228,7 +228,7 @@ def processRequest(req):
                 date2=datetime.datetime.now().strftime("%m/%d/%Y")
                 return year
 
-            elif (str1.upper() == "LAST YEAR" or str1.upper() == "PREVIOUS YEAR"):
+        elif (str1.upper() == "LAST YEAR" or str1.upper() == "PREVIOUS YEAR"):
 
                 flag = 1
                 num = datetime.datetime.now().strftime("%Y")
@@ -247,7 +247,7 @@ def processRequest(req):
 
                 return year
 
-            elif (str1.upper() == "FIRST QUARTER" or str1.upper() == "1ST QUARTER"):
+        elif (str1.upper() == "FIRST QUARTER" or str1.upper() == "1ST QUARTER"):
 
                 quat = datetime.datetime.now()
                 quat = quat.replace(day=1, month=1)
@@ -264,7 +264,7 @@ def processRequest(req):
 
                 return quat
 
-            elif (str1.upper() == "SECOND QUARTER" or str1.upper() == "2ND QUARTER"):
+        elif (str1.upper() == "SECOND QUARTER" or str1.upper() == "2ND QUARTER"):
 
                 quat1 = datetime.datetime.now()
                 quat1 = quat1.replace(day=1, month=4)
@@ -283,7 +283,7 @@ def processRequest(req):
                 date2=quat2
                 return quat2
 
-            elif (str1.upper() == "THIRD QUARTER" or str1.upper() == "3RD QUARTER"):
+        elif (str1.upper() == "THIRD QUARTER" or str1.upper() == "3RD QUARTER"):
 
                 quat1 = datetime.datetime.now()
                 quat1 = quat1.replace(day=1, month=7)
@@ -302,7 +302,7 @@ def processRequest(req):
                 date2=quat2
                 return quat2
 
-            elif (str1.upper() == "FOURTH QUARTER" or str1.upper() == "4TH QUARTER"):
+        elif (str1.upper() == "FOURTH QUARTER" or str1.upper() == "4TH QUARTER"):
 
                 quat1 = datetime.datetime.now()
                 quat1 = quat1.replace(day=1, month=10)
@@ -320,7 +320,7 @@ def processRequest(req):
                 date2=quat2
                 return quat2
 
-            elif (str1.upper() == "HALF YEARLY"):
+        elif (str1.upper() == "HALF YEARLY"):
 
                 year = datetime.datetime.now().strftime("%m")
                 count = int(year)
@@ -356,12 +356,12 @@ def processRequest(req):
                     date2=quat2
                 return quat2
 
-            else:
+        else:
                 print("Not a known time frame...")
 
-                
 
-        res = getDATE(str1)
+
+        #res = getDATE(str1)
         # id=id.strip()
 
         #date1="01/01/2017"
