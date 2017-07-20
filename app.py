@@ -204,7 +204,7 @@ def processRequest(req):
         # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
 
         if  b=='None':
-            speech="Sorry! Not a valid Application ID."
+            speech="Sorry! Not a valid time frame"
         else:
             speech = " Nummber of proposals that have been submitted in " +str1+ " is: "+b
 
@@ -446,6 +446,8 @@ def getDATE1(str1):
                 return quat2
 
             else:
+                date1=""
+                date2=""
                 print("Not a known time frame...")
 
 def makeYqlQuery(req):
