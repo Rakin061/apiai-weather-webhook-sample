@@ -361,6 +361,9 @@ def processRequest(req):
 
         # id=id.strip()
 
+        date1="01/01/2017"
+        date2="07/20/2017"
+
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
         yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY')"
         action="Proposal.Count"
