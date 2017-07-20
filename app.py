@@ -186,7 +186,7 @@ def processRequest(req):
 
 
 
-        getDATE(str1)
+        res=getDATE1(str1)
         # id=id.strip()
 
         #date1="01/01/2017"
