@@ -201,7 +201,7 @@ def processRequest(req):
                 error_code = 1
                 flag1 = -1
 
-        elif (prop_action == "Reviewed"):
+        elif (prop_action == "Rejected"):
             if (role.upper() == "CRM"):
                 global flag1, status_code
                 status_code = "06"
