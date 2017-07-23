@@ -144,24 +144,31 @@ def processRequest(req):
         global status_code
         global flag1
         if (role.upper() == "ARO"):
+            global flag1,status_code
             status_code="01"
             flag1=0
         elif (role.upper() == "RO" or role.upper() == "RM" ):
+            global flag1, status_code
             status_code = "02"
             flag1 = 0
         elif (role.upper() == "BDM"):
+            global flag1, status_code
             status_code = "03"
             flag1 = 0
         elif (role.upper() == "CRM"):
+            global flag1, status_code
             status_code = "05"
             flag1 = 0
         elif (role.upper() == "CRM MANAGER"):
+            global flag1, status_code
             status_code = "08"
             flag1 = 0
         elif (role.upper() == "CRM HEAD"):
+            global flag1, status_code
             status_code = "11"
             flag1 = 0
         elif (role.upper() == "ALL" or role.upper() == "GENERAL" ):
+            global flag1
             flag1=1
         else:
             error_code=1
