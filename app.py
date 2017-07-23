@@ -124,7 +124,8 @@ def processRequest(req):
 
     elif req.get("result").get("action") == "Proposal.Count":
 
-        flag1 = 0
+        status_code="00"
+        flag1 =0
         error_code = 0
         result = req.get("result")
         parameters = result.get("parameters")
