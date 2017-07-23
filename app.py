@@ -170,12 +170,12 @@ def processRequest(req):
                 global flag1, status_code
                 status_code = "11"
                 flag1 = 0
-            elif (role.upper() == "ALL" or role.upper() == "GENERAL" ):
+            elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper()=="ANY" ):
                 global flag1
                 flag1=1
             else:
                 error_code=1
-                flag1 = 1
+                flag1 = -1
 
         elif (prop_action == "Reviewed"):
             if (role.upper() == "CRM"):
@@ -194,9 +194,12 @@ def processRequest(req):
                 global flag1, status_code
                 status_code = "20"
                 flag1 = 0
+            elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper()=="ANY" ):
+                global flag1
+                flag1=2
             else:
                 error_code = 1
-                flag1 = 1
+                flag1 = -1
 
         elif (prop_action == "Reviewed"):
             if (role.upper() == "CRM"):
@@ -211,9 +214,12 @@ def processRequest(req):
                 global flag1, status_code
                 status_code = "09"
                 flag1 = 0
+            elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper()=="ANY" ):
+                global flag1
+                flag1=3
             else:
                 error_code = 1
-                flag1 = 1
+                flag1 = -1
         elif (prop_action == "Declined"):
             global flag1, status_code
             status_code = "13"
@@ -224,7 +230,7 @@ def processRequest(req):
             flag1 = 0
         else:
             error_code=1
-            flag1=1
+            flag1=-1
 
 
 
@@ -283,9 +289,15 @@ def processRequest(req):
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
         if flag1==1:
-            yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
-        else:
+            yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
+        elif flag1==2:
+            yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') AND APPL_STATUS_CODE IN ('07','10','17','20')"
+        elif flag1==3:
+            yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') AND APPL_STATUS_CODE IN ('04','06','09')"
+        elif flag1==0:
             yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY') AND APPL_STATUS_CODE='"+status_code+"'"
+        else:
+            yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
 
         action="Proposal.Count"
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
