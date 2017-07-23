@@ -18,6 +18,7 @@ from flask import make_response
 
 status_code="01"
 flag=1
+flag1 =0
 date1="01/01/2017"
 date2="07/20/2017"
 
@@ -126,7 +127,7 @@ def processRequest(req):
     elif req.get("result").get("action") == "Proposal.Count":
 
 
-        flag1 =0
+
         error_code = 0
         result = req.get("result")
         parameters = result.get("parameters")
@@ -141,6 +142,7 @@ def processRequest(req):
         #str1 = input("Enter the time frame\n")
 
         global status_code
+        global flag1
         if (role.upper() == "ARO"):
             status_code="01"
             flag1=0
