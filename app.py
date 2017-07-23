@@ -89,6 +89,7 @@ def processRequest(req):
         result = req.get("result")
         parameters = result.get("parameters")
         id = parameters.get("ID")
+
         # id=id.strip()
 
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
@@ -123,10 +124,12 @@ def processRequest(req):
 
     elif req.get("result").get("action") == "Proposal.Count":
 
-
+        flag1 = 0
+        error_code = 0
         result = req.get("result")
         parameters = result.get("parameters")
         str1= parameters.get("time")
+        role = parameters.get("role")
         #str1=str1.strip()
 
         #global date1,date2
@@ -134,6 +137,30 @@ def processRequest(req):
         #date2="07/20/2017"
 
         #str1 = input("Enter the time frame\n")
+
+        if (role.upper() == "ARO"):
+            status_code="01"
+            flag1=0
+        elif (role.upper() == "RO" or role.upper() == "RM" ):
+            status_code = "02"
+            flag1 = 0
+        elif (role.upper() == "BDM"):
+            status_code = "03"
+            flag1 = 0
+        elif (role.upper() == "CRM"):
+            status_code = "05"
+            flag1 = 0
+        elif (role.upper() == "CRM MANAGER"):
+            status_code = "08"
+            flag1 = 0
+        elif (role.upper() == "CRM HEAD"):
+            status_code = "11"
+            flag1 = 0
+        elif (role.upper() == "ALL" or role.upper() == "GENERAL" ):
+            flag1=1
+        else:
+            error_code=1
+            flag1 = 0
 
 
         def getDATE(str1):
@@ -189,7 +216,12 @@ def processRequest(req):
         #date2="07/20/2017"
 
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
-        yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY')"
+
+        if flag1==1:
+            yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+        else:
+            yql_query = "SELECT COUNT(APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY') AND APPL_STATUS_CODE='"+status_code+"'"
+
         action="Proposal.Count"
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
@@ -206,8 +238,10 @@ def processRequest(req):
 
         if (flag==0):
             speech=" Sorry! Not a valid time frame"
+        elif(error_code==1):
+            speech = " Please write the functional role correctly."
         else:
-            speech = "Nummber of proposals that have been submitted in " +str1+ " is: "+b
+            speech = "Nummber of proposals that have been submitted by "+role+" in " +str1+ " is: "+b
 
         return {
             "speech": speech,
