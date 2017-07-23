@@ -124,7 +124,7 @@ def processRequest(req):
 
     elif req.get("result").get("action") == "Proposal.Count":
 
-        status_code="00"
+        status_code="01"
         flag1 =0
         error_code = 0
         result = req.get("result")
@@ -161,7 +161,7 @@ def processRequest(req):
             flag1=1
         else:
             error_code=1
-            flag1 = 0
+            flag1 = 1
 
 
         def getDATE(str1):
