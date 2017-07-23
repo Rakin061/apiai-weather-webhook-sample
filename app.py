@@ -133,6 +133,7 @@ def processRequest(req):
         parameters = result.get("parameters")
         str1= parameters.get("time")
         role = parameters.get("role")
+        prop_action=parameters.get("proposal_action")
         #str1=str1.strip()
 
         #global date1,date2
@@ -143,36 +144,88 @@ def processRequest(req):
 
         global status_code
         global flag1
-        if (role.upper() == "ARO"):
-            global flag1,status_code
-            status_code="01"
-            flag1=0
-        elif (role.upper() == "RO" or role.upper() == "RM" ):
+
+        if(prop_action=="Submitted"):
+            if (role.upper() == "ARO"):
+                global flag1,status_code
+                status_code="01"
+                flag1=0
+            elif (role.upper() == "RO" or role.upper() == "RM" ):
+                global flag1, status_code
+                status_code = "02"
+                flag1 = 0
+            elif (role.upper() == "BDM"):
+                global flag1, status_code
+                status_code = "03"
+                flag1 = 0
+            elif (role.upper() == "CRM"):
+                global flag1, status_code
+                status_code = "05"
+                flag1 = 0
+            elif (role.upper() == "CRM MANAGER"):
+                global flag1, status_code
+                status_code = "08"
+                flag1 = 0
+            elif (role.upper() == "CRM HEAD"):
+                global flag1, status_code
+                status_code = "11"
+                flag1 = 0
+            elif (role.upper() == "ALL" or role.upper() == "GENERAL" ):
+                global flag1
+                flag1=1
+            else:
+                error_code=1
+                flag1 = 1
+
+        elif (prop_action == "Reviewed"):
+            if (role.upper() == "CRM"):
+                global flag1, status_code
+                status_code = "07"
+                flag1 = 0
+            elif (role.upper() == "BDM"):
+                global flag1, status_code
+                status_code = "17"
+                flag1 = 0
+            elif (role.upper() == "CRM MANAGER"):
+                global flag1, status_code
+                status_code = "10"
+                flag1 = 0
+            elif (role.upper() == "HEAD OF BUSINESS"):
+                global flag1, status_code
+                status_code = "20"
+                flag1 = 0
+            else:
+                error_code = 1
+                flag1 = 1
+
+        elif (prop_action == "Reviewed"):
+            if (role.upper() == "CRM"):
+                global flag1, status_code
+                status_code = "06"
+                flag1 = 0
+            elif (role.upper() == "BDM"):
+                global flag1, status_code
+                status_code = "04"
+                flag1 = 0
+            elif (role.upper() == "CRM MANAGER"):
+                global flag1, status_code
+                status_code = "09"
+                flag1 = 0
+            else:
+                error_code = 1
+                flag1 = 1
+        elif (prop_action == "Declined"):
             global flag1, status_code
-            status_code = "02"
+            status_code = "13"
             flag1 = 0
-        elif (role.upper() == "BDM"):
+        elif (prop_action == "Approved"):
             global flag1, status_code
-            status_code = "03"
+            status_code = "12"
             flag1 = 0
-        elif (role.upper() == "CRM"):
-            global flag1, status_code
-            status_code = "05"
-            flag1 = 0
-        elif (role.upper() == "CRM MANAGER"):
-            global flag1, status_code
-            status_code = "08"
-            flag1 = 0
-        elif (role.upper() == "CRM HEAD"):
-            global flag1, status_code
-            status_code = "11"
-            flag1 = 0
-        elif (role.upper() == "ALL" or role.upper() == "GENERAL" ):
-            global flag1
-            flag1=1
         else:
             error_code=1
-            flag1 = 1
+            flag1=1
+
 
 
         def getDATE(str1):
@@ -251,9 +304,9 @@ def processRequest(req):
         if (flag==0):
             speech=" Sorry! Not a valid time frame"
         elif(error_code==1):
-            speech = " Please write the functional role correctly."
+            speech = " Sorry! Response unavailable due to some data mismatch."
         else:
-            speech = "Nummber of proposals that have been submitted by "+role+" in " +str1+ " is: "+b
+            speech = "Nummber of proposals that have been "+prop_action + " by "+role+" in " +str1+ " is: "+b
 
         return {
             "speech": speech,
