@@ -377,8 +377,8 @@ def processRequest(req):
         res = getDATE1(str1)
         # id=id.strip()
 
-        # date1="01/01/2017"
-        # date2="07/20/2017"
+        date1="01/01/2016"
+        date2="12/31/2016"
 
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
