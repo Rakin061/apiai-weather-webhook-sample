@@ -330,6 +330,102 @@ def processRequest(req):
 
 
 
+    elif req.get("result").get("action") == "Performance.individual":
+
+        error_code = 0
+        result = req.get("result")
+        parameters = result.get("parameters")
+        str1 = parameters.get("time")
+        role = parameters.get("role")
+        branch_name = parameters.get("Branch_Name")
+        # str1=str1.strip()
+
+        # global date1,date2
+        # date1="01/01/2017"
+        # date2="07/20/2017"
+
+        # str1 = input("Enter the time frame\n")
+
+        global status_code
+        global flag1
+        role_flag=1
+
+        if(role.upper()=="CRM HEAD"):
+            role="CRMHED"
+        elif(role.upper()=="HEAD OF BUSINESS"):
+            role="CMSEHOB"
+        elif (role.upper() == "CRMS"):
+            role = "CRMS"
+        elif (role.upper() == "MD"):
+            role = "MD"
+        elif (role.upper() == "RM"):
+            role = "RM"
+        elif (role.upper() == "RO"):
+            role = "RO"
+        elif (role.upper() == "CRO"):
+            role = "CRM"
+        elif (role.upper() == "ARO"):
+            role = "ARO"
+        elif (role.upper() == "BDM"):
+            role = "BDM"
+        else:
+            role_flag=0
+
+
+
+
+        res = getDATE1(str1)
+        # id=id.strip()
+
+        # date1="01/01/2017"
+        # date2="07/20/2017"
+
+        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+
+
+        yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+        + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+        + " FROM OCASMN.VW_APPL_STS_INFO"
+        + " WHERE user_group_code = '"+role+"' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = 'N' AND branch_code =004"
+        + " AND SUBMISSION_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY')"
+        + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+
+        action = "Performance.individual"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        no_of_rows = data["Number of Rows"]
+
+        final_speech=""
+
+        for i in range(1,no_of_rows+1):
+            final_speech=final_speech+" User ID: "+ data['Query'][0][0]['Row'+str(no_of_rows)]['USER_ID']
+            +",  Number of Approval: " + data['Query'][0][0]['Row' + str(no_of_rows)]['PERFORMNC']
+            +",  Branch Name " + data['Query'][0][0]['Row' + str(no_of_rows)]['BRANCH_NAME']
+            +",  Requested_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['REQUESTED_AMOUNT']
+            +",  Approved_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['APPROVE_AMOUNT']+"     "
+
+
+
+
+
+
+        return {
+            "speech": final_speech,
+            "displayText": final_speech,
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
+
+
+
     else:
         return {}
 
