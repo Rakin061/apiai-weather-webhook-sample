@@ -106,6 +106,18 @@ def processRequest(req):
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
 
+        if data=={}:
+            speech="Sorry! Not a valid Application ID."
+            return {
+                "speech": speech,
+                "displayText": speech,
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+
+
+
         a = data.get('Status')
         b = str(a[0].get('result'))
 
