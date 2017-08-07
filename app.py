@@ -381,6 +381,8 @@ def processRequest(req):
         else:
             role_flag = 0
 
+        res = getDATE1(str1)
+
         final_speech = "OK"
 
 
