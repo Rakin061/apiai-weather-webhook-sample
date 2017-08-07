@@ -391,6 +391,10 @@ def processRequest(req):
         yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
         yql_query=yql_query+ "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
         yql_query=yql_query+ " FROM OCASMN.VW_APPL_STS_INFO"
+        yql_query=yql_query+ " WHERE user_group_code = 'ARO' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = 'N' AND branch_code =004"
+        yql_query=yql_query+ " AND SUBMISSION_DT BETWEEN TO_DATE('01/01/2016','MM-DD-YYYY') AND TO_DATE('12/31/2016','MM-DD-YYYY')"
+        yql_query=yql_query+ "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
 
 
         final_speech = "OK"
