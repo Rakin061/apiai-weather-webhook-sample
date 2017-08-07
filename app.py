@@ -342,7 +342,44 @@ def processRequest(req):
 
     elif req.get("result").get("action") == "Performance.individual":
 
+        error_code = 0
+        result = req.get("result")
+        parameters = result.get("parameters")
+        str1 = parameters.get("time")
+        role = parameters.get("role")
+        branch_name = parameters.get("Branch_Name")
+        # str1=str1.strip()
 
+        # global date1,date2
+        # date1="01/01/2017"
+        # date2="07/20/2017"
+
+        # str1 = input("Enter the time frame\n")
+
+        global status_code
+        global flag1
+        role_flag = 1
+
+        if (role.upper() == "CRM HEAD"):
+            role = "CRMHED"
+        elif (role.upper() == "HEAD OF BUSINESS"):
+            role = "CMSEHOB"
+        elif (role.upper() == "CRMS"):
+            role = "CRMS"
+        elif (role.upper() == "MD"):
+            role = "MD"
+        elif (role.upper() == "RM"):
+            role = "RM"
+        elif (role.upper() == "RO"):
+            role = "RO"
+        elif (role.upper() == "CRO"):
+            role = "CRM"
+        elif (role.upper() == "ARO"):
+            role = "ARO"
+        elif (role.upper() == "BDM"):
+            role = "BDM"
+        else:
+            role_flag = 0
 
         final_speech = "OK"
 
