@@ -356,8 +356,8 @@ def processRequest(req):
 
         # str1 = input("Enter the time frame\n")
 
-        global status_code
-        global flag1
+        #global status_code
+        #global flag1
         role_flag = 1
 
         if (role.upper() == "CRM HEAD"):
@@ -382,6 +382,11 @@ def processRequest(req):
             role_flag = 0
 
         res = getDATE1(str1)
+
+        date1 = "01/01/2016"
+        date2 = "12/31/2016"
+
+        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
         final_speech = "OK"
 
