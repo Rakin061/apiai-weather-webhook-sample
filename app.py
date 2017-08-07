@@ -408,14 +408,9 @@ def processRequest(req):
 
         no_of_rows = data["Number of Rows"]
 
-        final_speech = ""
+        final_speech = "OK"
 
-        for i in range(1, no_of_rows + 1):
-            final_speech = final_speech + " User ID: " + data['Query'][0][0]['Row' + str(no_of_rows)]['USER_ID']
-            +",  Number of Approval: " + data['Query'][0][0]['Row' + str(no_of_rows)]['PERFORMNC']
-            +",  Branch Name " + data['Query'][0][0]['Row' + str(no_of_rows)]['BRANCH_NAME']
-            +",  Requested_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['REQUESTED_AMOUNT']
-            +",  Approved_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['APPROVE_AMOUNT'] + "     "
+
 
         return {
             "speech": final_speech,
