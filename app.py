@@ -343,13 +343,14 @@ def processRequest(req):
     elif req.get("result").get("action") == "Performance.individual":
 
         error_code = 0
-        result = req.get("result")
-        parameters = result.get("parameters")
-        str1 = parameters.get("time")
-        role = parameters.get("role")
-        branch_name = parameters.get("Branch_Name")
+        #result = req.get("result")
+        #parameters = result.get("parameters")
+        #str1 = parameters.get("time")
+        #role = parameters.get("role")
+        #branch_name = parameters.get("Branch_Name")
         # str1=str1.strip()
-        q_role=" "
+        role="ARO"
+
 
         # global date1,date2
         # date1="01/01/2017"
@@ -362,27 +363,27 @@ def processRequest(req):
         role_flag = 1
 
         if (role.upper() == "CRM HEAD"):
-            q_role = "CRMHED"
+            role = "CRMHED"
         elif (role.upper() == "HEAD OF BUSINESS"):
-            q_role = "CMSEHOB"
+            role = "CMSEHOB"
         elif (role.upper() == "CRMS"):
-            q_role = "CRMS"
+            role = "CRMS"
         elif (role.upper() == "MD"):
-            q_role = "MD"
+            role = "MD"
         elif (role.upper() == "RM"):
-            q_role = "RM"
+            role = "RM"
         elif (role.upper() == "RO"):
-            q_role = "RO"
+            role = "RO"
         elif (role.upper() == "CRO"):
-            q_role = "CRM"
+            role = "CRM"
         elif (role.upper() == "ARO"):
-            q_role = "ARO"
+            role = "ARO"
         elif (role.upper() == "BDM"):
-            q_role = "BDM"
+            role = "BDM"
         else:
             role_flag = 0
 
-        res = getDATE1(str1)
+        #res = getDATE1(str1)
         # id=id.strip()
 
         date1 = "01/01/2016"
