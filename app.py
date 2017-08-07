@@ -342,54 +342,7 @@ def processRequest(req):
 
     elif req.get("result").get("action") == "Performance.individual":
 
-        error_code = 0
-        #result = req.get("result")
-        #parameters = result.get("parameters")
-        #str1 = parameters.get("time")
-        #role = parameters.get("role")
-        #branch_name = parameters.get("Branch_Name")
-        # str1=str1.strip()
-        #role="ARO"
 
-
-        # global date1,date2
-        # date1="01/01/2017"
-        # date2="07/20/2017"
-
-        # str1 = input("Enter the time frame\n")
-
-        #global status_code
-        #global flag1
-        role_flag = 1
-
-
-
-        #res = getDATE1(str1)
-        # id=id.strip()
-
-        date1 = "01/01/2016"
-        date2 = "12/31/2016"
-
-        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
-
-
-        yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
-        + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
-        + " FROM OCASMN.VW_APPL_STS_INFO"
-        + " WHERE user_group_code = 'ARO' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = 'N' AND branch_code =004"
-        + " AND SUBMISSION_DT BETWEEN TO_DATE('01/01/2016','MM-DD-YYYY') AND TO_DATE('12/31/2016','MM-DD-YYYY')"
-        + "GROUP BY createby, branch_name ORDER BY performnc DESC"
-
-        action = "Performance.individual"
-        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
-        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
-
-        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
-
-        test_res = urlopen(yql_url).read()
-        data = json.loads(test_res)
-
-        no_of_rows = data["Number of Rows"]
 
         final_speech = "OK"
 
