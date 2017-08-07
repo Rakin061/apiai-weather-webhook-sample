@@ -383,8 +383,8 @@ def processRequest(req):
 
         res = getDATE1(str1)
 
-        date1 = "01/01/2016"
-        date2 = "12/31/2016"
+        #date1 = "01/01/2016"
+        #date2 = "12/31/2016"
 
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
@@ -395,9 +395,25 @@ def processRequest(req):
         yql_query=yql_query+ " AND SUBMISSION_DT BETWEEN TO_DATE('01/01/2016','MM-DD-YYYY') AND TO_DATE('12/31/2016','MM-DD-YYYY')"
         yql_query=yql_query+ "GROUP BY createby, branch_name ORDER BY performnc DESC"
 
+        action = "Performance.individual"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
 
-        final_speech = "OK"
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        no_of_rows = data["Number of Rows"]
+
+        final_speech = ""
+
+        for i in range(1, no_of_rows + 1):
+            final_speech = final_speech + " User ID: " + data['Query'][0][0]['Row' + str(no_of_rows)]['USER_ID']
+            +",  Number of Approval: " + data['Query'][0][0]['Row' + str(no_of_rows)]['PERFORMNC']
+            +",  Branch Name " + data['Query'][0][0]['Row' + str(no_of_rows)]['BRANCH_NAME']
+            +",  Requested_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['REQUESTED_AMOUNT']
+            +",  Approved_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['APPROVE_AMOUNT'] + "     "
 
 
 
