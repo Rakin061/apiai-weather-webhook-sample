@@ -407,13 +407,14 @@ def processRequest(req):
         no_of_rows = data["Number of Rows"]
 
         speech_counter = ""
+        final_speech=""
 
         for i in range(1, no_of_rows + 1):
-            final_speech = speech_counter + " User ID: " + data['Query'][0][0]['Row' + str(no_of_rows)]['USER_ID']
-            final_speech=final_speech+",  Number of Approval: " + data['Query'][0][0]['Row' + str(no_of_rows)]['PERFORMNC']
-            final_speech=final_speech+",  Branch Name " + data['Query'][0][0]['Row' + str(no_of_rows)]['BRANCH_NAME']
-            final_speech=final_speech+",  Requested_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['REQUESTED_AMOUNT']
-            final_speech=final_speech+",  Approved_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['APPROVE_AMOUNT'] + "     "
+            final_speech = speech_counter + " User ID: " + data['Query']['Row' + str(no_of_rows)]['USER_ID']
+            final_speech=final_speech+",  Number of Approval: " + data['Query']['Row' + str(no_of_rows)]['PERFORMNC']
+            final_speech=final_speech+",  Branch Name " + data['Query']['Row' + str(no_of_rows)]['BRANCH_NAME']
+            final_speech=final_speech+",  Requested_Amount: " + data['Query']['Row' + str(no_of_rows)]['REQUESTED_AMOUNT']
+            final_speech=final_speech+",  Approved_Amount: " + data['Query']['Row' + str(no_of_rows)]['APPROVE_AMOUNT'] + "     "
             speech_counter=final_speech
 
 
