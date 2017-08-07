@@ -359,10 +359,12 @@ def processRequest(req):
         #global status_code
         #global flag1
         role_flag = 1
-        branch_code=""
+        error_code=0
 
         if(branch_name.upper()=="GULSHAN BRANCH"):
             branch_code="004"
+        else:
+            error_code=1
 
         if (role.upper() == "CRM HEAD"):
             role = "CRMHED"
@@ -389,6 +391,16 @@ def processRequest(req):
 
         #date1 = "01/01/2016"
         #date2 = "12/31/2016"
+
+        if error_code==1:
+            return {
+                "speech": "Sorry! Data mismatch or invalid Query. Please try again!",
+                "displayText": "Sorry! Data mismatch or invalid Query. Please try again!",
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+
 
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
