@@ -394,8 +394,8 @@ def processRequest(req):
 
         if error_code==1:
             return {
-                "speech": "Sorry! Data mismatch or invalid Query. Please try again!",
-                "displayText": "Sorry! Data mismatch or invalid Query. Please try again!",
+                "speech": "Sorry! My response is limited! ",
+                "displayText": "Sorry! My response is limited!",
                 # "data": data,
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
