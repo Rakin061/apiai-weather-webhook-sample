@@ -349,6 +349,7 @@ def processRequest(req):
         role = parameters.get("role")
         branch_name = parameters.get("Branch_Name")
         # str1=str1.strip()
+        q_role=" "
 
         # global date1,date2
         # date1="01/01/2017"
@@ -361,23 +362,23 @@ def processRequest(req):
         role_flag = 1
 
         if (role.upper() == "CRM HEAD"):
-            role = "CRMHED"
+            q_role = "CRMHED"
         elif (role.upper() == "HEAD OF BUSINESS"):
-            role = "CMSEHOB"
+            q_role = "CMSEHOB"
         elif (role.upper() == "CRMS"):
-            role = "CRMS"
+            q_role = "CRMS"
         elif (role.upper() == "MD"):
-            role = "MD"
+            q_role = "MD"
         elif (role.upper() == "RM"):
-            role = "RM"
+            q_role = "RM"
         elif (role.upper() == "RO"):
-            role = "RO"
+            q_role = "RO"
         elif (role.upper() == "CRO"):
-            role = "CRM"
+            q_role = "CRM"
         elif (role.upper() == "ARO"):
-            role = "ARO"
+            q_role = "ARO"
         elif (role.upper() == "BDM"):
-            role = "BDM"
+            q_role = "BDM"
         else:
             role_flag = 0
 
