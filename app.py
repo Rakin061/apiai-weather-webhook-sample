@@ -388,7 +388,9 @@ def processRequest(req):
 
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
-        yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
+        yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+        yql_query=yql_query+ "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+        yql_query=yql_query+ " FROM OCASMN.VW_APPL_STS_INFO"
 
 
         final_speech = "OK"
