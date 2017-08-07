@@ -159,31 +159,31 @@ def processRequest(req):
 
         if(prop_action=="Submitted"):
             if (role.upper() == "ARO"):
-                global flag1,status_code
+                #global flag1,status_code
                 status_code="01"
                 flag1=0
             elif (role.upper() == "RO" or role.upper() == "RM" ):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "02"
                 flag1 = 0
             elif (role.upper() == "BDM"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "03"
                 flag1 = 0
             elif (role.upper() == "CRM"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "05"
                 flag1 = 0
             elif (role.upper() == "CRM MANAGER"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "08"
                 flag1 = 0
             elif (role.upper() == "CRM HEAD"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "11"
                 flag1 = 0
             elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper()=="ANY" ):
-                global flag1
+                #global flag1
                 flag1=1
             else:
                 error_code=1
@@ -191,23 +191,23 @@ def processRequest(req):
 
         elif (prop_action == "Reviewed"):
             if (role.upper() == "CRM"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "07"
                 flag1 = 0
             elif (role.upper() == "BDM"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "17"
                 flag1 = 0
             elif (role.upper() == "CRM MANAGER"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "10"
                 flag1 = 0
             elif (role.upper() == "HEAD OF BUSINESS"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "20"
                 flag1 = 0
             elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper()=="ANY" ):
-                global flag1
+                #global flag1
                 flag1=2
             else:
                 error_code = 1
@@ -215,29 +215,29 @@ def processRequest(req):
 
         elif (prop_action == "Rejected"):
             if (role.upper() == "CRM"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "06"
                 flag1 = 0
             elif (role.upper() == "BDM"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "04"
                 flag1 = 0
             elif (role.upper() == "CRM MANAGER"):
-                global flag1, status_code
+                #global flag1, status_code
                 status_code = "09"
                 flag1 = 0
             elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper()=="ANY" ):
-                global flag1
+                #global flag1
                 flag1=3
             else:
                 error_code = 1
                 flag1 = -1
         elif (prop_action == "Declined"):
-            global flag1, status_code
+            #global flag1, status_code
             status_code = "13"
             flag1 = 0
         elif (prop_action == "Approved"):
-            global flag1, status_code
+            #global flag1, status_code
             status_code = "12"
             flag1 = 0
         else:
@@ -340,7 +340,90 @@ def processRequest(req):
             "source": "apiai-weather-webhook-sample"
         }
 
+    elif req.get("result").get("action") == "Performance.individual":
 
+        error_code = 0
+        result = req.get("result")
+        parameters = result.get("parameters")
+        str1 = parameters.get("time")
+        role = parameters.get("role")
+        branch_name = parameters.get("Branch_Name")
+        # str1=str1.strip()
+
+        # global date1,date2
+        # date1="01/01/2017"
+        # date2="07/20/2017"
+
+        # str1 = input("Enter the time frame\n")
+
+        #global status_code
+        #global flag1
+        role_flag = 1
+
+        if (role.upper() == "CRM HEAD"):
+            role = "CRMHED"
+        elif (role.upper() == "HEAD OF BUSINESS"):
+            role = "CMSEHOB"
+        elif (role.upper() == "CRMS"):
+            role = "CRMS"
+        elif (role.upper() == "MD"):
+            role = "MD"
+        elif (role.upper() == "RM"):
+            role = "RM"
+        elif (role.upper() == "RO"):
+            role = "RO"
+        elif (role.upper() == "CRO"):
+            role = "CRM"
+        elif (role.upper() == "ARO"):
+            role = "ARO"
+        elif (role.upper() == "BDM"):
+            role = "BDM"
+        else:
+            role_flag = 0
+
+        res = getDATE1(str1)
+        # id=id.strip()
+
+        date1 = "01/01/2016"
+        date2 = "12/31/2016"
+
+        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+
+
+        yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+        + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+        + " FROM OCASMN.VW_APPL_STS_INFO"
+        + " WHERE user_group_code = 'ARO' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = 'N' AND branch_code =004"
+        + " AND SUBMISSION_DT BETWEEN TO_DATE('01/01/2016','MM-DD-YYYY') AND TO_DATE('12/31/2016','MM-DD-YYYY')"
+        + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+        action = "Performance.individual"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        no_of_rows = data["Number of Rows"]
+
+        final_speech = ""
+
+        for i in range(1, no_of_rows + 1):
+            final_speech = final_speech + " User ID: " + data['Query'][0][0]['Row' + str(no_of_rows)]['USER_ID']
+            +",  Number of Approval: " + data['Query'][0][0]['Row' + str(no_of_rows)]['PERFORMNC']
+            +",  Branch Name " + data['Query'][0][0]['Row' + str(no_of_rows)]['BRANCH_NAME']
+            +",  Requested_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['REQUESTED_AMOUNT']
+            +",  Approved_Amount: " + data['Query'][0][0]['Row' + str(no_of_rows)]['APPROVE_AMOUNT'] + "     "
+
+        return {
+            "speech": final_speech,
+            "displayText": final_speech,
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
     
 
     else:
