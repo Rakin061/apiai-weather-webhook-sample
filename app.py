@@ -364,13 +364,13 @@ def processRequest(req):
         error_code=0
 
         if(type.upper().find("BRANCH")):
-            type_flag="N"
+            type_flag='N'
         elif(type.upper().find("AGENT")):
-            type_flag="Y"
+            type_flag='Y'
         else:
             error_code=1
 
-        type_flag='N'
+        #type_flag='N'
 
         if(branch_name.upper()=="GULSHAN BRANCH"):
             branch_code="004"
