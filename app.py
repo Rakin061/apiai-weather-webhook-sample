@@ -370,7 +370,7 @@ def processRequest(req):
         else:
             error_code=1
 
-
+        type_flag='N'
 
         if(branch_name.upper()=="GULSHAN BRANCH"):
             branch_code="004"
