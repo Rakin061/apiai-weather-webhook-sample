@@ -363,9 +363,9 @@ def processRequest(req):
         role_flag = 1
         error_code=0
 
-        if(type.upper().find("BRANCH")):
+        if("BRACNH" in type.upper()):
             type_flag='N'
-        elif(type.upper().find("AGENT")):
+        elif("AGENT" in type.upper()):
             type_flag='Y'
         else:
             error_code=1
