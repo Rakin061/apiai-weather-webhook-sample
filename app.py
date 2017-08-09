@@ -348,8 +348,9 @@ def processRequest(req):
         str1 = parameters.get("time")
         role = parameters.get("role")
         branch_name = parameters.get("Branch_Name")
-        type=parameters.get("type")
+        type=parameters.get("type").strip()
         type_flag=""
+        branch_code=""
         # str1=str1.strip()
 
         # global date1,date2
