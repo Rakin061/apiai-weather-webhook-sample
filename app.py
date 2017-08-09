@@ -364,7 +364,7 @@ def processRequest(req):
         role_flag = 1
         error_code=0
 
-        if "BRACNH" in str(type.upper()):
+        if "BRANCH" in str(type.upper()):
             type_flag='N'
         elif "AGENT" in str(type.upper()):
             type_flag='Y'
