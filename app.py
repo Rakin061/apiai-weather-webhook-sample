@@ -348,6 +348,8 @@ def processRequest(req):
         str1 = parameters.get("time")
         role = parameters.get("role")
         branch_name = parameters.get("Branch_Name")
+        type=parameters.get("type")
+        type_flag=""
         # str1=str1.strip()
 
         # global date1,date2
@@ -360,6 +362,15 @@ def processRequest(req):
         #global flag1
         role_flag = 1
         error_code=0
+
+        if(type.upper().find("BRANCH")):
+            type_flag="N"
+        elif(type.upper().find("AGENT")):
+            type_flag="Y"
+        else:
+            error_code=1
+
+
 
         if(branch_name.upper()=="GULSHAN BRANCH"):
             branch_code="004"
@@ -394,8 +405,8 @@ def processRequest(req):
 
         if error_code==1:
             return {
-                "speech": "Sorry! My response is limited! ",
-                "displayText": "Sorry! My response is limited!",
+                "speech": "Sorry! Data Mismatch! ",
+                "displayText": "Sorry! Data Mismatch!",
                 # "data": data,
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
@@ -407,7 +418,7 @@ def processRequest(req):
         yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
         yql_query=yql_query+ "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
         yql_query=yql_query+ " FROM OCASMN.VW_APPL_STS_INFO"
-        yql_query=yql_query+ " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = 'N' AND branch_code ='"+branch_code+"'"
+        yql_query=yql_query+ " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = '"+type_flag+"' AND (branch_code ='"+branch_name+"' OR BRANCH_NAME LIKE'%"+branch_name+"%')"
         yql_query=yql_query+ " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
         yql_query=yql_query+ "GROUP BY createby, branch_name ORDER BY performnc DESC"
 
