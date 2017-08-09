@@ -373,10 +373,7 @@ def processRequest(req):
 
         #type_flag='N'
 
-        if(branch_name.upper()=="GULSHAN BRANCH"):
-            branch_code="004"
-        else:
-            error_code=1
+        
 
         if (role.upper() == "CRM HEAD"):
             role = "CRMHED"
