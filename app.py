@@ -313,10 +313,15 @@ def processRequest(req):
 
 
         res=getDATE1(str1)
+
+
         # id=id.strip()
 
         #date1="01/01/2017"
         #date2="07/20/2017"
+
+
+        # USING STRING CONCATANATION METHOD ... Handled Branch Factors
 
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
@@ -384,10 +389,12 @@ def processRequest(req):
         role_flag = 1
         error_code=0
 
-        if type[0].upper()=="B":
+        if "BR" in type.upper():
             type_flag='N'
-        elif type[0].upper()=="A":
+        elif "AG" in type.upper():
             type_flag='Y'
+        elif "BOTH" in type.upper():
+            branch_factor=" "
         else:
             error_code=1
 
@@ -431,14 +438,50 @@ def processRequest(req):
             }
 
 
+        # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
+
+
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
-        yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
-        yql_query=yql_query+ "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
-        yql_query=yql_query+ " FROM OCASMN.VW_APPL_STS_INFO"
-        yql_query=yql_query+ " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = '"+type_flag+"' AND (branch_code ='"+branch_name.strip()+"' OR UPPER(BRANCH_NAME) LIKE'%"+branch_name.strip().upper()+"%')"
-        yql_query=yql_query+ " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
-        yql_query=yql_query+ "GROUP BY createby, branch_name ORDER BY performnc DESC"
+        if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
+
+            if type.upper()=="BOTH":
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role +"' AND appl_status_code = 12"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+            else:
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = '" + type_flag + "'"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+        else:
+
+            if type.upper() == "BOTH":
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND (branch_code ='" + branch_name.strip() + "' OR UPPER(BRANCH_NAME) LIKE'%" + branch_name.strip().upper() + "%')"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+            else:
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = '" + type_flag + "' AND (branch_code ='" + branch_name.strip() + "' OR UPPER(BRANCH_NAME) LIKE'%" + branch_name.strip().upper() + "%')"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+
+
+
+
 
         action = "Performance.individual"
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
