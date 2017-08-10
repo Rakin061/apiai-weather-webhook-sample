@@ -164,10 +164,12 @@ def processRequest(req):
         else:
             branch_factor="AND (branch_code ='"+branch_name+"' OR UPPER(BRANCH_NAME) LIKE '%"+branch_name.upper()+"%')"
 
-        if b_type[0].upper()=="B":
+        if "BR" in b_type.upper():
             branch_factor=branch_factor+" AND NVL (agent_flg, 'Z') = 'N'"
-        elif b_type[0].upper()=="A":
+        elif "AG" in b_type.upper():
             branch_factor = branch_factor + " AND NVL (agent_flg, 'Z') = 'Y'"
+        elif "BOTH" in b_type.upper():
+            branch_factor=" "
         else:
             error_code=1
 
