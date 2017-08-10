@@ -146,6 +146,8 @@ def processRequest(req):
         str1= parameters.get("time")
         role = parameters.get("role")
         prop_action=parameters.get("proposal_action")
+        branch_name=parameters.get("Branch_Name").strip()
+        b_type=parameters.get("b_type").strip()
         #str1=str1.strip()
 
         #global date1,date2
@@ -153,6 +155,22 @@ def processRequest(req):
         #date2="07/20/2017"
 
         #str1 = input("Enter the time frame\n")
+
+
+        branch_factor=" "
+
+        if "ALL" in branch_name.upper()or "EVERY" in branch_name.upper() or"ANY" in branch_name.upper():
+            branch_factor=" "
+        else:
+            branch_factor="AND (branch_code ='"+branch_name+"' OR UPPER(BRANCH_NAME) LIKE '%"+branch_name.upper()+"%')"
+
+        if b_type[0].upper()=="B":
+            branch_factor=branch_factor+" AND NVL (agent_flg, 'Z') = 'N'"
+        elif b_type[0].upper()=="A":
+            branch_factor = branch_factor + " AND NVL (agent_flg, 'Z') = 'Y'"
+        else:
+            error_code=1
+
 
         global status_code
         global flag1
@@ -301,15 +319,15 @@ def processRequest(req):
         baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
 
         if flag1==1:
-            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') "+branch_factor+" AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
         elif flag1==2:
-            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') AND APPL_STATUS_CODE IN ('07','10','17','20')"
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') "+branch_factor+" AND APPL_STATUS_CODE IN ('07','10','17','20')"
         elif flag1==3:
-            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') AND APPL_STATUS_CODE IN ('04','06','09')"
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') "+branch_factor+" AND APPL_STATUS_CODE IN ('04','06','09')"
         elif flag1==0:
-            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY') AND APPL_STATUS_CODE='"+status_code+"'"
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('"+date1+"','MM-DD-YYYY') AND TO_DATE('"+date2+"','MM-DD-YYYY') "+branch_factor+" AND APPL_STATUS_CODE='"+status_code+"'"
         else:
-            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') "+branch_factor
 
         action="Proposal.Count"
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
@@ -328,7 +346,7 @@ def processRequest(req):
         if (flag==0):
             speech=" Sorry! Not a valid time frame"
         elif(error_code==1):
-            speech = " Sorry! Response unavailable due to some data mismatch."
+            speech = "Sorry! Response unavailable due to some data mismatch."
         else:
             speech = "Nummber of proposals that have been "+prop_action + " by "+role+" in " +str1+ " is: "+b
 
@@ -366,7 +384,7 @@ def processRequest(req):
 
         if type[0].upper()=="B":
             type_flag='N'
-        elif "AGENT" in str(type.upper()):
+        elif type[0].upper()=="A":
             type_flag='Y'
         else:
             error_code=1
@@ -403,8 +421,8 @@ def processRequest(req):
 
         if error_code==1:
             return {
-                "speech": "Sorry! Data Mismatch! ",
-                "displayText": "Sorry! Data Mismatch!",
+                "speech": "Sorry! Response unavailable due to some data mismatch.",
+                "displayText": "Sorry! Response unavailable due to some data mismatch.",
                 # "data": data,
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
