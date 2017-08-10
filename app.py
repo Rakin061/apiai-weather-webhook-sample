@@ -136,6 +136,229 @@ def processRequest(req):
             "source": "apiai-weather-webhook-sample"
         }
 
+
+    elif req.get("result").get("action") == "Proposal.Count_AR":
+        error_code = 0
+        result = req.get("result")
+        parameters = result.get("parameters")
+        str1 = parameters.get("time")
+        role = parameters.get("role")
+        prop_action = parameters.get("proposal_action")
+        branch_name = parameters.get("Branch_Name").strip()
+        b_type = parameters.get("b_type").strip()
+        # str1=str1.strip()
+
+        # global date1,date2
+        # date1="01/01/2017"
+        # date2="07/20/2017"
+
+        # str1 = input("Enter the time frame\n")
+
+
+        branch_factor = " "
+
+        if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
+            branch_factor = " "
+        else:
+            branch_factor = "AND (branch_code ='" + branch_name + "' OR UPPER(BRANCH_NAME) LIKE '%" + branch_name.upper() + "%')"
+
+        if "BR" in b_type.upper():
+            branch_factor = branch_factor + " AND NVL (agent_flg, 'Z') = 'N'"
+        elif "AG" in b_type.upper():
+            branch_factor = branch_factor + " AND NVL (agent_flg, 'Z') = 'Y'"
+        elif "BOTH" in b_type.upper():
+            branch_factor = " "
+        else:
+            error_code = 1
+
+        global status_code
+        global flag1
+
+        if (prop_action == "Submitted"):
+            if (role.upper() == "ARO"):
+                # global flag1,status_code
+                status_code = "01"
+                flag1 = 0
+            elif (role.upper() == "RO" or role.upper() == "RM"):
+                # global flag1, status_code
+                status_code = "02"
+                flag1 = 0
+            elif (role.upper() == "BDM"):
+                # global flag1, status_code
+                status_code = "03"
+                flag1 = 0
+            elif (role.upper() == "CRM"):
+                # global flag1, status_code
+                status_code = "05"
+                flag1 = 0
+            elif (role.upper() == "CRM MANAGER"):
+                # global flag1, status_code
+                status_code = "08"
+                flag1 = 0
+            elif (role.upper() == "CRM HEAD"):
+                # global flag1, status_code
+                status_code = "11"
+                flag1 = 0
+            elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper() == "ANY"):
+                # global flag1
+                flag1 = 1
+            else:
+                error_code = 1
+                flag1 = -1
+
+        elif (prop_action == "Reviewed"):
+            if (role.upper() == "CRM"):
+                # global flag1, status_code
+                status_code = "07"
+                flag1 = 0
+            elif (role.upper() == "BDM"):
+                # global flag1, status_code
+                status_code = "17"
+                flag1 = 0
+            elif (role.upper() == "CRM MANAGER"):
+                # global flag1, status_code
+                status_code = "10"
+                flag1 = 0
+            elif (role.upper() == "HEAD OF BUSINESS"):
+                # global flag1, status_code
+                status_code = "20"
+                flag1 = 0
+            elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper() == "ANY"):
+                # global flag1
+                flag1 = 2
+            else:
+                error_code = 1
+                flag1 = -1
+
+        elif (prop_action == "Rejected"):
+            if (role.upper() == "CRM"):
+                # global flag1, status_code
+                status_code = "06"
+                flag1 = 0
+            elif (role.upper() == "BDM"):
+                # global flag1, status_code
+                status_code = "04"
+                flag1 = 0
+            elif (role.upper() == "CRM MANAGER"):
+                # global flag1, status_code
+                status_code = "09"
+                flag1 = 0
+            elif (role.upper() == "ALL" or role.upper() == "GENERAL" or role.upper() == "ANY"):
+                # global flag1
+                flag1 = 3
+            else:
+                error_code = 1
+                flag1 = -1
+        elif (prop_action == "Declined"):
+            # global flag1, status_code
+            status_code = "13"
+            flag1 = 0
+        elif (prop_action == "Approved"):
+            # global flag1, status_code
+            status_code = "12"
+            flag1 = 0
+        else:
+            error_code = 1
+            flag1 = -1
+
+        def getDATE(str1):
+
+            global date1, date2
+            if (str1.upper() == "TODAY"):
+                # global date1,date2
+                date1 = datetime.datetime.now().strftime("%m/%d/%Y")
+                date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+
+            elif (str1.upper() == "THIS WEEK" or str1.upper() == "CURRENT WEEK"):
+                # global date1,date2
+                week = datetime.datetime.now() - datetime.timedelta(days=datetime.datetime.now().isoweekday() % 7)
+                week = week.strftime("%m/%d/%Y")
+                print(week)
+                print(datetime.datetime.now().strftime("%m/%d/%Y"))
+                date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+                date1 = week
+            elif (str1.upper() == "THIS YEAR" or str1.upper() == "CURRENT YEAR"):
+                # global date1,date2
+                year = datetime.datetime.now()
+                year = year.replace(day=1, month=1)
+                year = year.strftime("%m/%d/%Y")
+                print(year)
+                print(datetime.datetime.now().strftime("%m/%d/%Y"))
+                date1 = year
+                date2 = datetime.datetime.now().strftime("%m/%d/%Y")
+            elif (str1.upper() == "LAST YEAR" or str1.upper() == "PREVIOUS YEAR"):
+
+                # global date1,date2
+                flag = 1
+                num = datetime.datetime.now().strftime("%Y")
+                num_int = int(num) - 1
+                year = datetime.datetime.now()
+                year = year.replace(day=1, month=1, year=num_int)
+                year = year.strftime("%m/%d/%Y")
+                y_num = datetime.datetime.now()
+                y_num = y_num.replace(day=1, month=1)
+                y_num = y_num - datetime.timedelta(days=1)
+                y_num = y_num.strftime("%m/%d/%Y")
+                print(year)
+                print(y_num)
+                date1 = year
+                date2 = y_num
+            else:
+                print("Not a known time frame...")
+
+        res = getDATE1(str1)
+
+        # id=id.strip()
+
+        # date1="01/01/2017"
+        # date2="07/20/2017"
+
+
+        # USING STRING CONCATANATION METHOD ... Handled Branch Factors
+
+        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+
+        if flag1 == 1:
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') " + branch_factor + " AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
+        elif flag1 == 2:
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') " + branch_factor + " AND APPL_STATUS_CODE IN ('07','10','17','20')"
+        elif flag1 == 3:
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') " + branch_factor + " AND APPL_STATUS_CODE IN ('04','06','09')"
+        elif flag1 == 0:
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') " + branch_factor + " AND APPL_STATUS_CODE='" + status_code + "'"
+        else:
+            yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') " + branch_factor
+
+        action = "Proposal.Count"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        a = data.get('Status')
+        b = str(a[0].get('result'))
+
+        # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
+
+        if (flag == 0):
+            speech = " Sorry! Not a valid time frame"
+        elif (error_code == 1):
+            speech = "Sorry! Response unavailable due to some data mismatch."
+        else:
+            speech = "Nummber of proposals that have been " + prop_action + " by " + role + " in " + str1 + " is: " + b
+
+        return {
+            "speech": speech,
+            "displayText": speech,
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
+
+
     elif req.get("result").get("action") == "Proposal.Count":
 
 
@@ -174,8 +397,8 @@ def processRequest(req):
             error_code=1
 
 
-        global status_code
-        global flag1
+        #global status_code
+        #global flag1
 
         if(prop_action=="Submitted"):
             if (role.upper() == "ARO"):
