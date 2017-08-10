@@ -364,7 +364,7 @@ def processRequest(req):
         role_flag = 1
         error_code=0
 
-        if type[0].upper=="B":
+        if type[0].upper()=="B":
             type_flag='N'
         elif "AGENT" in str(type.upper()):
             type_flag='Y'
