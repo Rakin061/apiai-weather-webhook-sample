@@ -599,7 +599,7 @@ def processRequest(req):
         branch_name = parameters.get("Branch_Name")
         type = parameters.get("type").strip()
         type_flag = ""
-        #top_factor= parameters.get("number")
+        top_factor= int(parameters.get("number"))
         #top_factor=2
 
         branch_code = ""
@@ -718,7 +718,7 @@ def processRequest(req):
         speech_counter = ""
         final_speech = ""
 
-        for i in range(1, no_of_rows+ 1):
+        for i in range(1, top_factor+ 1):
             final_speech = speech_counter +" User ID: " + data['Query']['Row' + str(no_of_rows)]['USER_ID']
             final_speech = final_speech + ",  Number of Approval: " + data['Query']['Row' + str(no_of_rows)][
                 'PERFORMNC']
