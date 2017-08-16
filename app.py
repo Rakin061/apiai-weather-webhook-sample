@@ -599,7 +599,9 @@ def processRequest(req):
         branch_name = parameters.get("Branch_Name")
         type = parameters.get("type").strip()
         type_flag = ""
-        top_factor= int(parameters.get("number"))
+        top_factor= parameters.get("number")
+        top_factor=int(top_factor)
+
         branch_code = ""
         # str1=str1.strip()
 
