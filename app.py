@@ -600,7 +600,7 @@ def processRequest(req):
         type = parameters.get("type").strip()
         type_flag = ""
         top_factor= parameters.get("number")
-        top_factor=int(top_factor)
+        top_factor=2
 
         branch_code = ""
         # str1=str1.strip()
