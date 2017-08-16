@@ -588,6 +588,153 @@ def processRequest(req):
             "source": "apiai-weather-webhook-sample"
         }
 
+
+    elif req.get("result").get("action") == "Performance.top":
+
+        error_code = 0
+        result = req.get("result")
+        parameters = result.get("parameters")
+        str1 = parameters.get("time")
+        role = parameters.get("role")
+        branch_name = parameters.get("Branch_Name")
+        type = parameters.get("type").strip()
+        type_flag = ""
+        number = int(parameters.get("number"))
+        branch_code = ""
+        # str1=str1.strip()
+
+        # global date1,date2
+        # date1="01/01/2017"
+        # date2="07/20/2017"
+
+        # str1 = input("Enter the time frame\n")
+
+        # global status_code
+        # global flag1
+        role_flag = 1
+        error_code = 0
+
+        if "BR" in type.upper():
+            type_flag = 'N'
+        elif "AG" in type.upper():
+            type_flag = 'Y'
+        elif "BOTH" in type.upper():
+            branch_factor = " "
+        else:
+            error_code = 1
+
+        # type_flag='N'
+
+
+
+        if (role.upper() == "CRM HEAD"):
+            role = "CRMHED"
+        elif (role.upper() == "HEAD OF BUSINESS"):
+            role = "CMSEHOB"
+        elif (role.upper() == "CRMS"):
+            role = "CRMS"
+        elif (role.upper() == "MD"):
+            role = "MD"
+        elif (role.upper() == "RM"):
+            role = "RM"
+        elif (role.upper() == "RO"):
+            role = "RO"
+        elif (role.upper() == "CRO"):
+            role = "CRM"
+        elif (role.upper() == "ARO"):
+            role = "ARO"
+        elif (role.upper() == "BDM"):
+            role = "BDM"
+        else:
+            role_flag = 0
+
+        res = getDATE1(str1)
+
+        # date1 = "01/01/2016"
+        # date2 = "12/31/2016"
+
+        if error_code == 1:
+            return {
+                "speech": "Sorry! Response unavailable due to some data mismatch.",
+                "displayText": "Sorry! Response unavailable due to some data mismatch.",
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+
+        # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
+
+
+        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+
+        if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
+
+            if type.upper() == "BOTH":
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role + "' AND appl_status_code = 12"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+            else:
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = '" + type_flag + "'"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+        else:
+
+            if type.upper() == "BOTH":
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND (branch_code ='" + branch_name.strip() + "' OR UPPER(BRANCH_NAME) LIKE'%" + branch_name.strip().upper() + "%')"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+            else:
+                yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
+                yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
+                yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
+                yql_query = yql_query + " WHERE user_group_code = '" + role + "' AND appl_status_code = 12 AND NVL (agent_flg, 'Z') = '" + type_flag + "' AND (branch_code ='" + branch_name.strip() + "' OR UPPER(BRANCH_NAME) LIKE'%" + branch_name.strip().upper() + "%')"
+                yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
+                yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
+
+        action = "Performance.individual"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        no_of_rows = data["Number of Rows"]
+
+        speech_counter = ""
+        final_speech = ""
+
+        for i in range(1, no_of_rows + 1):
+            final_speech = speech_counter + " User ID: " + data['Query']['Row' + str(no_of_rows)]['USER_ID']
+            final_speech = final_speech + ",  Number of Approval: " + data['Query']['Row' + str(no_of_rows)][
+                'PERFORMNC']
+            final_speech = final_speech + ",  Branch Name " + data['Query']['Row' + str(no_of_rows)]['BRANCH_NAME']
+            final_speech = final_speech + ",  Requested_Amount: " + data['Query']['Row' + str(no_of_rows)][
+                'REQUESTED_AMOUNT']
+            final_speech = final_speech + ",  Approved_Amount: " + data['Query']['Row' + str(no_of_rows)][
+                'APPROVE_AMOUNT'] + "     "
+            speech_counter = final_speech
+
+        return {
+            "speech": final_speech,
+            "displayText": final_speech,
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        }
+
     elif req.get("result").get("action") == "Performance.individual":
 
         error_code = 0
