@@ -723,7 +723,7 @@ def processRequest(req):
         final_speech = ""
 
         for i in range(1, no_of_rows+ 1):
-            final_speech = speech_counter +" "+i+". User ID: " + data['Query']['Row' + str(i)]['USER_ID']
+            final_speech = speech_counter +i+". User ID: " + data['Query']['Row' + str(i)]['USER_ID']
             final_speech = final_speech + ",  Number of Approval: " + data['Query']['Row' + str(i)][
                 'PERFORMNC']
             final_speech = final_speech + ",  Branch Name " + data['Query']['Row' + str(i)]['BRANCH_NAME']
