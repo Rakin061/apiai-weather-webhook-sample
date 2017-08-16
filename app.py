@@ -713,12 +713,12 @@ def processRequest(req):
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
 
-        no_of_rows = data["Number of Rows"]
+        no_of_rows = top_factor
 
         speech_counter = ""
         final_speech = ""
 
-        for i in range(1, top_factor+ 1):
+        for i in range(1, no_of_rows+ 1):
             final_speech = speech_counter +" User ID: " + data['Query']['Row' + str(no_of_rows)]['USER_ID']
             final_speech = final_speech + ",  Number of Approval: " + data['Query']['Row' + str(no_of_rows)][
                 'PERFORMNC']
