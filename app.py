@@ -168,6 +168,8 @@ def processRequest(req):
             branch_factor = branch_factor + " AND NVL (agent_flg, 'Z') = 'Y'"
         elif "BOTH" in b_type.upper():
             branch_factor = " "
+        elif "ALL" in b_type.upper():
+            branch_factor = " "
         else:
             error_code = 1
 
@@ -393,6 +395,8 @@ def processRequest(req):
             branch_factor = branch_factor + " AND NVL (agent_flg, 'Z') = 'Y'"
         elif "BOTH" in b_type.upper():
             branch_factor=" "
+        elif "BOTH" in b_type.upper():
+            branch_factor = " "
         else:
             error_code=1
 
