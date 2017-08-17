@@ -677,7 +677,7 @@ def processRequest(req):
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 
-            if type.upper() == "BOTH":
+            if type.upper() == "BOTH" or  type.upper() == "ALL":
                 yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
                 yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
                 yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
@@ -695,7 +695,7 @@ def processRequest(req):
 
         else:
 
-            if type.upper() == "BOTH":
+            if type.upper() == "BOTH" or type.upper() == "ALL":
                 yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
                 yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
                 yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
@@ -829,7 +829,7 @@ def processRequest(req):
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 
-            if type.upper()=="BOTH":
+            if type.upper()=="BOTH" or type.upper()=="ALL":
                 yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
                 yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
                 yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
@@ -847,7 +847,7 @@ def processRequest(req):
 
         else:
 
-            if type.upper() == "BOTH":
+            if type.upper() == "BOTH" or type.upper() == "ALL":
                 yql_query = "SELECT   COUNT (application_id) AS performnc,TO_CHAR (NVL (SUM (req_limit), 0),'9999999999,990.99') || ' Milion' requested_amount,"
                 yql_query = yql_query + "TO_CHAR (NVL (SUM (approve_limit), 0), '9999999999,990.99')|| ' Milion' approve_amount, createby user_id, branch_name"
                 yql_query = yql_query + " FROM OCASMN.VW_APPL_STS_INFO"
