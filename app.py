@@ -626,6 +626,8 @@ def processRequest(req):
             type_flag = 'Y'
         elif "BOTH" in type.upper():
             branch_factor = " "
+        elif "ALL" in type.upper():
+            branch_factor = " "
         else:
             error_code = 1
 
@@ -775,6 +777,8 @@ def processRequest(req):
             type_flag='Y'
         elif "BOTH" in type.upper():
             branch_factor=" "
+        elif "ALL" in type.upper():
+            branch_factor = " "
         else:
             error_code=1
 
