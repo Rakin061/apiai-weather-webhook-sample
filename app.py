@@ -348,7 +348,7 @@ def processRequest(req):
         elif (error_code == 1):
             speech = "Sorry! Response unavailable due to some data mismatch."
         else:
-            speech = "Nummber of proposals that have been " + prop_action + " by " + role + " during " + str1 +" in "+branch_name+ " is: " + b
+            speech = "Number of proposals that have been " + prop_action + " by " + role + " during " + str1 +" in "+branch_name+ " is: " + b
 
         return {
             "speech": speech,
