@@ -94,7 +94,7 @@ def processRequest(req):
         username=parameters.get("username").strip()
         password= parameters.get("password").strip()
 
-        match= False
+        match=False
 
         match=auth(username,password)
 
@@ -945,10 +945,15 @@ def auth(username,password):
 
     if(username=="rakin@bankasia net"):
         if(password=="123"):
-            return True
+                return True
+        else:
+            return False
     elif(username=="anwar@bankasia net"):
         if(password=="456"):
             return True
+        else:
+            return False
+
     else:
         return False
 
