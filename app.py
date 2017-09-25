@@ -110,7 +110,7 @@ def processRequest(req):
 
         # id=id.strip()
 
-        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI/ApplicationStatus?"
         yql_query = "SELECT APPL_STATUS_DESC FROM ocasmn.vw_appl_sts_info WHERE APPLICATION_ID='" + id + "'"
 
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
@@ -348,7 +348,7 @@ def processRequest(req):
 
         # USING STRING CONCATANATION METHOD ... Handled Branch Factors
 
-        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI/ApplicationStatus?"
 
         if flag1 == 1:
             yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') " + branch_factor + " AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
@@ -597,7 +597,7 @@ def processRequest(req):
 
         # USING STRING CONCATANATION METHOD ... Handled Branch Factors
 
-        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI/ApplicationStatus?"
 
         if flag1==1:
             yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') "+branch_factor+" AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
@@ -734,7 +734,7 @@ def processRequest(req):
         # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
 
 
-        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI/ApplicationStatus?"
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 
@@ -886,7 +886,7 @@ def processRequest(req):
         # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
 
 
-        baseurl = "http://202.40.190.114:8086/BotAPI/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI/ApplicationStatus?"
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 

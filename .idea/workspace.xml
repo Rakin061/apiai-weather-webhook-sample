@@ -17,8 +17,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="666" column="13" lean-forward="true" selection-start-line="666" selection-start-column="13" selection-end-line="666" selection-end-column="13" />
+            <state relative-caret-position="103">
+              <caret line="886" column="0" lean-forward="true" selection-start-line="886" selection-start-column="0" selection-end-line="886" selection-end-column="0" />
               <folding>
                 <element signature="e#23#60#0" expanded="true" />
               </folding>
@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/../BOT/apiai-python-client/examples/send_text_example.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding>
                 <element signature="e#47#61#0" expanded="true" />
               </folding>
@@ -65,6 +65,7 @@
       <find>strftime(&quot;%m/%d/%Y -- %A&quot;)</find>
       <find>strftime(&quot;%m/%d/%Y --%A&quot;)</find>
       <find>Sorry! Username or/and password is wrong!</find>
+      <find>202.40.190.114</find>
     </findStrings>
     <replaceStrings>
       <replace>strftime(&quot;%m/%d/%Y&quot;)</replace>
@@ -719,7 +720,7 @@
     <entry file="file://$PROJECT_DIR$/../BOT/apiai-python-client/examples/send_text_example.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
           <folding>
             <element signature="e#47#61#0" expanded="true" />
           </folding>
@@ -728,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="666" column="13" lean-forward="true" selection-start-line="666" selection-start-column="13" selection-end-line="666" selection-end-column="13" />
+        <state relative-caret-position="103">
+          <caret line="886" column="0" lean-forward="true" selection-start-line="886" selection-start-column="0" selection-end-line="886" selection-end-column="0" />
           <folding>
             <element signature="e#23#60#0" expanded="true" />
           </folding>
