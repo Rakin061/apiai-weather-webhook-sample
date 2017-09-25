@@ -162,6 +162,20 @@ def processRequest(req):
         prop_action = parameters.get("proposal_action")
         branch_name = parameters.get("Branch_Name").strip()
         b_type = parameters.get("b_type").strip()
+        username= parameters.get("username").strip()
+        password= parameters.get("password").strip()
+
+        match = auth(username, password)
+
+        if match == False:
+            return {
+                "speech": "Sorry! Username or/and password is wrong! Please try again!",
+                "displayText": "Sorry! Username or/and password is wrong! Please try again!",
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+
         # str1=str1.strip()
 
         # global date1,date2
