@@ -17,8 +17,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="156" column="8" lean-forward="true" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+            <state relative-caret-position="205">
+              <caret line="666" column="13" lean-forward="true" selection-start-line="666" selection-start-column="13" selection-end-line="666" selection-end-column="13" />
               <folding>
                 <element signature="e#23#60#0" expanded="true" />
               </folding>
@@ -64,6 +64,7 @@
     <findStrings>
       <find>strftime(&quot;%m/%d/%Y -- %A&quot;)</find>
       <find>strftime(&quot;%m/%d/%Y --%A&quot;)</find>
+      <find>Sorry! Username or/and password is wrong!</find>
     </findStrings>
     <replaceStrings>
       <replace>strftime(&quot;%m/%d/%Y&quot;)</replace>
@@ -727,8 +728,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="156" column="8" lean-forward="true" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+        <state relative-caret-position="205">
+          <caret line="666" column="13" lean-forward="true" selection-start-line="666" selection-start-column="13" selection-end-line="666" selection-end-column="13" />
           <folding>
             <element signature="e#23#60#0" expanded="true" />
           </folding>

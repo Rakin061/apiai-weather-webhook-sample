@@ -100,8 +100,8 @@ def processRequest(req):
 
         if match==False:
             return {
-                "speech": "Sorry! Username or/and password is wrong! Please try again!",
-                "displayText": "Sorry! Username or/and password is wrong! Please try again!",
+                "speech": "Sorry! Username or/and password is wrong! Please Start Over!",
+                "displayText": "Sorry! Username or/and password is wrong! Please Start Over!",
                 # "data": data,
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
@@ -169,8 +169,8 @@ def processRequest(req):
 
         if match == False:
             return {
-                "speech": "Sorry! Username or/and password is wrong! Please try again!",
-                "displayText": "Sorry! Username or/and password is wrong! Please try again!",
+                "speech": "Sorry! Username or/and password is wrong! Please Start Over!",
+                "displayText": "Sorry! Username or/and password is wrong! Please Start Over!",
                 # "data": data,
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
@@ -412,8 +412,8 @@ def processRequest(req):
 
         if match == False:
             return {
-                "speech": "Sorry! Username or/and password is wrong! Please try again!",
-                "displayText": "Sorry! Username or/and password is wrong! Please try again!",
+                "speech": "Sorry! Username or/and password is wrong! Please Start Over!!",
+                "displayText": "Sorry! Username or/and password is wrong! Please Start Over!",
                 # "data": data,
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
@@ -651,6 +651,20 @@ def processRequest(req):
         type = parameters.get("type").strip()
         type_flag = ""
         top_factor= int(parameters.get("number"))
+
+        username= parameters.get("username").strip()
+        password=parameters.get("password").strip()
+
+        match = auth(username, password)
+
+        if match == False:
+            return {
+                "speech": "Sorry! Username or/and password is wrong! Please Start over!",
+                "displayText": "Sorry! Username or/and password is wrong! Please Start over",
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
         #top_factor=2
 
         branch_code = ""
