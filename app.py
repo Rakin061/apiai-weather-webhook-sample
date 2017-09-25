@@ -91,6 +91,22 @@ def processRequest(req):
         result = req.get("result")
         parameters = result.get("parameters")
         id = parameters.get("ID")
+        username=parameters.get("username")
+        password= parameters.get("password")
+
+        match= False
+
+        match=auth(username,password)
+
+        if match==False:
+            return {
+                "speech": "Sorry! Username or/and password is wrong! Please try again!",
+                "displayText": "Sorry! Username or/and password is wrong! Please try again!",
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+
 
         # id=id.strip()
 
@@ -904,6 +920,20 @@ def processRequest(req):
 
     else:
         return {}
+
+
+
+def auth(username,password):
+
+
+    if(username=="rakin@bankasia.net"):
+        if(password=="123"):
+            return True
+    elif(username=="anwar@bankasia.net"):
+        if(password=="456"):
+            return True
+    else:
+        return False
 
 def getDATE1(str1):
 
