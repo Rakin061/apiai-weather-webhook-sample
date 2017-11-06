@@ -973,12 +973,12 @@ def processRequest(req):
 def auth(username,password):
 
 
-    if(username=="rakin@bankasia net" or username=="rakin@bankasia.net" ):
+    if(username=="rakin@bankasia net" or username=="rakin@bankasia.net" or username=="rakin" ):
         if(password=="123"):
                 return True
         else:
             return False
-    elif(username=="anwar@bankasia net" or username=="anwar@bankasia.net" ):
+    elif(username=="anwar@bankasia net" or username=="anwar@bankasia.net" or username=="anwar" ):
         if(password=="456"):
             return True
         else:
