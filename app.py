@@ -376,17 +376,20 @@ def processRequest(req):
         data = json.loads(test_res)
 
         a = data.get('Status')
-        b = str(a[0].get('result'))
+        flg=str(a[0].get('flag'))
+        b = str(a[1].get('result'))
 
         # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
 
-        if (flag == 0):
-            speech = " Sorry! Not a valid time frame"
-        elif (error_code == 1):
-            speech = "Sorry! Response unavailable due to some data mismatch."
+        if flg=="0":
+            if (flag == 0):
+                speech = " Sorry! Not a valid time frame"
+            elif (error_code == 1):
+                speech = "Sorry! Response unavailable due to some data mismatch."
+            else:
+                speech = "Number of proposals that have been " + prop_action + " by " + role + " during " + str1 +" in "+branch_name+ " is: " + b
         else:
-            speech = "Number of proposals that have been " + prop_action + " by " + role + " during " + str1 +" in "+branch_name+ " is: " + b
-
+            speech=b
         return {
             "speech": speech,
             "displayText": speech,
@@ -411,10 +414,11 @@ def processRequest(req):
         username=parameters.get("username").strip()
         password=parameters.get("password").strip()
 
-        match = False
+        #match = False
 
-        match=auth(username, password)
+        #match=auth(username, password)
 
+        '''
         if match == False:
             return {
                 "speech": "Sorry! Username or/and password is wrong! Please Start Over!!",
@@ -423,7 +427,7 @@ def processRequest(req):
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
             }
-
+        '''
 
         #str1=str1.strip()
 
@@ -619,22 +623,25 @@ def processRequest(req):
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
-        yql_url = baseurl + urlencode({'q': yql_query})+ "&"+urlencode({'act': action}) + "&format=json"
-
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&" + urlencode({'usname': username}) + "&" + urlencode({'paswd': password}) + "&format=json"
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
 
         a = data.get('Status')
-        b = str(a[0].get('result'))
+        flg = str(a[0].get('flag'))
+        b = str(a[1].get('result'))
 
         # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
 
-        if (flag==0):
-            speech=" Sorry! Not a valid time frame"
-        elif(error_code==1):
-            speech = "Sorry! Response unavailable due to some data mismatch."
+        if flg == "0":
+            if (flag == 0):
+                speech = " Sorry! Not a valid time frame"
+            elif (error_code == 1):
+                speech = "Sorry! Response unavailable due to some data mismatch."
+            else:
+                speech = "Number of proposals that have been " + prop_action + " by " + role + " during " + str1 + " in " + branch_name + " is: " + b
         else:
-            speech = "Number of proposals that have been "+prop_action + " by "+role+" during " +str1+" in "+branch_name+ " is: "+b
+            speech = b
 
         return {
             "speech": speech,
