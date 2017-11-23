@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="888" column="0" lean-forward="true" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
+            <state relative-caret-position="1745">
+              <caret line="962" column="13" lean-forward="false" selection-start-line="962" selection-start-column="13" selection-end-line="962" selection-end-column="13" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -58,6 +57,7 @@
       <find>http://202.40.190.116:8086/BotAPI/ApplicationStatus?</find>
       <find>http://202.40.190.114:8086/BotAPI-L/ApplicationStatus?</find>
       <find>http://10.11.1.154/BotAPI/ApplicationStatus?</find>
+      <find>http://202.40.190.114:8084</find>
     </findStrings>
     <replaceStrings>
       <replace>strftime(&quot;%m/%d/%Y&quot;)</replace>
@@ -725,8 +725,8 @@
     <entry file="file://$PROJECT_DIR$/../BOT/apiai-python-client/examples/send_text_example.py" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="888" column="0" lean-forward="true" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
+        <state relative-caret-position="1745">
+          <caret line="962" column="13" lean-forward="false" selection-start-line="962" selection-start-column="13" selection-end-line="962" selection-end-column="13" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>

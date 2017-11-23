@@ -783,6 +783,17 @@ def processRequest(req):
         data = json.loads(test_res)
         no_of_rows = data["Number of Rows"]
 
+        if no_of_rows==0:
+            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+" Thanks."
+            return {
+                "speech": final_speech,
+                "displayText": final_speech,
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+
+
         if top_factor<= no_of_rows:
             no_of_rows = top_factor
 
@@ -940,6 +951,16 @@ def processRequest(req):
         data = json.loads(test_res)
 
         no_of_rows = data["Number of Rows"]
+
+        if no_of_rows==0:
+            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+" Thanks."
+            return {
+                "speech": final_speech,
+                "displayText": final_speech,
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
 
         speech_counter = ""
         final_speech=""
