@@ -784,7 +784,7 @@ def processRequest(req):
         no_of_rows = data["Number of Rows"]
 
         if no_of_rows==0:
-            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+" Thanks."
+            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+". Thanks!"
             return {
                 "speech": final_speech,
                 "displayText": final_speech,
@@ -953,7 +953,7 @@ def processRequest(req):
         no_of_rows = data["Number of Rows"]
 
         if no_of_rows==0:
-            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+" Thanks."
+            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+". Thanks!"
             return {
                 "speech": final_speech,
                 "displayText": final_speech,
