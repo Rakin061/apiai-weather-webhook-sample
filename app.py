@@ -122,13 +122,13 @@ def processRequest(req):
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
         action="ApplicationStatus"
-        yql_url = baseurl + urlencode({'q': yql_query})+ "&"+urlencode({'act': action})+ "&"+urlencode({'uname': username})+ "&"+urlencode({'paswd': password}) + "&format=json"
+        yql_url = baseurl + urlencode({'q': yql_query})+ "&"+urlencode({'act': action})+ "&"+urlencode({'usname': username})+ "&"+urlencode({'paswd': password}) + "&format=json"
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
 
         if data=={}:
-            speech="Sorry! Not a valid Application ID."
+            speech="Sorry! You do not have the rights to get information of ID:- "+id+". Try with Your Application ID."
             return {
                 "speech": speech,
                 "displayText": speech,
