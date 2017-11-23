@@ -379,8 +379,8 @@ def processRequest(req):
         data = json.loads(test_res)
 
         a = data.get('Status')
-        flg=str(a[0].get('result'))
-        b = str(a[1].get('flag'))
+        flg = str(data['Status']['flag'])
+        b = str(data['Status']['result'])
 
         # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
 
@@ -632,8 +632,8 @@ def processRequest(req):
         data = json.loads(test_res)
 
         a = data.get('Status')
-        flg = str(a[0].get('result'))
-        b = str(a[1].get('flag'))
+        flg = str(data['Status']['flag'])
+        b = str(data['Status']['result'])
 
         # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
 
