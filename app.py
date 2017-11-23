@@ -168,6 +168,7 @@ def processRequest(req):
         branch_name = parameters.get("Branch_Name").strip()
         b_type = parameters.get("b_type").strip()
         username= parameters.get("username").strip()
+        username = username.replace(' ', '.')
         password= parameters.get("password").strip()
 
         '''
@@ -414,6 +415,7 @@ def processRequest(req):
         branch_name=parameters.get("Branch_Name").strip()
         b_type=parameters.get("b_type").strip()
         username=parameters.get("username").strip()
+        username = username.replace(' ', '.')
         password=parameters.get("password").strip()
 
         #match = False
