@@ -170,6 +170,7 @@ def processRequest(req):
         username= parameters.get("username").strip()
         password= parameters.get("password").strip()
 
+        '''
         match = auth(username, password)
 
         if match == False:
@@ -180,6 +181,7 @@ def processRequest(req):
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
             }
+        '''
 
         # str1=str1.strip()
 
