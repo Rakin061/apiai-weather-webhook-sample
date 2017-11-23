@@ -126,9 +126,20 @@ def processRequest(req):
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
+        flg=str(data['Status']['flag']);
+        b=str(data['Status']['result'])
 
-        if data=={}:
-            speech="Sorry! You do not have the rights to get information of ID:- "+id+". Try with Your Application ID."
+        if data=={} and flg=="N":
+            speech="Sorry! You do not have the rights to get information of ID:- "+id+". Try with Your Own Application ID."
+            return {
+                "speech": speech,
+                "displayText": speech,
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+        elif data=={} and flg=="Y":
+            speech="Sorry! "+id+" is not a valid application id."
             return {
                 "speech": speech,
                 "displayText": speech,
@@ -139,8 +150,8 @@ def processRequest(req):
 
 
 
-        a = data.get('Status')
-        b = str(a[0].get('result'))
+        #a = data.get('Status')
+        #b = str(a[0].get('result'))
 
         # speech = "Hello. You Application staus is: Submitted from ARO.  Thanks !"
 
