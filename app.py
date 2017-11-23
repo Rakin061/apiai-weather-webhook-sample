@@ -94,6 +94,7 @@ def processRequest(req):
         parameters = result.get("parameters")
         id = parameters.get("ID")
         username=parameters.get("username").strip()
+        username=username.replace(' ','.')
         password= parameters.get("password").strip()
 
         match=False
