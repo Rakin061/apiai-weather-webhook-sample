@@ -98,8 +98,9 @@ def processRequest(req):
 
         match=False
 
-        match=auth(username,password)
+        #match=auth(username,password)
 
+        """
         if match==False:
             return {
                 "speech": "Sorry! Username or/and password is wrong! Please Start Over!",
@@ -109,17 +110,18 @@ def processRequest(req):
                 "source": "apiai-weather-webhook-sample"
             }
 
-
+        """
         # id=id.strip()
 
         baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
-        yql_query = "SELECT APPL_STATUS_DESC FROM ocasmn.vw_appl_sts_info WHERE APPLICATION_ID='" + id + "'"
-
+        yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '"+id+"'"
+        #yql_query=yql_query+id
+        #yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
         action="ApplicationStatus"
-        yql_url = baseurl + urlencode({'q': yql_query})+ "&"+urlencode({'act': action}) + "&format=json"
+        yql_url = baseurl + urlencode({'q': yql_query})+ "&"+urlencode({'act': action})+ "&"+urlencode({'uname': username})+ "&"+urlencode({'paswd': password}) + "&format=json"
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
