@@ -873,6 +873,9 @@ def processRequest(req):
         role = parameters.get("role")
         branch_name = parameters.get("Branch_Name")
         type=parameters.get("type").strip()
+        username = parameters.get("username").strip()
+        username = username.replace(' ', '.')
+        password = parameters.get("password").strip()
         type_flag=""
         branch_code=""
         # str1=str1.strip()
@@ -988,15 +991,53 @@ def processRequest(req):
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
-        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&" + urlencode({'usname': username}) + "&" + urlencode({'paswd': password}) + "&format=json"
+
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
+        result_top = str(data["Result"])
 
-        no_of_rows = data["Number of Rows"]
+        if result_top != "OK":
+            return {
+                "speech": result_top,
+                "displayText": result_top,
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
 
-        if no_of_rows==0:
-            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+". Thanks!"
+        else:
+
+
+            no_of_rows = data["Number of Rows"]
+
+            if no_of_rows==0:
+                final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+". Thanks!"
+                return {
+                    "speech": final_speech,
+                    "displayText": final_speech,
+                    # "data": data,
+                    # "contextOut": [],
+                    "source": "apiai-weather-webhook-sample"
+                }
+
+            speech_counter = ""
+            final_speech=""
+
+            for i in range(1, no_of_rows + 1):
+                final_speech = speech_counter +str(i)+". User ID: " + data['Query']['Row' + str(i)]['USER_ID']
+                final_speech=final_speech+",  Number of Approval: " + data['Query']['Row' + str(i)]['PERFORMNC']
+                final_speech=final_speech+",  Branch Name " + data['Query']['Row' + str(i)]['BRANCH_NAME']
+                final_speech=final_speech+",  Requested_Amount: " + data['Query']['Row' + str(i)]['REQUESTED_AMOUNT']
+                final_speech=final_speech+",  Approved_Amount: " + data['Query']['Row' + str(i)]['APPROVE_AMOUNT'] + "     "
+                speech_counter=final_speech
+
+
+
+
+
             return {
                 "speech": final_speech,
                 "displayText": final_speech,
@@ -1005,29 +1046,6 @@ def processRequest(req):
                 "source": "apiai-weather-webhook-sample"
             }
 
-        speech_counter = ""
-        final_speech=""
-
-        for i in range(1, no_of_rows + 1):
-            final_speech = speech_counter +str(i)+". User ID: " + data['Query']['Row' + str(i)]['USER_ID']
-            final_speech=final_speech+",  Number of Approval: " + data['Query']['Row' + str(i)]['PERFORMNC']
-            final_speech=final_speech+",  Branch Name " + data['Query']['Row' + str(i)]['BRANCH_NAME']
-            final_speech=final_speech+",  Requested_Amount: " + data['Query']['Row' + str(i)]['REQUESTED_AMOUNT']
-            final_speech=final_speech+",  Approved_Amount: " + data['Query']['Row' + str(i)]['APPROVE_AMOUNT'] + "     "
-            speech_counter=final_speech
-
-
-
-
-
-        return {
-            "speech": final_speech,
-            "displayText": final_speech,
-            # "data": data,
-            # "contextOut": [],
-            "source": "apiai-weather-webhook-sample"
-        }
-    
 
     else:
         return {}

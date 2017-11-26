@@ -16,8 +16,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="684" column="45" lean-forward="false" selection-start-line="684" selection-start-column="45" selection-end-line="684" selection-end-column="45" />
+            <state relative-caret-position="-640">
+              <caret line="989" column="41" lean-forward="true" selection-start-line="989" selection-start-column="41" selection-end-line="989" selection-end-column="41" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -728,8 +728,8 @@
     <entry file="file://$PROJECT_DIR$/../BOT/apiai-python-client/examples/send_text_example.py" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="684" column="45" lean-forward="false" selection-start-line="684" selection-start-column="45" selection-end-line="684" selection-end-column="45" />
+        <state relative-caret-position="-640">
+          <caret line="989" column="41" lean-forward="true" selection-start-line="989" selection-start-column="41" selection-end-line="989" selection-end-column="41" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
