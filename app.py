@@ -811,10 +811,50 @@ def processRequest(req):
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
-        no_of_rows = data["Number of Rows"]
+        result_top=str(data["Result"])
 
-        if no_of_rows==0:
-            final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+". Thanks!"
+        if result_top!="OK":
+            return {
+                "speech": result_top,
+                "displayText": result_top,
+                # "data": data,
+                # "contextOut": [],
+                "source": "apiai-weather-webhook-sample"
+            }
+
+        else:
+            no_of_rows = data["Number of Rows"]
+
+            if no_of_rows==0:
+                final_speech="Sorry!! No records found for "+ role+ " in "+ branch_name+". Thanks!"
+                return {
+                    "speech": final_speech,
+                    "displayText": final_speech,
+                    # "data": data,
+                    # "contextOut": [],
+                    "source": "apiai-weather-webhook-sample"
+                }
+
+
+            if top_factor<= no_of_rows:
+                no_of_rows = top_factor
+
+
+
+            speech_counter = ""
+            final_speech = ""
+
+            for i in range(1, no_of_rows+ 1):
+                final_speech = speech_counter +str(i)+". User ID: " + data['Query']['Row' + str(i)]['USER_ID']
+                final_speech = final_speech + ",  Number of Approval: " + data['Query']['Row' + str(i)][
+                    'PERFORMNC']
+                final_speech = final_speech + ",  Branch Name " + data['Query']['Row' + str(i)]['BRANCH_NAME']
+                final_speech = final_speech + ",  Requested_Amount: " + data['Query']['Row' + str(i)][
+                    'REQUESTED_AMOUNT']
+                final_speech = final_speech + ",  Approved_Amount: " + data['Query']['Row' + str(i)][
+                    'APPROVE_AMOUNT'] + "     "
+                speech_counter = final_speech
+
             return {
                 "speech": final_speech,
                 "displayText": final_speech,
@@ -822,34 +862,6 @@ def processRequest(req):
                 # "contextOut": [],
                 "source": "apiai-weather-webhook-sample"
             }
-
-
-        if top_factor<= no_of_rows:
-            no_of_rows = top_factor
-
-
-
-        speech_counter = ""
-        final_speech = ""
-
-        for i in range(1, no_of_rows+ 1):
-            final_speech = speech_counter +str(i)+". User ID: " + data['Query']['Row' + str(i)]['USER_ID']
-            final_speech = final_speech + ",  Number of Approval: " + data['Query']['Row' + str(i)][
-                'PERFORMNC']
-            final_speech = final_speech + ",  Branch Name " + data['Query']['Row' + str(i)]['BRANCH_NAME']
-            final_speech = final_speech + ",  Requested_Amount: " + data['Query']['Row' + str(i)][
-                'REQUESTED_AMOUNT']
-            final_speech = final_speech + ",  Approved_Amount: " + data['Query']['Row' + str(i)][
-                'APPROVE_AMOUNT'] + "     "
-            speech_counter = final_speech
-
-        return {
-            "speech": final_speech,
-            "displayText": final_speech,
-            # "data": data,
-            # "contextOut": [],
-            "source": "apiai-weather-webhook-sample"
-        }
 
     elif req.get("result").get("action") == "Performance.individual":
 
