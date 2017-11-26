@@ -682,6 +682,7 @@ def processRequest(req):
         top_factor= int(parameters.get("number"))
 
         username= parameters.get("username").strip()
+        username = username.replace(' ', '.')
         password=parameters.get("password").strip()
 
         #match = auth(username, password)
