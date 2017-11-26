@@ -16,7 +16,7 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="113">
               <caret line="113" column="11" lean-forward="true" selection-start-line="113" selection-start-column="11" selection-end-line="113" selection-end-column="11" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
@@ -60,6 +60,7 @@
       <find>http://202.40.190.114:8084</find>
       <find>baseurl = &quot;http://202.40.190.114:8084/BotAPI/ApplicationStatus?&quot;</find>
       <find>baseurl = &quot;http://202.40.190.114:8084/BotAPI/ApplicationStatus?&quot;</find>
+      <find>baseurl = &quot;http://103.17.69.35:81/BotAPI/ApplicationStatus?&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>strftime(&quot;%m/%d/%Y&quot;)</replace>
@@ -730,7 +731,7 @@
     <entry file="file://$PROJECT_DIR$/../BOT/apiai-python-client/examples/send_text_example.py" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
+        <state relative-caret-position="113">
           <caret line="113" column="11" lean-forward="true" selection-start-line="113" selection-start-column="11" selection-end-line="113" selection-end-column="11" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
