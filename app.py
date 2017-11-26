@@ -684,8 +684,9 @@ def processRequest(req):
         username= parameters.get("username").strip()
         password=parameters.get("password").strip()
 
-        match = auth(username, password)
+        #match = auth(username, password)
 
+        """
         if match == False:
             return {
                 "speech": "Sorry! Username or/and password is wrong! Please Start over!",
@@ -695,7 +696,7 @@ def processRequest(req):
                 "source": "apiai-weather-webhook-sample"
             }
         #top_factor=2
-
+        """
         branch_code = ""
         # str1=str1.strip()
 
@@ -804,7 +805,9 @@ def processRequest(req):
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
-        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&format=json"
+
+        yql_url = baseurl + urlencode({'q': yql_query}) + "&" + urlencode({'act': action}) + "&" + urlencode({'usname': username}) + "&" + urlencode({'paswd': password}) + "&format=json"
+
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
