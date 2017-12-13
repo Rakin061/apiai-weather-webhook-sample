@@ -13,6 +13,7 @@ from urllib.error import HTTPError
 import json
 import os
 import datetime
+import re
 
 from flask import Flask
 from flask import request
@@ -682,8 +683,25 @@ def processRequest(req):
         top_factor= int(parameters.get("number"))
 
         username= parameters.get("username").strip()
-        username = username.replace(' ', '.')
-        password=parameters.get("password").strip()
+        if "href" in username:
+            match = re.findall(r'[\w\.-]+@[\w\.-]+', username)
+            uname = match[1]
+            uname = uname[1:]
+            uname = uname.replace(' ', '')[:-2]
+            username=uname
+        else:
+            username = username.replace(' ', '.')
+
+        password = parameters.get("password").strip()
+        if "href" in password:
+            match = re.findall(r'[\w\.-]+@[\w\.-]+', password)
+            uname = match[1]
+            uname = uname[1:]
+            uname = uname.replace(' ', '')[:-2]
+            password=uname
+        else:
+            password=password
+        
 
         #match = auth(username, password)
 
