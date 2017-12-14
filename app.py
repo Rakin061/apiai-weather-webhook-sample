@@ -96,7 +96,14 @@ def processRequest(req):
         id = parameters.get("ID")
         username=parameters.get("username").strip()
         username=username.replace(' ','.')
-        password= parameters.get("password").strip()
+
+        if "href" in username:
+            username = skype_auth(username)
+
+        password = parameters.get("password").strip()
+
+        if "herf" in password:
+            password = skype_auth(password)
 
         match=False
 
@@ -183,7 +190,14 @@ def processRequest(req):
         b_type = parameters.get("b_type").strip()
         username= parameters.get("username").strip()
         username = username.replace(' ', '.')
-        password= parameters.get("password").strip()
+
+        if "href" in username:
+            username = skype_auth(username)
+
+        password = parameters.get("password").strip()
+
+        if "herf" in password:
+            password = skype_auth(password)
 
         '''
         match = auth(username, password)
@@ -430,7 +444,14 @@ def processRequest(req):
         b_type=parameters.get("b_type").strip()
         username=parameters.get("username").strip()
         username = username.replace(' ', '.')
-        password=parameters.get("password").strip()
+
+        if "href" in username:
+            username = skype_auth(username)
+
+        password = parameters.get("password").strip()
+
+        if "herf" in password:
+            password = skype_auth(password)
 
         #match = False
 
@@ -690,8 +711,6 @@ def processRequest(req):
             username=skype_auth(username)
 
 
-
-
         password = parameters.get("password").strip()
 
         if "herf" in password:
@@ -777,7 +796,7 @@ def processRequest(req):
         # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
 
 
-        baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
+        baseurl = "http://103.17.69.35:81/BotAPI/ApplicationStatus?"
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 
@@ -887,7 +906,16 @@ def processRequest(req):
         type=parameters.get("type").strip()
         username = parameters.get("username").strip()
         username = username.replace(' ', '.')
+
+        if "href" in username:
+            username = skype_auth(username)
+
         password = parameters.get("password").strip()
+
+        if "herf" in password:
+            password = skype_auth(password)
+
+
         type_flag=""
         branch_code=""
         # str1=str1.strip()
