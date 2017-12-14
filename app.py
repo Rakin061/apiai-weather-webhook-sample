@@ -687,27 +687,15 @@ def processRequest(req):
 
 
         if "href" in username:
-            match = re.findall(r'[\w\.-]+@[\w\.-]+', username)
-            uname = match[1]
-            uname = uname[1:]
-            uname = uname.replace(' ', '')[:-2]
-            username=uname
-        else:
-            username = username.replace(' ', '.')
-        
+            username=skype_auth(username)
+
+
 
 
         password = parameters.get("password").strip()
-        """
-        if "href" in password:
-            match = re.findall(r'[\w\.-]+@[\w\.-]+', password)
-            uname = match[1]
-            uname = uname[1:]
-            uname = uname.replace(' ', '')[:-2]
-            password=uname
-        else:
-            password=password
-        """
+
+        if "herf" in password:
+            password=skype_auth(password)
 
         #match = auth(username, password)
 
@@ -1075,6 +1063,13 @@ def processRequest(req):
         return {}
 
 
+
+def skype_auth(username):
+    match = re.findall(r'[\w\.-]+@[\w\.-]+', username)
+    uname = match[1]
+    uname = uname[1:]
+    uname = uname.replace(' ', '')[:-2]
+    return uname
 
 def auth(username,password):
 
