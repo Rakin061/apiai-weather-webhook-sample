@@ -796,7 +796,7 @@ def processRequest(req):
         # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
 
 
-        baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
+        baseurl = "http://103.17.69.35:81/BotAPI/ApplicationStatus?"
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 
