@@ -694,7 +694,7 @@ def processRequest(req):
         else:
             username = username.replace(' ', '.')
         """
-        username = username.replace(' ', '.')
+        #username = username.replace(' ', '.')
 
         password = parameters.get("password").strip()
         """
