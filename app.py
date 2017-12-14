@@ -683,8 +683,9 @@ def processRequest(req):
         top_factor= int(parameters.get("number"))
 
         username= parameters.get("username").strip()
+        username = username.replace(' ', '.')
 
-        """"
+
         if "href" in username:
             match = re.findall(r'[\w\.-]+@[\w\.-]+', username)
             uname = match[1]
@@ -693,8 +694,8 @@ def processRequest(req):
             username=uname
         else:
             username = username.replace(' ', '.')
-        """
-        #username = username.replace(' ', '.')
+        
+
 
         password = parameters.get("password").strip()
         """
