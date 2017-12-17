@@ -707,14 +707,14 @@ def processRequest(req):
         username = username.replace(' ', '.')
 
 
-        if "href" in username:
-            username=skype_auth(username)
+        #if "href" in username:
+        #   username=skype_auth(username)
 
 
         password = parameters.get("password").strip()
 
-        if "herf" in password:
-            password=skype_auth(password)
+        #if "herf" in password:
+        #    password=skype_auth(password)
 
         #match = auth(username, password)
 
