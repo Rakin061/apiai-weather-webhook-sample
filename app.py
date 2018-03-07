@@ -122,7 +122,7 @@ def processRequest(req):
         """
         # id=id.strip()
 
-        baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
+        baseurl = "http://103.17.69.35:81/BotAPI/ApplicationStatus?"
         yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '"+id+"'"
         #yql_query=yql_query+id
         #yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -384,7 +384,7 @@ def processRequest(req):
 
         # USING STRING CONCATANATION METHOD ... Handled Branch Factors
 
-        baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
+        baseurl = "http://103.17.69.35:81/BotAPI/ApplicationStatus?"
 
         if flag1 == 1:
             yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') " + branch_factor + " AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
@@ -645,7 +645,7 @@ def processRequest(req):
 
         # USING STRING CONCATANATION METHOD ... Handled Branch Factors
 
-        baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
+        baseurl = "http://103.17.69.35:81/BotAPI/ApplicationStatus?"
 
         if flag1==1:
             yql_query = "SELECT COUNT(DISTINCT APPLICATION_ID) AS N0_OF_PROPOSAL FROM OCASMN.VW_APPL_STS_INFO WHERE ARO_SUBMIT_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY') "+branch_factor+" AND APPL_STATUS_CODE IN ('01','02','03','05','08','11')"
@@ -796,7 +796,7 @@ def processRequest(req):
         # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
 
 
-        baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
+        baseurl = "http://103.17.69.35:81/BotAPI/ApplicationStatus?"
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 
@@ -985,7 +985,7 @@ def processRequest(req):
         # USING IF-ELSE CHAIN METHOD ... Handling Branch Factors
 
 
-        baseurl = "http://202.40.190.114:8084/BotAPI/ApplicationStatus?"
+        baseurl = "http://103.17.69.35:81/BotAPI/ApplicationStatus?"
 
         if "ALL" in branch_name.upper() or "EVERY" in branch_name.upper() or "ANY" in branch_name.upper():
 
