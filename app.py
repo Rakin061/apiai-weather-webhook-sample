@@ -704,11 +704,11 @@ def processRequest(req):
         top_factor= int(parameters.get("number"))
 
         username= parameters.get("username").strip()
-        #username = username.replace(' ', '.')
+        username = username.replace(' ', '.')
 
 
-        #if "href" in username:
-           #username=skype_auth(username)
+        if "href" in username:
+           username=skype_auth(username)
 
 
         password = parameters.get("password").strip()
@@ -1093,8 +1093,8 @@ def processRequest(req):
 
 
 def skype_auth(username):
-    start = username.find('..mailto.') + 9
-    end = username.find('..', start)
+    start = username.find('"mailto:') + 8
+    end = username.find('" title', start)
     uname=username[start:end]
     return uname
 
