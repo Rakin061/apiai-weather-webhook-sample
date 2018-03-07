@@ -833,7 +833,7 @@ def processRequest(req):
                 yql_query = yql_query + " AND SUBMISSION_DT BETWEEN TO_DATE('" + date1 + "','MM-DD-YYYY') AND TO_DATE('" + date2 + "','MM-DD-YYYY')"
                 yql_query = yql_query + "GROUP BY createby, branch_name ORDER BY performnc DESC"
 
-        action = "Performance.top"
+        action = "Performance.individual"
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
