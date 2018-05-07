@@ -33,15 +33,10 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
-    #print("OKKKKKKKKKK")
-
-
-
-    #print("Request:")
+    print("Request:")
     print(json.dumps(req, indent=4))
 
     res = processRequest(req)
-    #print(res)
 
     res = json.dumps(res, indent=4)
     # print(res)
@@ -51,22 +46,19 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("queryResult").get("action") == "yahooWeatherForecast":
+    if req.get("result").get("action") == "yahooWeatherForecast":
 
-        '''
-        result = req.get("queryResult")
-        parameters=result.get("parameters")
-        city=parameters.get("geo-city")
-
-        resp="Weather in "+ city+ "is 32C"
-
-        #return city
+        print("OKKKKKKKKKK")
 
         return {
-            "fulfillmentText": resp,
+            "speech": speech,
+            "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+            # "source": "apiai-onlinestore-shipping"
         }
-        '''
 
+        '''
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = makeYqlQuery(req)
         if yql_query is None:
@@ -76,8 +68,7 @@ def processRequest(req):
         data = json.loads(result)
         res = makeWebhookResult(data)
         return res
-
-
+        '''
     elif req.get("result").get("action") == "loan.eligibilty":
 
         result = req.get("result")
@@ -1375,7 +1366,7 @@ def getDATE1(str1):
                 print("Not a known time frame...")
 
 def makeYqlQuery(req):
-    result = req.get("queryResult")
+    result = req.get("result")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     if city is None:
@@ -1415,14 +1406,18 @@ def makeWebhookResult(data):
     temp=str(temp)
 
 
-    speech = " Hellooooo!! Today the weather in " + location.get('city') + " is : " + condition.get('text') + \
+    speech = " Hello !! Today the weather in " + location.get('city') + " is : " + condition.get('text') + \
              ", and the temperature is " + temp + " " + "C" + ".  Thanks!!"
 
-    #print("Response:")
-    #print(speech)
+    print("Response:")
+    print(speech)
 
     return {
-        "fulfillmentText": speech,
+        "speech": speech,
+        "displayText": speech,
+        # "data": data,
+        # "contextOut": [],
+        "source": "apiai-weather-webhook-sample"
     }
 
 if __name__ == '__main__':
@@ -1430,4 +1425,4 @@ if __name__ == '__main__':
 
     print("Starting app on port %d" % port)
 
-    app.run(debug=True, port=port, host='0.0.0.0')
+    app.run(debug=False, port=port, host='0.0.0.0')
