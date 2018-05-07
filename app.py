@@ -35,7 +35,7 @@ def webhook():
 
     print("OKKKKKKKKKK")
 
-    '''
+
 
     print("Request:")
     print(json.dumps(req, indent=4))
@@ -48,7 +48,7 @@ def webhook():
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
-'''
+
 
 def processRequest(req):
     if req.get("result").get("action") == "yahooWeatherForecast":
