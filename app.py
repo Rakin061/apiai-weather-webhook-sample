@@ -51,10 +51,10 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") == "yahooWeatherForecast":
+    if req.get("queryResult").get("action") == "yahooWeatherForecast":
 
         #print("OKKKKKKKKKK")
-        msg="okkkkk"
+        msg="okkkkk PROCESS REQUEST"
         return msg
 
 
