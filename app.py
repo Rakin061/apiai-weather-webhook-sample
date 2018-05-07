@@ -53,6 +53,7 @@ def webhook():
 def processRequest(req):
     if req.get("queryResult").get("action") == "yahooWeatherForecast":
 
+        '''
         result = req.get("queryResult")
         parameters=result.get("parameters")
         city=parameters.get("geo-city")
@@ -64,8 +65,8 @@ def processRequest(req):
         return {
             "fulfillmentText": resp,
         }
-
         '''
+
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = makeYqlQuery(req)
         if yql_query is None:
@@ -75,7 +76,7 @@ def processRequest(req):
         data = json.loads(result)
         res = makeWebhookResult(data)
         return res
-        '''
+
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
@@ -1374,7 +1375,7 @@ def getDATE1(str1):
                 print("Not a known time frame...")
 
 def makeYqlQuery(req):
-    result = req.get("result")
+    result = req.get("queryResult")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     if city is None:
@@ -1421,11 +1422,7 @@ def makeWebhookResult(data):
     print(speech)
 
     return {
-        "speech": speech,
-        "displayText": speech,
-        # "data": data,
-        # "contextOut": [],
-        "source": "apiai-weather-webhook-sample"
+        "fulfillmentText": speech,
     }
 
 if __name__ == '__main__':
