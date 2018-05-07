@@ -41,7 +41,7 @@ def webhook():
     print(json.dumps(req, indent=4))
 
     res = processRequest(req)
-    print(res)
+    print("Your required city is ",res)
 
     res = json.dumps(res, indent=4)
     # print(res)
@@ -53,12 +53,14 @@ def webhook():
 def processRequest(req):
     if req.get("queryResult").get("action") == "yahooWeatherForecast":
 
-        #print("OKKKKKKKKKK")
-        msg="okkkkk PROCESS REQUEST"
-        return msg
+        result = req.get("queryResult")
+        parameters=result.get("parameters")
+        city=parameters.get("geo-city")
+
+        return city
 
 
-        '''
+
         return {
             "speech": speech,
             "displayText": speech,
@@ -77,7 +79,7 @@ def processRequest(req):
         data = json.loads(result)
         res = makeWebhookResult(data)
         return res
-        '''
+
     elif req.get("result").get("action") == "loan.eligibilty":
 
         result = req.get("result")
