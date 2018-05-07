@@ -41,7 +41,7 @@ def webhook():
     print(json.dumps(req, indent=4))
 
     res = processRequest(req)
-    print("Your required city is ",res)
+    print(res)
 
     res = json.dumps(res, indent=4)
     # print(res)
@@ -57,19 +57,15 @@ def processRequest(req):
         parameters=result.get("parameters")
         city=parameters.get("geo-city")
 
-        return city
+        resp="Weather in "+ city+ "is 32C"
 
-
+        #return city
 
         return {
-            "speech": speech,
-            "displayText": speech,
-            # "data": {},
-            # "contextOut": [],
-            # "source": "apiai-onlinestore-shipping"
+            "fulfillmentText": resp,
         }
 
-       
+        '''
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = makeYqlQuery(req)
         if yql_query is None:
@@ -79,6 +75,7 @@ def processRequest(req):
         data = json.loads(result)
         res = makeWebhookResult(data)
         return res
+        '''
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
