@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,26 +13,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="848">
               <caret line="1433" column="0" lean-forward="true" selection-start-line="1433" selection-start-column="0" selection-end-line="1433" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="31" column="69" lean-forward="true" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
               <folding>
-                <marker date="1527142684184" expanded="true" signature="37154:37381" ph="..." />
-                <marker date="1527142684184" expanded="true" signature="37154:37394" ph="..." />
-                <marker date="1527142684184" expanded="true" signature="37154:37409" ph="..." />
-                <marker date="1527142684184" expanded="true" signature="37155:37363" ph="..." />
+                <element signature="e#2790#2796#0" expanded="true" />
+                <element signature="e#2810#2816#0" expanded="true" />
+                <element signature="e#2846#2852#0" expanded="true" />
+                <element signature="e#2865#2871#0" expanded="true" />
+                <element signature="e#3325#3331#0" expanded="true" />
+                <element signature="e#3383#3389#0" expanded="true" />
+                <element signature="e#3419#3425#0" expanded="true" />
+                <element signature="e#3477#3483#0" expanded="true" />
+                <element signature="e#3513#3519#0" expanded="true" />
+                <element signature="e#3567#3573#0" expanded="true" />
+                <element signature="e#3645#3651#0" expanded="true" />
+                <element signature="e#3659#3665#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,6 +78,7 @@
         <option value="$PROJECT_DIR$/../BOT/apiai-python-client/examples/send_text_example.py" />
         <option value="$PROJECT_DIR$/../BOT/apiai-python-client - test/examples/send_text_example.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -699,24 +707,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1527142684184" expanded="true" signature="37154:37381" ph="..." />
-            <marker date="1527142684184" expanded="true" signature="37154:37394" ph="..." />
-            <marker date="1527142684184" expanded="true" signature="37154:37409" ph="..." />
-            <marker date="1527142684184" expanded="true" signature="37155:37363" ph="..." />
-          </folding>
+        <state relative-caret-position="848">
+          <caret line="1433" column="0" lean-forward="true" selection-start-line="1433" selection-start-column="0" selection-end-line="1433" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="1433" column="0" lean-forward="true" selection-start-line="1433" selection-start-column="0" selection-end-line="1433" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="476">
+          <caret line="31" column="69" lean-forward="true" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+          <folding>
+            <element signature="e#2790#2796#0" expanded="true" />
+            <element signature="e#2810#2816#0" expanded="true" />
+            <element signature="e#2846#2852#0" expanded="true" />
+            <element signature="e#2865#2871#0" expanded="true" />
+            <element signature="e#3325#3331#0" expanded="true" />
+            <element signature="e#3383#3389#0" expanded="true" />
+            <element signature="e#3419#3425#0" expanded="true" />
+            <element signature="e#3477#3483#0" expanded="true" />
+            <element signature="e#3513#3519#0" expanded="true" />
+            <element signature="e#3567#3573#0" expanded="true" />
+            <element signature="e#3645#3651#0" expanded="true" />
+            <element signature="e#3659#3665#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
