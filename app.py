@@ -33,10 +33,15 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
-    print("Request:")
+    #print("OKKKKKKKKKK")
+
+
+
+    #print("Request:")
     print(json.dumps(req, indent=4))
 
     res = processRequest(req)
+    #print(res)
 
     res = json.dumps(res, indent=4)
     # print(res)
@@ -46,7 +51,21 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") == "yahooWeatherForecast":
+    if req.get("queryResult").get("action") == "yahooWeatherForecast":
+
+        '''
+        result = req.get("queryResult")
+        parameters=result.get("parameters")
+        city=parameters.get("geo-city")
+
+        resp="Weather in "+ city+ "is 32C"
+
+        #return city
+
+        return {
+            "fulfillmentText": resp,
+        }
+        '''
 
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = makeYqlQuery(req)
@@ -57,6 +76,7 @@ def processRequest(req):
         data = json.loads(result)
         res = makeWebhookResult(data)
         return res
+
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
@@ -1355,7 +1375,7 @@ def getDATE1(str1):
                 print("Not a known time frame...")
 
 def makeYqlQuery(req):
-    result = req.get("result")
+    result = req.get("queryResult")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     if city is None:
@@ -1395,18 +1415,14 @@ def makeWebhookResult(data):
     temp=str(temp)
 
 
-    speech = " Hello !! Today the weather in " + location.get('city') + " is : " + condition.get('text') + \
+    speech = " Hellooooo!! Today the weather in " + location.get('city') + " is : " + condition.get('text') + \
              ", and the temperature is " + temp + " " + "C" + ".  Thanks!!"
 
-    print("Response:")
-    print(speech)
+    #print("Response:")
+    #print(speech)
 
     return {
-        "speech": speech,
-        "displayText": speech,
-        # "data": data,
-        # "contextOut": [],
-        "source": "apiai-weather-webhook-sample"
+        "fulfillmentText": speech,
     }
 
 if __name__ == '__main__':
@@ -1414,4 +1430,4 @@ if __name__ == '__main__':
 
     print("Starting app on port %d" % port)
 
-    app.run(debug=False, port=port, host='0.0.0.0')
+    app.run(debug=True, port=port, host='0.0.0.0')
