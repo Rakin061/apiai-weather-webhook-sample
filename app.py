@@ -63,6 +63,8 @@ def processRequest(req):
         parameters= result.get("parameters")
         emp_id=parameters.get("emp_id")
 
+        print("Employee id:-",emp_id)
+
         return {
 
             "speech":"Successful request for ID:_ "+emp_id,
