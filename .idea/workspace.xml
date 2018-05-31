@@ -17,8 +17,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+            <state relative-caret-position="341">
+              <caret line="71" column="59" lean-forward="false" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -32,10 +32,10 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1527757000292" expanded="true" signature="42184:42201" ph="..." />
-                <marker date="1527757000292" expanded="true" signature="42184:42219" ph="..." />
-                <marker date="1527757000292" expanded="true" signature="42184:42232" ph="..." />
-                <marker date="1527757000292" expanded="true" signature="42184:42247" ph="..." />
+                <marker date="1527757142740" expanded="true" signature="42470:42487" ph="..." />
+                <marker date="1527757142740" expanded="true" signature="42470:42505" ph="..." />
+                <marker date="1527757142740" expanded="true" signature="42470:42518" ph="..." />
+                <marker date="1527757142740" expanded="true" signature="42470:42533" ph="..." />
               </folding>
             </state>
           </provider>
@@ -348,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527756681759</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="leave-02">
+      <created>1527757007588</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1527757007588</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -816,10 +823,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527757000292" expanded="true" signature="42184:42201" ph="..." />
-            <marker date="1527757000292" expanded="true" signature="42184:42219" ph="..." />
-            <marker date="1527757000292" expanded="true" signature="42184:42232" ph="..." />
-            <marker date="1527757000292" expanded="true" signature="42184:42247" ph="..." />
+            <marker date="1527757142740" expanded="true" signature="42470:42487" ph="..." />
+            <marker date="1527757142740" expanded="true" signature="42470:42505" ph="..." />
+            <marker date="1527757142740" expanded="true" signature="42470:42518" ph="..." />
+            <marker date="1527757142740" expanded="true" signature="42470:42533" ph="..." />
           </folding>
         </state>
       </provider>
@@ -834,8 +841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+        <state relative-caret-position="341">
+          <caret line="71" column="59" lean-forward="false" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
