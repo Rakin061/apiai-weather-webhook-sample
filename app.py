@@ -58,6 +58,16 @@ def processRequest(req):
         res = makeWebhookResult(data)
         return res
 
+    elif req.get("result").get("action")=="leave.02":
+        result=req.get("result")
+        parameters= result.get("parameters")
+        emp_id=parameters.get("emp_id")
+
+        return {
+
+            "speech":"Successful request for ID:_ "+emp_id
+        }
+
     elif req.get("result").get("action") == "loan.eligibilty":
 
         result = req.get("result")
