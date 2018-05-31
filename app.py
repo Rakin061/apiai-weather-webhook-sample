@@ -61,14 +61,16 @@ def processRequest(req):
     elif req.get("result").get("action")=="leave.02":
         result=req.get("result")
         parameters= result.get("parameters")
-        emp_id=parameters.get("emp_id")
+        emp_id= str (parameters.get("emp_id"))
 
         print("Employee id:-",emp_id)
 
+        speech="Successful request for ID:_ "+emp_id
+
         return {
 
-            "speech":"Successful request for ID:_ "+emp_id,
-            "displayText": "Successful request for ID:_ " + emp_id,
+            "speech": speech,
+            "displayText": speech,
         }
 
     elif req.get("result").get("action") == "loan.eligibilty":
