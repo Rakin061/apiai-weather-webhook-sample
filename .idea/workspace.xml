@@ -17,8 +17,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="68" column="24" lean-forward="false" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -32,10 +32,10 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1527756007838" expanded="true" signature="40997:41014" ph="..." />
-                <marker date="1527756007838" expanded="true" signature="40997:41032" ph="..." />
-                <marker date="1527756007838" expanded="true" signature="40997:41045" ph="..." />
-                <marker date="1527756007838" expanded="true" signature="40997:41060" ph="..." />
+                <marker date="1527756179044" expanded="true" signature="41325:41342" ph="..." />
+                <marker date="1527756179044" expanded="true" signature="41325:41360" ph="..." />
+                <marker date="1527756179044" expanded="true" signature="41325:41373" ph="..." />
+                <marker date="1527756179044" expanded="true" signature="41325:41388" ph="..." />
               </folding>
             </state>
           </provider>
@@ -320,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527751797873</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="leave-02">
+      <created>1527756041845</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527756041845</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -378,7 +385,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update3" />
-    <option name="LAST_COMMIT_MESSAGE" value="update3" />
+    <MESSAGE value="leave-02" />
+    <option name="LAST_COMMIT_MESSAGE" value="leave-02" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -787,10 +795,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527756007838" expanded="true" signature="40997:41014" ph="..." />
-            <marker date="1527756007838" expanded="true" signature="40997:41032" ph="..." />
-            <marker date="1527756007838" expanded="true" signature="40997:41045" ph="..." />
-            <marker date="1527756007838" expanded="true" signature="40997:41060" ph="..." />
+            <marker date="1527756179044" expanded="true" signature="41325:41342" ph="..." />
+            <marker date="1527756179044" expanded="true" signature="41325:41360" ph="..." />
+            <marker date="1527756179044" expanded="true" signature="41325:41373" ph="..." />
+            <marker date="1527756179044" expanded="true" signature="41325:41388" ph="..." />
           </folding>
         </state>
       </provider>
@@ -805,8 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="68" column="24" lean-forward="false" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
