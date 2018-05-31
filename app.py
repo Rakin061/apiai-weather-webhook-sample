@@ -67,9 +67,27 @@ def processRequest(req):
 
         #speech=
 
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Leave.02"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode({'act': action}) +"&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+        leaves=""
+
+        for i in range(1, len(data)):
+            leaves += data['Leave' + str(i)] + " , "
+
+
         return {
 
-            "speech": "Successful request for ID:_ "+emp_id
+            "speech": "Your availavle leaves are : "+leaves
         }
 
     elif req.get("result").get("action") == "loan.eligibilty":
