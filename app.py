@@ -87,7 +87,7 @@ def processRequest(req):
 
         return {
 
-            "speech": "Your availavle leaves are : "+leaves + " Thanks!"
+            "speech": "Your availavle leaves are :-  "+leaves + " Thanks!"
         }
 
     elif req.get("result").get("action") == "loan.eligibilty":
