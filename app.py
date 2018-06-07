@@ -145,7 +145,7 @@ def processRequest(req):
             speech=" Here's your leave balance for all kind of leaves:-  "
             query_dict=data['Query']
             for key, value in query_dict.items():
-                speech = speech + key + " : " + value + " ;  "
+                speech = speech +" "+ key + " : " + value + " ;  "
 
             speech=speech+" Thanks!!"
 
