@@ -60,8 +60,20 @@ def processRequest(req):
 
     elif req.get("result").get("action")=="Leave.02":
         result=req.get("result")
-        parameters= result.get("parameters")
-        emp_id= str (parameters.get("emp_id"))
+        cont= result.get("contexts")
+        item_count=len(cont)
+        index=-1
+
+        for i in range(item_count):
+            if cont[i]['name']=='emp_id':
+                index=i
+
+        if(index==-1):
+            return{
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id=cont[0]['parameters']['emp_id.original']
 
         print("Employee id:-",emp_id)
 
@@ -89,6 +101,8 @@ def processRequest(req):
 
             "speech": "Your availavle leaves are :-  "+leaves + " Thanks!"
         }
+
+
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
