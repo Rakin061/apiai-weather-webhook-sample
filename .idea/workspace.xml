@@ -17,8 +17,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="75" column="59" lean-forward="false" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
+            <state relative-caret-position="109">
+              <caret line="67" column="40" lean-forward="false" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -32,13 +32,13 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1528352021611" expanded="true" signature="44242:44259" ph="..." />
-                <marker date="1528352021611" expanded="true" signature="44242:44277" ph="..." />
-                <marker date="1528352021611" expanded="true" signature="44242:44290" ph="..." />
-                <marker date="1528352021611" expanded="true" signature="44242:44699" ph="..." />
-                <marker date="1528352021611" expanded="true" signature="44347:44684" ph="..." />
-                <marker date="1528352021611" expanded="true" signature="44409:44671" ph="..." />
-                <marker date="1528352021611" expanded="true" signature="44453:44653" ph="..." />
+                <marker date="1528352274982" expanded="true" signature="44576:44593" ph="..." />
+                <marker date="1528352274982" expanded="true" signature="44576:44611" ph="..." />
+                <marker date="1528352274982" expanded="true" signature="44576:44624" ph="..." />
+                <marker date="1528352274982" expanded="true" signature="44576:45033" ph="..." />
+                <marker date="1528352274982" expanded="true" signature="44681:45018" ph="..." />
+                <marker date="1528352274982" expanded="true" signature="44743:45005" ph="..." />
+                <marker date="1528352274982" expanded="true" signature="44787:44987" ph="..." />
               </folding>
             </state>
           </provider>
@@ -399,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528187278574</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="context-update">
+      <created>1528352144048</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1528352144048</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -460,7 +467,8 @@
     <MESSAGE value="update3" />
     <MESSAGE value="leave-02" />
     <MESSAGE value="leave-02-q1" />
-    <option name="LAST_COMMIT_MESSAGE" value="leave-02-q1" />
+    <MESSAGE value="context-update" />
+    <option name="LAST_COMMIT_MESSAGE" value="context-update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -866,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="75" column="59" lean-forward="false" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
+        <state relative-caret-position="109">
+          <caret line="67" column="40" lean-forward="false" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
@@ -879,13 +887,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1528352021611" expanded="true" signature="44242:44259" ph="..." />
-            <marker date="1528352021611" expanded="true" signature="44242:44277" ph="..." />
-            <marker date="1528352021611" expanded="true" signature="44242:44290" ph="..." />
-            <marker date="1528352021611" expanded="true" signature="44242:44699" ph="..." />
-            <marker date="1528352021611" expanded="true" signature="44347:44684" ph="..." />
-            <marker date="1528352021611" expanded="true" signature="44409:44671" ph="..." />
-            <marker date="1528352021611" expanded="true" signature="44453:44653" ph="..." />
+            <marker date="1528352274982" expanded="true" signature="44576:44593" ph="..." />
+            <marker date="1528352274982" expanded="true" signature="44576:44611" ph="..." />
+            <marker date="1528352274982" expanded="true" signature="44576:44624" ph="..." />
+            <marker date="1528352274982" expanded="true" signature="44576:45033" ph="..." />
+            <marker date="1528352274982" expanded="true" signature="44681:45018" ph="..." />
+            <marker date="1528352274982" expanded="true" signature="44743:45005" ph="..." />
+            <marker date="1528352274982" expanded="true" signature="44787:44987" ph="..." />
           </folding>
         </state>
       </provider>

@@ -65,7 +65,7 @@ def processRequest(req):
         index=-1
 
         for i in range(item_count):
-            if cont[i]['name']=='emp_id':
+            if cont[i]['name']=='emp_idd':
                 index=i
 
         if(index==-1):
