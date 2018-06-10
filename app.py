@@ -139,12 +139,13 @@ def processRequest(req):
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
+        query_dict = data['Query']
 
         speech=""
 
         if data['Number of Rows']> 1:
             speech=" Here's your leave balance for all kind of leaves:-  "
-            query_dict=data['Query']
+
             for key, value in query_dict.items():
                 speech = speech+" .. " + key + " : " + value + " ;  "
 
@@ -154,19 +155,17 @@ def processRequest(req):
 
                 "speech": speech
             }
+        else:
 
+            for key,value in query_dict.items():
+                leave_count=value;
+            speech=" Your balance for "+leave_type+" is :- "+leave_count+". Thanks!!"
 
+            return{
 
-        leaves=""
+                "speech": speech
+            }
 
-        for i in range(1, len(data)):
-            leaves += data['Leave' + str(i)] + " , "
-
-
-        return {
-
-            "speech": "Your availavle leaves are :-  "+leaves + " Thanks!"
-        }
 
 
     elif req.get("result").get("action") == "loan.eligibilty":
