@@ -99,7 +99,7 @@ def processRequest(req):
 
         return {
 
-            "speech": "Your availavle leaves are :-  "+leaves + " Thanks!"
+            "speech": "Your available leaves are :-  "+leaves + " Thanks!"
         }
 
 
@@ -159,7 +159,7 @@ def processRequest(req):
 
             for key,value in query_dict.items():
                 leave_count=value;
-            speech=" Your balance for "+leave_type+" is :- "+leave_count+". Thanks!!"
+            speech=" Your leave balance for "+leave_type+" is :- "+leave_count+". Thanks!!"
 
             return{
 
