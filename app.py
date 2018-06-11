@@ -91,6 +91,12 @@ def processRequest(req):
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
+
+        if data=={}:
+            return{
+                "speech": "Sorry!! "+emp_id+" is not a Valid employee Id! Plese try again with Valid ID."
+            }
+
         leaves=""
 
         for i in range(1, len(data)):
@@ -139,6 +145,13 @@ def processRequest(req):
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
+
+        if data['Number of Rows']==0:
+            return{
+                "speech": "Sorry!! "+emp_id+" is not a Valid employee Id! Please try again with Valid ID."
+            }
+
+
         query_dict = data['Query']
 
         speech=""
