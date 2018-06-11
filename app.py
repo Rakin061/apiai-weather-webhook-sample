@@ -94,7 +94,7 @@ def processRequest(req):
 
         if data=={}:
             return{
-                "speech": "Sorry!! "+emp_id+" is not a Valid employee Id! Plese try again with Valid ID."
+                "speech": "Sorry!! "+emp_id+" is not a Valid employee Id! Please try again with Valid ID."
             }
 
         leaves=""
