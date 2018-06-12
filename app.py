@@ -249,9 +249,9 @@ def processRequest(req):
 
 
             if int(leave_count)>0:
-                speech=speech+". So, You're eligible for taking leave !!"
+                speech=speech+". You're eligible for taking leave !!"
             else:
-                speech=speech+". Sorry! You can't take leave right now."
+                speech=speech+". You can't take leave right now."
 
             return{
 
