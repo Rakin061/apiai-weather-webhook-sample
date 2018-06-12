@@ -247,11 +247,12 @@ def processRequest(req):
                 leave_count=value;
             speech=" Your leave balance for "+leave_type+" is :- "+leave_count
 
+            '''
             if leave_count>0:
                 speech=speech+". So, You're eligible for taking leave !!"
             else:
                 speech=speech+". Sorry! You can't take leave right now."
-
+            '''
             return{
 
                 "speech": speech
