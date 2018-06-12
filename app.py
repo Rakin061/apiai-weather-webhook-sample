@@ -75,7 +75,7 @@ def processRequest(req):
         else:
             emp_id=cont[0]['parameters']['emp_id.original']
 
-        print("Employee id:-",emp_id)
+        #print("Employee id:-",emp_id)
 
         #speech=
 
@@ -202,7 +202,7 @@ def processRequest(req):
         else:
             emp_id=cont[0]['parameters']['emp_id.original']
 
-        print("Employee id:-",emp_id)
+        #print("Employee id:-",emp_id)
 
         #speech=
 
@@ -265,6 +265,54 @@ def processRequest(req):
 
                 "speech": speech
             }
+
+
+    elif req.get("result").get("action")=="Leave.08":
+        result=req.get("result")
+        cont= result.get("contexts")
+        item_count=len(cont)
+        index=-1
+
+        for i in range(item_count):
+            if cont[i]['name']=='emp_id':
+                index=i
+
+        if(index == -1):
+            return{
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id=cont[0]['parameters']['emp_id.original']
+
+        #print("Employee id:-",emp_id)
+
+        #speech=
+
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Leave.08"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode({'act': action}) +"&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        if data=={}:
+            return{
+                "speech": "Sorry!! No records found for the employee ID:- "+emp_id
+            }
+
+        speech="You will be eligible for LFA on:-  "+ data['LFA_DATE']
+
+
+        return {
+
+            "speech": speech
+        }
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
