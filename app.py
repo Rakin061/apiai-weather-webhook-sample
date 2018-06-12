@@ -94,7 +94,7 @@ def processRequest(req):
 
         if data=={}:
             return{
-                "speech": "Sorry!! "+emp_id+" is not a Valid employee Id! Please try again with Valid ID."
+                "speech": "Sorry!! No records found for the employee ID:- "+emp_id
             }
 
         leaves=""
@@ -148,7 +148,7 @@ def processRequest(req):
 
         if data['Number of Rows']==0:
             return{
-                "speech": "Sorry!! "+emp_id+" is not a Valid employee Id! Please try again with Valid ID."
+                "speech": "Sorry!! You're not eligible for "+leave_type+" ."
             }
 
 
@@ -221,7 +221,7 @@ def processRequest(req):
 
         if data['Number of Rows']==0:
             return{
-                "speech": "Sorry!! "+emp_id+" is not a Valid employee Id! Please try again with Valid ID."
+                "speech": "Sorry!! You're not eligible for "+leave_type+" ."
             }
 
 
