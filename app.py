@@ -232,8 +232,16 @@ def processRequest(req):
         if data['Number of Rows']> 1:
             speech=" Here's your leave balance for all kind of leaves:-  "
 
+            elig_lv=[]
+
             for key, value in query_dict.items():
                 speech = speech+" .. " + key + " : " + value + " ;  "
+                if int(value)>0:
+                    elig_lv.append(key)
+
+            speech = speech + " So, You can take "
+            for i in range(len(elig_lv)):
+                speech=speech+ elig_lv[i]+" , "
 
             speech=speech+" Thanks!!"
 
