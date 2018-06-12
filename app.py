@@ -239,9 +239,13 @@ def processRequest(req):
                 if int(value)>0:
                     elig_lv.append(key)
 
-            speech = speech + " So, You can take "
-            for i in range(len(elig_lv)):
-                speech=speech+ elig_lv[i]+" , "
+
+            if len(elig_lv)==0:
+                speech=speech+" You're not eligible for any kind of Leave!!"
+            else:
+                speech = speech + " So, You can take "
+                for i in range(len(elig_lv)):
+                    speech=speech+ elig_lv[i]+" , "
 
             speech=speech+" Thanks!!"
 
