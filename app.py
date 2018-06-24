@@ -310,7 +310,10 @@ def processRequest(req):
                 "speech": "Sorry!! No records found for the employee ID:- "+emp_id
             }
 
-        speech="You will be eligible for LFA on:-  "+ data['LFA_DATE']
+        if data['LFA_DATE']==None:
+            speech="Sorry!! No records found for the employee ID:- "+emp_id
+        else:
+            speech="You will be eligible for LFA on:-  "+ data['LFA_DATE']
 
 
         return {
