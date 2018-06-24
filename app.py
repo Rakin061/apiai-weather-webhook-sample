@@ -327,6 +327,8 @@ def processRequest(req):
         result=req.get("result")
         parameters = result.get("parameters")
         leave_type=parameters.get("leave_type")
+        start_date = parameter.get("start_date")
+        end_date = parameters.get("end_date")
 
         cont= result.get("contexts")
         item_count=len(cont)
@@ -342,8 +344,7 @@ def processRequest(req):
             }
         else:
             emp_id=cont[i]['parameters']['emp_id.original']
-            start_date=cont[i]['parameters']['start_date.original']
-            end_date= cont[i]['parameters']['end_date.original']
+
 
         #print("Employee id:-",emp_id)
 
