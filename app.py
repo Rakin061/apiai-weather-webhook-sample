@@ -326,8 +326,8 @@ def processRequest(req):
     elif req.get("result").get("action")=="Leave.14":
         result=req.get("result")
         parameters = result.get("parameters")
-        leave_type=parameters.get("leave_type")
-        start_date = parameter.get("start_date")
+        leave_type= parameters.get("leave_type")
+        start_date = parameters.get("start_date")
         end_date = parameters.get("end_date")
 
         print(start_date)
