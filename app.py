@@ -330,6 +330,9 @@ def processRequest(req):
         start_date = parameter.get("start_date")
         end_date = parameters.get("end_date")
 
+        print(start_date)
+        print(end_date)
+
         cont= result.get("contexts")
         item_count=len(cont)
         index=-1
