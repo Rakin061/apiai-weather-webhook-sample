@@ -17,8 +17,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="380" column="0" lean-forward="true" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+            <state relative-caret-position="227">
+              <caret line="430" column="26" lean-forward="false" selection-start-line="430" selection-start-column="26" selection-end-line="430" selection-end-column="26" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -32,11 +32,11 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1529909791098" expanded="true" signature="55225:55348" ph="..." />
-                <marker date="1529909791098" expanded="true" signature="55225:55366" ph="..." />
-                <marker date="1529909791098" expanded="true" signature="55225:55379" ph="..." />
-                <marker date="1529909791098" expanded="true" signature="55225:55394" ph="..." />
-                <marker date="1529909791098" expanded="true" signature="55248:55331" ph="..." />
+                <marker date="1529924773597" expanded="true" signature="55519:55642" ph="..." />
+                <marker date="1529924773597" expanded="true" signature="55519:55660" ph="..." />
+                <marker date="1529924773597" expanded="true" signature="55519:55673" ph="..." />
+                <marker date="1529924773597" expanded="true" signature="55519:55688" ph="..." />
+                <marker date="1529924773597" expanded="true" signature="55542:55625" ph="..." />
               </folding>
             </state>
           </provider>
@@ -642,7 +642,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529909693333</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="leave.14">
+      <created>1529909869894</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1529909869894</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1129,11 +1136,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1529909791098" expanded="true" signature="55225:55348" ph="..." />
-            <marker date="1529909791098" expanded="true" signature="55225:55366" ph="..." />
-            <marker date="1529909791098" expanded="true" signature="55225:55379" ph="..." />
-            <marker date="1529909791098" expanded="true" signature="55225:55394" ph="..." />
-            <marker date="1529909791098" expanded="true" signature="55248:55331" ph="..." />
+            <marker date="1529924773597" expanded="true" signature="55519:55642" ph="..." />
+            <marker date="1529924773597" expanded="true" signature="55519:55660" ph="..." />
+            <marker date="1529924773597" expanded="true" signature="55519:55673" ph="..." />
+            <marker date="1529924773597" expanded="true" signature="55519:55688" ph="..." />
+            <marker date="1529924773597" expanded="true" signature="55542:55625" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1156,8 +1163,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="380" column="0" lean-forward="true" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+        <state relative-caret-position="227">
+          <caret line="430" column="26" lean-forward="false" selection-start-line="430" selection-start-column="26" selection-end-line="430" selection-end-column="26" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>

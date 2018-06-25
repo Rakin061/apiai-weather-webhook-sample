@@ -390,6 +390,74 @@ def processRequest(req):
             "speech": speech
         }
 
+
+    elif req.get("result").get("action")=="Leave.15":
+        result=req.get("result")
+        parameters = result.get("parameters")
+        leave_type= parameters.get("leave_type")
+        start_date = parameters.get("start_date")
+        end_date = parameters.get("end_date")
+
+        #print(start_date)
+        #print(end_date)
+
+        cont= result.get("contexts")
+        item_count=len(cont)
+        index=-1
+
+        for i in range(item_count):
+            if cont[i]['name']=='emp_id':
+                index=i
+
+        if(index==-1):
+            return{
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id=cont[i]['parameters']['emp_id.original']
+
+
+        #print("Employee id:-",emp_id)
+
+        #speech=
+
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Leave.15"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'leave_type':leave_type})+"&"+urlencode({'start_date':start_date})+"&"+urlencode({'end_date':end_date})+"&" +urlencode({'act': action}) +"&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        if data['Total_Approved_Person']==0:
+            return{
+                "speech": "Sorry!! No record found for Employee ID:- "+ emp_id
+            }
+
+        num = data['Total_Approved_Person']
+
+        speech=" Number of approval person for your "+leave_type+" leave  is:- "+str(num)
+
+        query_dict = data['Description']
+
+        speech=speech+". They are:-  "
+
+        for key, value in query_dict.items():
+            speech = speech + " " + str(key) + ") " + value + " .. "
+
+        speech=speech+" Thanks!!"
+
+
+        return{
+
+            "speech": speech
+        }
+
     elif req.get("result").get("action") == "loan.eligibilty":
 
         result = req.get("result")
