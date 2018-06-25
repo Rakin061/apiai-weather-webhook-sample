@@ -375,7 +375,7 @@ def processRequest(req):
 
         speech=" Your Number of approval person is:- "+str(num)
 
-        query_dict = data['Query']
+        query_dict = data['Description']
 
         speech=speech+". They are:-  "
 
