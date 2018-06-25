@@ -431,32 +431,41 @@ def processRequest(req):
         action = "Leave.15"
         yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'leave_type':leave_type})+"&"+urlencode({'start_date':start_date})+"&"+urlencode({'end_date':end_date})+"&" +urlencode({'act': action}) +"&format=json"
 
+
+
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
+        query_dict = data['Query']
 
-        if data['Total_Approved_Person']==0:
+        speech=""
+
+        if data['Number of Leaves']==0:
             return{
                 "speech": "Sorry!! No record found for Employee ID:- "+ emp_id
             }
+        elif data['Number of Leaves']==1:
 
-        num = data['Total_Approved_Person']
+            speech="Your availed leave of "
+            for key,value in query_dict.items():
+                speech=speech+key+ " is:- "+ str(value)
 
-        speech=" Number of approval person for your "+leave_type+" leave  is:- "+str(num)
+            speech=speech+" Thanks!!"
+            return{
+                "speech": speech
+            }
+        else:
+            speech=" Here's the details of your all kind of availed leaves:- "
 
-        query_dict = data['Description']
+            for key,value in query_dict.items():
+                speech=speech + key+" : "+ value+" .."
 
-        speech=speech+". They are:-  "
+            speech = speech + " Thanks!!"
 
-        for key, value in query_dict.items():
-            speech = speech + " " + str(key) + ") " + value + " .. "
+            return {
+                "speech": speech
+            }
 
-        speech=speech+" Thanks!!"
 
-
-        return{
-
-            "speech": speech
-        }
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
