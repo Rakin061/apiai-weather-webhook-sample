@@ -330,8 +330,8 @@ def processRequest(req):
         start_date = parameters.get("start_date")
         end_date = parameters.get("end_date")
 
-        print(start_date)
-        print(end_date)
+        #print(start_date)
+        #print(end_date)
 
         cont= result.get("contexts")
         item_count=len(cont)
@@ -366,56 +366,29 @@ def processRequest(req):
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
 
-        if data['Number of Rows']==0:
+        if data['Total_Approved_Person']==0:
             return{
-                "speech": "Sorry!! You're not eligible for "+leave_type+" ."
+                "speech": "Sorry!! No record found for Employee ID:- "+ emp_id
             }
 
+        num = data['Total_Approved_Person']
+
+        speech=" Your Number of approval person is:- "+num
 
         query_dict = data['Query']
 
-        speech=""
+        speech=". They are:-  "
 
-        if data['Number of Rows']> 1:
-            speech=" Here's your leave balance for all kind of leaves:-  "
+        for key, value in query_dict.items():
+            speech = speech + " " + key + ") " + value + " "
 
-            elig_lv=[]
-
-            for key, value in query_dict.items():
-                speech = speech+" .. " + key + " : " + value + " ;  "
-                if int(value)>0:
-                    elig_lv.append(key)
+        speech=speech+" Thanks!!"
 
 
-            if len(elig_lv)==0:
-                speech=speech+" You're not eligible for any kind of Leave!!"
-            else:
-                speech = speech + " So, You can take "
-                for i in range(len(elig_lv)):
-                    speech=speech+ elig_lv[i]+" , "
+        return{
 
-            speech=speech+" Thanks!!"
-
-            return {
-
-                "speech": speech
-            }
-        else:
-
-            for key,value in query_dict.items():
-                leave_count=value;
-            speech=" Your leave balance for "+leave_type+" is :- "+leave_count
-
-
-            if int(leave_count)>0:
-                speech=speech+". You're eligible for taking leave !!"
-            else:
-                speech=speech+". You can't take leave right now."
-
-            return{
-
-                "speech": speech
-            }
+            "speech": speech
+        }
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
