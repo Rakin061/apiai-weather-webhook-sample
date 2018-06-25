@@ -377,7 +377,7 @@ def processRequest(req):
 
         query_dict = data['Query']
 
-        speech=". They are:-  "
+        speech=speech+". They are:-  "
 
         for key, value in query_dict.items():
             speech = speech + " " + key + ") " + value + " "
