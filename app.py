@@ -380,7 +380,7 @@ def processRequest(req):
         speech=speech+". They are:-  "
 
         for key, value in query_dict.items():
-            speech = speech + " " + str(key) + ") " + value + "  "
+            speech = speech + " " + str(key) + ") " + value + " .. "
 
         speech=speech+" Thanks!!"
 
