@@ -457,7 +457,7 @@ def processRequest(req):
             speech=" Here's the details of your all kind of availed leaves:- "
 
             for key,value in query_dict.items():
-                speech=speech + key+" : "+ value+" .."
+                speech=speech + key+" : "+ value+"   ..   "
 
             speech = speech + "  Thanks!!"
 
