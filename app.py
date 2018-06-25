@@ -449,7 +449,7 @@ def processRequest(req):
             for key,value in query_dict.items():
                 speech=speech+key+ " is:- "+ str(value)
 
-            speech=speech+" Thanks!!"
+            speech=speech+". Thanks!!"
             return{
                 "speech": speech
             }
@@ -459,7 +459,7 @@ def processRequest(req):
             for key,value in query_dict.items():
                 speech=speech + key+" : "+ value+" .."
 
-            speech = speech + " Thanks!!"
+            speech = speech + "  Thanks!!"
 
             return {
                 "speech": speech
