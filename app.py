@@ -373,7 +373,7 @@ def processRequest(req):
 
         num = data['Total_Approved_Person']
 
-        speech=" Number of approval person for your "+leave_type+"  is:- "+str(num)
+        speech=" Number of approval person for your "+leave_type+" leave  is:- "+str(num)
 
         query_dict = data['Description']
 
