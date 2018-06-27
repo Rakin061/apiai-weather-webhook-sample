@@ -522,7 +522,7 @@ def processRequest(req):
 
 
 
-        if data['Number of Leaves']==0:
+        if data['Number of Records']==0:
             return{
                 "speech": "No employees are in leave in "+time_frame+ ". Thanks!!"
             }
