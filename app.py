@@ -514,29 +514,26 @@ def processRequest(req):
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
+
         query_dict = data['Query']
 
         speech=""
 
+
+
         if data['Number of Leaves']==0:
             return{
-                "speech": "Sorry!! No record found for Employee ID:- "+ emp_id
+                "speech": "No employees are in leave in "+time_frame+ ". Thanks!!"
             }
-        elif data['Number of Leaves']==1:
 
-            speech="Your availed leave of "
-            for key,value in query_dict.items():
-                speech=speech+key+ " is:- "+ str(value)
-
-            speech=speech+". Thanks!!"
-            return{
-                "speech": speech
-            }
         else:
-            speech=" Here's the details of your all kind of availed leaves:- "
 
-            for key,value in query_dict.items():
-                speech=speech + key+" : "+ value+"   ..   "
+            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
+
+            for i in range(data['Number of Records']):
+                rec.append(query_dict["Record" + str(i + 1)])
+                for key, value in rec[i].items():
+                    speech = speech + " " + value + " "
 
             speech = speech + "  Thanks!!"
 
