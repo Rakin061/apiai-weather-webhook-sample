@@ -500,6 +500,7 @@ def processRequest(req):
 
 
 
+        print(emp_id,time_frame,date1,date2)
 
         #print("Employee id:-",emp_id)
 
