@@ -535,9 +535,9 @@ def processRequest(req):
             for i in range(data['Number of Records']):
                 rec.append(query_dict["Record" + str(i + 1)])
                 for key, value in rec[i].items():
-                    speech = speech + " " + value + " "
+                    speech = speech + value
 
-            speech = speech + "  Thanks!!"
+            speech = speech + " Thanks!!"
 
             return {
                 "speech": speech
