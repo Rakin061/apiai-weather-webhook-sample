@@ -478,6 +478,7 @@ def processRequest(req):
         #print(end_date)
 
 
+        '''
         cont= result.get("contexts")
         item_count=len(cont)
         index=-1
@@ -493,9 +494,9 @@ def processRequest(req):
         else:
             emp_id=cont[i]['parameters']['emp_id.original']
 
+        '''
 
-
-        #emp_id="000214"
+        emp_id="000214"
         res=getDATE1(time_frame)
 
 
@@ -532,24 +533,21 @@ def processRequest(req):
 
         if data['Number of Records']==0:
 
-            print("if eeeeeeeeeee")
             return{
                 "speech": "No employees are in leave in "+time_frame+ ". Thanks!!"
             }
 
         else:
 
-            print("else eeeeeeeeeee")
             speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
 
             print(speech)
 
             for i in range(data['Number of Records']):
                 rec.append(query_dict['Record' + str(i + 1)])
-                print(rec[i])
                 for key, value in rec[i].items():
-                    speech = speech + value
-                    print(value)
+                    speech = speech+" "+ value+ " "
+
 
             speech = speech + " Thanks!!"
 
