@@ -543,10 +543,12 @@ def processRequest(req):
 
             print(speech)
 
-            #for i in range(data['Number of Records']):
-            #    rec.append(query_dict["Record" + str(i + 1)])
-            #    for key, value in rec[i].items():
-            #        speech = speech + value
+            for i in range(data['Number of Records']):
+                rec.append(query_dict["Record" + str(i + 1)])
+                print(rec[i])
+                for key, value in rec[i].items():
+                    speech = speech + value
+                    print(speech)
 
             speech = speech + " Thanks!!"
 
