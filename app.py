@@ -499,6 +499,8 @@ def processRequest(req):
         res=getDATE1(time_frame)
 
 
+
+
         #print("Employee id:-",emp_id)
 
         #speech=
@@ -538,6 +540,8 @@ def processRequest(req):
                     speech = speech + value
 
             speech = speech + " Thanks!!"
+
+            print(speech)
 
             return {
                 "speech": speech
