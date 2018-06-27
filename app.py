@@ -522,6 +522,7 @@ def processRequest(req):
         data = json.loads(test_res)
 
         query_dict = data['Query']
+        rec=[]
 
         print(query_dict)
 
@@ -544,11 +545,11 @@ def processRequest(req):
             print(speech)
 
             for i in range(data['Number of Records']):
-                #rec.append(query_dict["Record" + str(i + 1)])
-                print(i)
-                #for key, value in rec[i].items():
-                #   #speech = speech + value
-                #    print(value)
+                rec.append(query_dict['Record' + str(i + 1)])
+                print(rec[i])
+                for key, value in rec[i].items():
+                    speech = speech + value
+                    print(value)
 
             speech = speech + " Thanks!!"
 
