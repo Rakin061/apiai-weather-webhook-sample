@@ -523,6 +523,8 @@ def processRequest(req):
 
         query_dict = data['Query']
 
+        print(query_dict)
+
         #speech=""
 
 
