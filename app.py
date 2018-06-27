@@ -541,6 +541,8 @@ def processRequest(req):
             print("else eeeeeeeeeee")
             speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
 
+            print(speech)
+
             for i in range(data['Number of Records']):
                 rec.append(query_dict["Record" + str(i + 1)])
                 for key, value in rec[i].items():
