@@ -520,7 +520,7 @@ def processRequest(req):
 
         query_dict = data['Query']
 
-        speech=""
+        #speech=""
 
 
 
