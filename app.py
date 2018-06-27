@@ -530,7 +530,6 @@ def processRequest(req):
             }
 
         else:
-
             speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
 
             for i in range(data['Number of Records']):
