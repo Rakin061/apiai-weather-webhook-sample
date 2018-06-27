@@ -477,7 +477,7 @@ def processRequest(req):
         #print(start_date)
         #print(end_date)
 
-        '''
+
         cont= result.get("contexts")
         item_count=len(cont)
         index=-1
@@ -493,9 +493,9 @@ def processRequest(req):
         else:
             emp_id=cont[i]['parameters']['emp_id.original']
 
-        '''
 
-        emp_id="000214"
+
+        #emp_id="000214"
         res=getDATE1(time_frame)
 
 
