@@ -507,7 +507,7 @@ def processRequest(req):
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
-        action = "Leave.15"
+        action = "Leave.16"
         yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'time_frame':time_frame})+"&"+urlencode({'start_date':date1})+"&"+urlencode({'end_date':date2})+"&" +urlencode({'act': action}) +"&format=json"
 
 
