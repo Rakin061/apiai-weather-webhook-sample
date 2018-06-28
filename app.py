@@ -522,10 +522,10 @@ def processRequest(req):
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
 
-        query_dict = data['Query']
+
         rec=[]
 
-        print(query_dict)
+        #print(query_dict)
 
         #speech=""
 
@@ -542,6 +542,7 @@ def processRequest(req):
             speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
 
             print(speech)
+            query_dict = data['Query']
 
             for i in range(data['Number of Records']):
                 rec.append(query_dict['Record' + str(i + 1)])
