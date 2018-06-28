@@ -581,7 +581,7 @@ def processRequest(req):
         emp_id="000214"
 
 
-        date_1=time_frame.split('/')[0]
+        date_1= time_frame.split('/')[0]
         date_2 = time_frame.split('/')[1]
 
 
@@ -620,7 +620,7 @@ def processRequest(req):
 
         else:
 
-            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
+            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + ". Here's the list"
 
             print(speech)
             query_dict = data['Query']

@@ -20,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2765">
-              <caret line="469" column="0" lean-forward="true" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
+            <state relative-caret-position="245">
+              <caret line="622" column="130" lean-forward="false" selection-start-line="622" selection-start-column="130" selection-end-line="622" selection-end-column="130" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -35,11 +35,11 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1530181010972" expanded="true" signature="55912:56035" ph="..." />
-                <marker date="1530181010972" expanded="true" signature="55912:56053" ph="..." />
-                <marker date="1530181010972" expanded="true" signature="55912:56066" ph="..." />
-                <marker date="1530181010972" expanded="true" signature="55912:56081" ph="..." />
-                <marker date="1530181010972" expanded="true" signature="55935:56018" ph="..." />
+                <marker date="1530181683730" expanded="true" signature="55922:56045" ph="..." />
+                <marker date="1530181683730" expanded="true" signature="55922:56063" ph="..." />
+                <marker date="1530181683730" expanded="true" signature="55922:56076" ph="..." />
+                <marker date="1530181683730" expanded="true" signature="55922:56091" ph="..." />
+                <marker date="1530181683730" expanded="true" signature="55945:56028" ph="..." />
               </folding>
             </state>
           </provider>
@@ -316,13 +316,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00042" summary="leave.14">
-      <created>1529909008960</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1529909008960</updated>
     </task>
     <task id="LOCAL-00043" summary="leave.14">
       <created>1529909143614</created>
@@ -660,7 +653,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530180871337</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="leave.17">
+      <created>1530181018037</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1530181018037</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1149,11 +1149,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1530181010972" expanded="true" signature="55912:56035" ph="..." />
-            <marker date="1530181010972" expanded="true" signature="55912:56053" ph="..." />
-            <marker date="1530181010972" expanded="true" signature="55912:56066" ph="..." />
-            <marker date="1530181010972" expanded="true" signature="55912:56081" ph="..." />
-            <marker date="1530181010972" expanded="true" signature="55935:56018" ph="..." />
+            <marker date="1530181683730" expanded="true" signature="55922:56045" ph="..." />
+            <marker date="1530181683730" expanded="true" signature="55922:56063" ph="..." />
+            <marker date="1530181683730" expanded="true" signature="55922:56076" ph="..." />
+            <marker date="1530181683730" expanded="true" signature="55922:56091" ph="..." />
+            <marker date="1530181683730" expanded="true" signature="55945:56028" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1176,8 +1176,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2765">
-          <caret line="469" column="0" lean-forward="true" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
+        <state relative-caret-position="245">
+          <caret line="622" column="130" lean-forward="false" selection-start-line="622" selection-start-column="130" selection-end-line="622" selection-end-column="130" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
