@@ -503,6 +503,8 @@ def processRequest(req):
         emp_id="000214"
         res=getDATE1(time_frame)
 
+        print(res)
+
 
 
         #print(emp_id,time_frame,date1,date2)
