@@ -472,6 +472,8 @@ def processRequest(req):
         result=req.get("result")
         parameters = result.get("parameters")
         time_frame=parameters.get("time_frame")
+
+        print(time_frame)
         #leave_type= parameters.get("leave_type")
         #start_date = parameters.get("start_date")
         #end_date = parameters.get("end_date")
