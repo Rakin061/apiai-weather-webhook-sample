@@ -473,7 +473,7 @@ def processRequest(req):
         parameters = result.get("parameters")
         time_frame=parameters.get("time_frame")
 
-        print(time_frame)
+
         #leave_type= parameters.get("leave_type")
         #start_date = parameters.get("start_date")
         #end_date = parameters.get("end_date")
@@ -521,7 +521,7 @@ def processRequest(req):
         action = "Leave.16"
         yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'time_frame':time_frame})+"&"+urlencode({'start_date':date1})+"&"+urlencode({'end_date':date2})+"&" +urlencode({'act': action}) +"&format=json"
 
-
+        print(yql_url)
 
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
