@@ -620,7 +620,7 @@ def processRequest(req):
 
         else:
 
-            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + ". Here's the list"
+            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave. Here's the list:- "
 
             print(speech)
             query_dict = data['Query']
