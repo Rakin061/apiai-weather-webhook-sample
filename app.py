@@ -558,7 +558,83 @@ def processRequest(req):
                 "speech": speech
             }
 
+    elif req.get("result").get("action")=="Leave.17":
+        result=req.get("result")
+        parameters = result.get("parameters")
+        time_frame=parameters.get("time_frame")
+        #leave_type= parameters.get("leave_type")
+        #start_date = parameters.get("start_date")
+        #end_date = parameters.get("end_date")
 
+        #print(start_date)
+        #print(end_date)
+
+
+
+        emp_id="000214"
+
+        time_frame="Last year"
+
+        res=getDATE1(time_frame)
+
+
+
+        #print(emp_id,time_frame,date1,date2)
+
+        #print("Employee id:-",emp_id)
+
+        #speech=
+
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Leave.16"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'time_frame':time_frame})+"&"+urlencode({'start_date':date1})+"&"+urlencode({'end_date':date2})+"&" +urlencode({'act': action}) +"&format=json"
+
+
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+
+        rec=[]
+
+        #print(query_dict)
+
+        #speech=""
+
+
+
+        if data['Number of Records']==0:
+
+            return{
+                "speech": "No employees are in leave in "+time_frame+ ". Thanks!!"
+            }
+
+        else:
+
+            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
+
+            print(speech)
+            query_dict = data['Query']
+
+            for i in range(data['Number of Records']):
+                rec.append(query_dict['Record' + str(i + 1)])
+                for key, value in rec[i].items():
+                    speech = speech+" "+ value+ " "
+
+
+            speech = speech + " Thanks!!"
+
+            print(speech)
+
+            return {
+                "speech": speech
+            }
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
