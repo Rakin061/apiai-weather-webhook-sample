@@ -586,8 +586,8 @@ def processRequest(req):
         emp_id="000214"
 
 
-        date1=time_frame.split('/')[0]
-        date2 = time_frame.split('/')[1]
+        #date1=time_frame.split('/')[0]
+        #date2 = time_frame.split('/')[1]
 
 
 
