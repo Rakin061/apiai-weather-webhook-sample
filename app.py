@@ -524,6 +524,7 @@ def processRequest(req):
         test_res = urlopen(yql_url).read()
         data = json.loads(test_res)
 
+        print(data)
 
         rec=[]
 
@@ -559,6 +560,8 @@ def processRequest(req):
             return {
                 "speech": speech
             }
+
+
 
     elif req.get("result").get("action")=="Leave.17":
         result=req.get("result")
@@ -628,7 +631,7 @@ def processRequest(req):
 
             speech = speech + " Thanks!!"
 
-            print(speech)
+            #print(speech)
 
             return {
                 "speech": speech
