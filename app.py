@@ -552,7 +552,7 @@ def processRequest(req):
 
             speech = speech + " Thanks!!"
 
-            print(speech)
+            #print(speech)
 
             return {
                 "speech": speech
