@@ -514,6 +514,7 @@ def processRequest(req):
         #speech=
 
         baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        print(baseurl)
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -521,6 +522,8 @@ def processRequest(req):
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
         action = "Leave.16"
+        print(action)
+
         yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'time_frame':time_frame})+"&"+urlencode({'start_date':date1})+"&"+urlencode({'end_date':date2})+"&" +urlencode({'act': action}) +"&format=json"
 
         print(yql_url)
