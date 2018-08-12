@@ -660,7 +660,7 @@ def processRequest(req):
                 "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
             }
         else:
-            emp_id=cont[0]['parameters']['emp_id.original']
+            emp_id=cont[i]['parameters']['emp_id.original']
 
         print("Employee id:-",emp_id)
 
@@ -717,7 +717,7 @@ def processRequest(req):
                 "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
             }
         else:
-            emp_id = cont[0]['parameters']['emp_id.original']
+            emp_id = cont[i]['parameters']['emp_id.original']
 
         print("Employee id:-", emp_id)
 
