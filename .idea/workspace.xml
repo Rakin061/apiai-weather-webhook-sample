@@ -20,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="698" column="104" selection-start-line="698" selection-start-column="104" selection-end-line="698" selection-end-column="104" />
+            <state relative-caret-position="208">
+              <caret line="691" column="19" lean-forward="true" selection-start-line="691" selection-start-column="19" selection-end-line="691" selection-end-column="19" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -32,8 +32,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13957">
-              <caret line="821" selection-start-line="821" selection-end-line="821" />
+            <state relative-caret-position="13991">
+              <caret line="823" selection-start-line="823" selection-end-line="823" />
             </state>
           </provider>
         </entry>
@@ -612,6 +612,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.18667643" side_tool="true" weight="0.37828946" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.81332356" weight="0.3290938" />
@@ -933,15 +934,15 @@
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13957">
-          <caret line="821" selection-start-line="821" selection-end-line="821" />
+        <state relative-caret-position="13991">
+          <caret line="823" selection-start-line="823" selection-end-line="823" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="698" column="104" selection-start-line="698" selection-start-column="104" selection-end-line="698" selection-end-column="104" />
+        <state relative-caret-position="208">
+          <caret line="691" column="19" lean-forward="true" selection-start-line="691" selection-start-column="19" selection-end-line="691" selection-end-column="19" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
