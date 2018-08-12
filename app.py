@@ -737,7 +737,7 @@ def processRequest(req):
 
         if data['Number of Rows'] == 0:
             return {
-                "speech": "Sorry!! Your leave balance for" + leave_type + " is : 0. So, You can't take this leave now. Thanks!! "
+                "speech": "Sorry!! You're not eligible for " + leave_type + " ."
             }
 
         query_dict = data['Query']
@@ -760,7 +760,11 @@ def processRequest(req):
 
             for key, value in query_dict.items():
                 leave_count = value;
-            speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now tell me the From Date."
+
+            if leave_count==0:
+                speech="Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave now!"
+            else:
+                speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Thanks!!"
 
             return {
 
