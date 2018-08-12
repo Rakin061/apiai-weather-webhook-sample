@@ -640,6 +640,83 @@ def processRequest(req):
                 "speech": speech
             }
 
+
+
+    elif req.get("result").get("action")=="Lv.App.01":
+        result=req.get("result")
+        #parameters = result.get("parameters")
+        #leave_type=parameters.get("leave_type")
+
+        cont= result.get("contexts")
+        item_count=len(cont)
+        index=-1
+
+        for i in range(item_count):
+            if cont[i]['name']=='emp_id':
+                index=i
+
+        if(index==-1):
+            return{
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id=cont[0]['parameters']['emp_id.original']
+
+        print("Employee id:-",emp_id)
+
+        speech="Sure! Your Employee ID: "+emp_id+" is valid."
+
+        return {
+
+            "speech": speech
+        }
+
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Leave.03"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'leave_type':leave_type})+"&" +urlencode({'act': action}) +"&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        if data['Number of Rows']==0:
+            return{
+                "speech": "Sorry!! You're not eligible for "+leave_type+" ."
+            }
+
+
+        query_dict = data['Query']
+
+        speech=""
+
+        if data['Number of Rows']> 1:
+            speech=" Here's your leave balance for all kind of leaves:-  "
+
+            for key, value in query_dict.items():
+                speech = speech+" .. " + key + " : " + value + " ;  "
+
+            speech=speech+" Thanks!!"
+
+            return {
+
+                "speech": speech
+            }
+        else:
+
+            for key,value in query_dict.items():
+                leave_count=value;
+            speech=" Your leave balance for "+leave_type+" is :- "+leave_count+". Thanks!!"
+
+            return{
+
+                "speech": speech
+            }
+
     elif req.get("result").get("action") == "loan.eligibilty":
 
         result = req.get("result")
