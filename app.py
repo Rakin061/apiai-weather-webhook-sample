@@ -696,7 +696,7 @@ def processRequest(req):
 
         return {
 
-            "speech": "Sure. Your available leaves are :-  " + leaves + " Which leave you wanna take ? "
+            "speech": "Sure. Your available leaves are :-  " + leaves + " Which leave you wanna take now ? "
         }
 
     elif req.get("result").get("action") == "loan.eligibilty":
