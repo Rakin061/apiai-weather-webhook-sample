@@ -645,7 +645,7 @@ def processRequest(req):
     elif req.get("result").get("action")=="Lv.App.01":
         result=req.get("result")
         #parameters = result.get("parameters")
-        #leave_type=parameters.get("leave_type")
+        leave_type=parameters.get("Type_of_Leave")
 
         cont= result.get("contexts")
         item_count=len(cont)
@@ -671,33 +671,92 @@ def processRequest(req):
         #     "speech": speech
         # }
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
-        # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
-        # yql_query=yql_query+id
-        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
-        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
-        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+        if leave_type=="":
+            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+            # yql_query=yql_query+id
+            # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+            # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+            # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
-        action = "Leave.02"
-        yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode({'act': action}) + "&format=json"
+            action = "Leave.02"
+            yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode({'act': action}) + "&format=json"
 
-        test_res = urlopen(yql_url).read()
-        data = json.loads(test_res)
+            test_res = urlopen(yql_url).read()
+            data = json.loads(test_res)
 
-        if data == {}:
+            if data == {}:
+                return {
+                    "speech": "Sorry!! No records found for the employee ID:- " + emp_id + ". Probably "+ emp_id+" is not a valid ID."
+                }
+
+            leaves = ""
+
+            for i in range(1, len(data)):
+                leaves += data['Leave' + str(i)] + " , "
+
             return {
-                "speech": "Sorry!! No records found for the employee ID:- " + emp_id + ". Probably "+ emp_id+" is not a valid ID."
+
+                "speech": "Sure. Your available leaves are :-  " + leaves + " Which leave you wanna take now ? "
             }
 
-        leaves = ""
+        else:
+            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+            # yql_query=yql_query+id
+            # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+            # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+            # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
-        for i in range(1, len(data)):
-            leaves += data['Leave' + str(i)] + " , "
+            action = "Leave.03"
+            yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode(
+                {'leave_type': leave_type}) + "&" + urlencode(
+                {'act': action}) + "&format=json"
 
-        return {
+            test_res = urlopen(yql_url).read()
+            data = json.loads(test_res)
 
-            "speech": "Sure. Your available leaves are :-  " + leaves + " Which leave you wanna take now ? "
-        }
+            if data['Number of Rows'] == 0:
+                return {
+                    "speech": "Sorry!! You're not eligible for " + leave_type + " ."
+                }
+
+            query_dict = data['Query']
+
+            speech = ""
+
+            if data['Number of Rows'] > 1:
+                speech = " Here's your leave balance for all kind of leaves:-  "
+
+                for key, value in query_dict.items():
+                    speech = speech + " .. " + key + " : " + value + " ;  "
+
+                speech = speech + " Thanks!!"
+
+                return {
+
+                    "speech": speech
+                }
+            else:
+
+                for key, value in query_dict.items():
+                    leave_count = value;
+
+                if leave_count == '0':
+                    speech = "Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave now!"
+                else:
+                    speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
+
+                return {
+
+                    "speech": speech,
+                    "contextOut": [{"name": "date_param", "lifespan": 19, "parameters": {}},
+                                   {"name": "leave_type", "lifespan": 14, "parameters": {"Type_of_Leave":leave_type}},
+                                   {"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}}
+                                   ]
+                }
+
+
 
     if req.get("result").get("action") == "Lv.App.02":
         result = req.get("result")
