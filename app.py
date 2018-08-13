@@ -644,7 +644,7 @@ def processRequest(req):
 
     elif req.get("result").get("action")=="Lv.App.01":
         result=req.get("result")
-        #parameters = result.get("parameters")
+        parameters = result.get("parameters")
         leave_type=parameters.get("Type_of_Leave")
 
         cont= result.get("contexts")
