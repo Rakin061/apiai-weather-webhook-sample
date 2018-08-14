@@ -754,7 +754,7 @@ def processRequest(req):
                     speech = "Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave now!"
                     return {
                         "speech": speech,
-                        "contextOut":[{}]
+                        "contextOut":[{"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}}]
                     }
 
                 else:
