@@ -835,7 +835,7 @@ def processRequest(req):
                 leave_count = value;
 
             if leave_count=='0':
-                speech="Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave right now!"
+                speech="Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave right now!!"
 
                 return {
 
