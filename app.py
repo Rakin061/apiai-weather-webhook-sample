@@ -868,8 +868,8 @@ def processRequest(req):
     if req.get("result").get("action") == "Lv.App.03":
         result = req.get("result")
         parameters = result.get("parameters")
-        from_date=parameters.get("from_date")
-        to_date=parameters.get("to_date")
+        from_date=parameters.get("from_date").strip()
+        to_date=parameters.get("to_date").strip()
 
         cont = result.get("contexts")
         item_count = len(cont)
@@ -885,7 +885,9 @@ def processRequest(req):
             }
         else:
             emp_id = cont[index]['parameters']['emp_id.original']
+            emp_id=emp_id.strip()
             leave_type=cont[index]['parameters']['Type_of_Leave']
+            leave_type=leave_type.strip()
 
         print("Employee id:-", emp_id)
         print("Leave Type:-", leave_type)
