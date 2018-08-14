@@ -889,10 +889,10 @@ def processRequest(req):
             leave_type=cont[index]['parameters']['Type_of_Leave']
             leave_type=leave_type.strip()
 
-        print("Employee id:-", emp_id)
-        print("Leave Type:-", leave_type)
-        print("from_date:-", from_date)
-        print("to_date:-", to_date)
+        print("Employee id:-",emp_id)
+        print("Leave Type:-",leave_type)
+        print("from_date:-",from_date)
+        print("to_date:-",to_date)
 
         holiday=holiday_check(from_date,to_date)
         print (holiday)

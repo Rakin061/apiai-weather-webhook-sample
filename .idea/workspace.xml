@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="894" column="48" lean-forward="true" selection-start-line="894" selection-start-column="48" selection-end-line="894" selection-end-column="48" />
+            <state relative-caret-position="436">
+              <caret line="894" column="26" lean-forward="true" selection-start-line="894" selection-start-column="26" selection-end-line="894" selection-end-column="26" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -31,8 +32,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="830" selection-start-line="830" selection-end-line="830" />
+            <state relative-caret-position="592">
+              <caret line="829" selection-start-line="829" selection-end-line="829" />
             </state>
           </provider>
         </entry>
@@ -252,27 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00076" summary="leave.16">
-      <created>1530104766221</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1530104766221</updated>
-    </task>
-    <task id="LOCAL-00077" summary="leave.16">
-      <created>1530170582514</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1530170582514</updated>
-    </task>
-    <task id="LOCAL-00078" summary="leave.16">
-      <created>1530172417106</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1530172417106</updated>
     </task>
     <task id="LOCAL-00079" summary="leave.16">
       <created>1530176077722</created>
@@ -596,7 +576,28 @@
       <option name="project" value="LOCAL" />
       <updated>1534246142691</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Lv.App.03.03">
+      <created>1534246361860</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1534246361860</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Lv.App.03.04">
+      <created>1534246475780</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1534246475780</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Lv.App.03.05">
+      <created>1534246703337</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1534246703337</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -681,9 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.01.01" />
-    <MESSAGE value="Lv.App.01.02" />
-    <MESSAGE value="Lv.App.01.03" />
     <MESSAGE value="Lv.App.02" />
     <MESSAGE value="Lv.App.02.01" />
     <MESSAGE value="Lv.App.02.02" />
@@ -706,7 +704,10 @@
     <MESSAGE value="Lv.App.02.19" />
     <MESSAGE value="Lv.App.03.01" />
     <MESSAGE value="Lv.App.03.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.03.02" />
+    <MESSAGE value="Lv.App.03.03" />
+    <MESSAGE value="Lv.App.03.04" />
+    <MESSAGE value="Lv.App.03.05" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.03.05" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -931,8 +932,8 @@
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="830" selection-start-line="830" selection-end-line="830" />
+        <state relative-caret-position="592">
+          <caret line="829" selection-start-line="829" selection-end-line="829" />
         </state>
       </provider>
     </entry>
@@ -944,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="894" column="48" lean-forward="true" selection-start-line="894" selection-start-column="48" selection-end-line="894" selection-end-column="48" />
+        <state relative-caret-position="436">
+          <caret line="894" column="26" lean-forward="true" selection-start-line="894" selection-start-column="26" selection-end-line="894" selection-end-column="26" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
