@@ -831,6 +831,11 @@ def processRequest(req):
             }
         else:
 
+            if leave_type=='CL':
+                leave_context='casuale_leave'
+            elif leave_type=='EL' or leave_type=='LFA':
+                leave_context='earn_leave'
+
             for key, value in query_dict.items():
                 leave_count = value;
 
@@ -840,8 +845,10 @@ def processRequest(req):
                 return {
 
                     "speech":speech,
-                    "contextOut": [{"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original": emp_id}},
-                                   {"name": "test", "lifespan": 1, "parameters": {}}
+                    "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
+                                   {"name": "leave_type", "lifespan": 0, "parameters": {},
+                                   {"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}},
+                                   {"name": leave_context, "lifespan": 0, "parameters": {}},
                                    ]
                 }
 
