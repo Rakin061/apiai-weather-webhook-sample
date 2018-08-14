@@ -869,9 +869,7 @@ def processRequest(req):
         result = req.get("result")
         parameters = result.get("parameters")
         from_date=parameters.get("from_date")
-        from_date=str(from_date).strip()
         to_date=parameters.get("to_date")
-        to_date=str(to_date).strip()
 
         cont = result.get("contexts")
         item_count = len(cont)
@@ -887,17 +885,14 @@ def processRequest(req):
             }
         else:
             emp_id = cont[index]['parameters']['emp_id.original']
-            emp_id=str(emp_id).strip()
             leave_type=cont[index]['parameters']['Type_of_Leave']
-            leave_type=str(leave_type).strip()
 
-        print("Employee id:-",emp_id)
-        print("Leave Type:-",leave_type)
-        print("from_date:-",from_date)
-        print("to_date:-",to_date)
+        # print("Employee id:-",emp_id)
+        # print("Leave Type:-",leave_type)
+        # print("from_date:-",from_date)
+        # print("to_date:-",to_date)
 
         holiday= holiday_check(from_date,to_date)
-        print(holiday)
 
         if holiday:
             speech="Sorry! Your specified date contains Holiday. I can't proceed. Please try other date except holidays."
