@@ -20,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="706" column="49" selection-start-line="706" selection-start-column="49" selection-end-line="706" selection-end-column="49" />
+            <state relative-caret-position="171">
+              <caret line="757" column="39" selection-start-line="757" selection-start-column="39" selection-end-line="757" selection-end-column="39" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -32,7 +32,7 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14059">
+            <state relative-caret-position="558">
               <caret line="827" selection-start-line="827" selection-end-line="827" />
             </state>
           </provider>
@@ -250,20 +250,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00060" summary="leave.14">
-      <created>1530100635250</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1530100635251</updated>
-    </task>
-    <task id="LOCAL-00061" summary="leave.14">
-      <created>1530100925302</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1530100925304</updated>
     </task>
     <task id="LOCAL-00062" summary="leave.14">
       <created>1530101500222</created>
@@ -594,7 +580,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534219965782</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Lv.App.02.09">
+      <created>1534220128973</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1534220128973</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Lv.App.02.10">
+      <created>1534239727070</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1534239727070</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -612,7 +612,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" visible="true" weight="0.2647504" />
+      <window_info active="true" id="Structure" order="1" side_tool="true" visible="true" weight="0.24508321" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -679,8 +679,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="update3" />
-    <MESSAGE value="leave-02" />
     <MESSAGE value="leave-02-q1" />
     <MESSAGE value="context-update" />
     <MESSAGE value="leave_balance" />
@@ -704,7 +702,9 @@
     <MESSAGE value="Lv.App.02.06" />
     <MESSAGE value="Lv.App.02.07" />
     <MESSAGE value="Lv.App.02.08" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.02.08" />
+    <MESSAGE value="Lv.App.02.09" />
+    <MESSAGE value="Lv.App.02.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.02.10" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -926,13 +926,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../BOT/apiai-python-client - test/examples/send_text_example.py" />
     <entry file="file://$PROJECT_DIR$/../BOT/apiai-python-client/examples/send_text_example.py" />
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14059">
+        <state relative-caret-position="558">
           <caret line="827" selection-start-line="827" selection-end-line="827" />
         </state>
       </provider>
@@ -940,10 +937,13 @@
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="706" column="49" selection-start-line="706" selection-start-column="49" selection-end-line="706" selection-end-column="49" />
+        <state relative-caret-position="171">
+          <caret line="757" column="39" selection-start-line="757" selection-start-column="39" selection-end-line="757" selection-end-column="39" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>

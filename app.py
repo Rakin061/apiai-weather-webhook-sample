@@ -752,6 +752,12 @@ def processRequest(req):
 
                 if leave_count == '0':
                     speech = "Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave now!"
+                    return {
+
+                        "speech": speech,
+                        "contextOut":[]
+                    }
+
                 else:
                     speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
 
