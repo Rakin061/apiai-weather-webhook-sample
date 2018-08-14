@@ -704,7 +704,7 @@ def processRequest(req):
 
             if leave_type=='CL':
                 leave_context='casuale_leave'
-            elif leave_type=='EL':
+            elif leave_type=='EL' or leave_type=='LFA':
                 leave_context='earn_leave'
 
 
