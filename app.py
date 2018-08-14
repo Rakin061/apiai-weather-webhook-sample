@@ -725,7 +725,8 @@ def processRequest(req):
 
             if data['Number of Rows'] == 0:
                 return {
-                    "speech": "Sorry!! You're not eligible for " + leave_type + " ."
+                    "speech": "Sorry!! You're not eligible for " + leave_type + " . Your leave blance of "+leave_type+" is: "+data['Number of Rows'],
+                    "contextOut":[]
                 }
 
             query_dict = data['Query']
