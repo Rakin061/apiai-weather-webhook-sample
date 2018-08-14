@@ -751,7 +751,7 @@ def processRequest(req):
                     leave_count = value;
 
                 if leave_count == '0':
-                    speech = "Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave now!"
+                    speech = "Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave right now!"
                     return {
                         "speech": speech,
                         "contextOut":[{"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}}]
