@@ -20,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="760" column="36" selection-start-line="760" selection-start-column="36" selection-end-line="760" selection-end-column="36" />
+            <state relative-caret-position="357">
+              <caret line="899" column="31" selection-start-line="899" selection-start-column="31" selection-end-line="899" selection-end-column="31" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -32,8 +32,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="826" selection-start-line="826" selection-end-line="826" />
+            <state relative-caret-position="558">
+              <caret line="827" selection-start-line="827" selection-end-line="827" />
             </state>
           </provider>
         </entry>
@@ -133,7 +133,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -250,20 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00073" summary="leave.14">
-      <created>1530104275702</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1530104275702</updated>
-    </task>
-    <task id="LOCAL-00074" summary="leave.16">
-      <created>1530104367811</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1530104367811</updated>
     </task>
     <task id="LOCAL-00075" summary="leave.16">
       <created>1530104508216</created>
@@ -594,7 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534242467030</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Lv.App.02.19">
+      <created>1534244507452</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1534244507453</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Lv.App.03.01">
+      <created>1534245392603</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1534245392603</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -602,25 +605,25 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.18667643" side_tool="true" weight="0.37828946" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.18667643" side_tool="true" weight="0.37828946" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.81332356" weight="0.3290938" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.31188118" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1732224" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.31188118" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834985" weight="0.1732224" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" visible="true" weight="0.24508321" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.1732224" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="3" weight="0.1954612" />
-      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Data View" order="4" weight="0.1954612" />
+      <window_info anchor="bottom" id="Messages" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -679,8 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="leave.17" />
-    <MESSAGE value="update" />
     <MESSAGE value="Lv.App.01" />
     <MESSAGE value="Lv.App.01.01" />
     <MESSAGE value="Lv.App.01.02" />
@@ -704,7 +705,9 @@
     <MESSAGE value="Lv.App.02.16" />
     <MESSAGE value="Lv.App.02.17" />
     <MESSAGE value="Lv.App.02.18" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.02.18" />
+    <MESSAGE value="Lv.App.02.19" />
+    <MESSAGE value="Lv.App.03.01" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.03.01" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -929,21 +932,21 @@
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="826" selection-start-line="826" selection-end-line="826" />
+        <state relative-caret-position="558">
+          <caret line="827" selection-start-line="827" selection-end-line="827" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="760" column="36" selection-start-line="760" selection-start-column="36" selection-end-line="760" selection-end-column="36" />
+        <state relative-caret-position="357">
+          <caret line="899" column="31" selection-start-line="899" selection-start-column="31" selection-end-line="899" selection-end-column="31" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>

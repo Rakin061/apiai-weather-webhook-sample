@@ -9,6 +9,7 @@ install_aliases()
 from urllib.parse import urlparse, urlencode
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
+from datetime import datetime, timedelta
 
 import json
 import os
@@ -886,10 +887,18 @@ def processRequest(req):
             emp_id = cont[index]['parameters']['emp_id.original']
             leave_type=cont[index]['parameters']['Type_of_Leave']
 
-        print("Employee id:-", emp_id)
-        print("Leave Type:-", leave_type)
-        print("from_date:-", from_date)
-        print("to_date:-", to_date)
+        # print("Employee id:-", emp_id)
+        # print("Leave Type:-", leave_type)
+        # print("from_date:-", from_date)
+        # print("to_date:-", to_date)
+
+        holiday=holiday_check(from_date,to_date)
+
+        if holiday:
+            speech="Sorry! Your specified date contains Holiday. I can't proceed. Please try other date except holidays."
+            return {
+                "speech":speech
+            }
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
@@ -2241,6 +2250,45 @@ def makeWebhookResult(data):
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }
+
+def holiday_check(from_date,to_date):
+
+
+
+    date_format = "%Y-%m-%d"
+    from_date = datetime.strptime(from_date, date_format)
+    to_date = datetime.strptime(to_date, date_format)
+    delta = to_date - from_date
+
+    holiday_check=False
+
+    print (delta.days)
+
+    day=0
+
+    if delta.days == 0:
+        day= from_date.weekday()
+
+    print('Day: ',day)
+
+    if day==4 or day==5:
+        holiday_check=True
+        return holiday_check
+
+
+    fromdate=from_date
+    todate=to_date
+
+    daygenerator = (fromdate + timedelta(x + 1) for x in range((todate - fromdate).days))
+
+    hol_delta=sum(1 for day in daygenerator if day.weekday() < 5)
+
+    if(delta.days>hol_delta):
+        holiday_check=True
+        return holiday_check
+    else:
+        holiday_check=False
+        return holiday_check
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
