@@ -899,6 +899,31 @@ def processRequest(req):
             return {
                 "speech":speech
             }
+        else:
+            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+            # yql_query=yql_query+id
+            # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+            # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+            # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+            action = "Lv.App.03"
+            yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode(
+                {'from_date': from_date}) + "&" + urlencode(
+                {'to_date': to_date}) + "&" + urlencode(
+                {'act': action}) + "&format=json"
+            test_res = urlopen(yql_url).read()
+            data = json.loads(test_res)
+
+            if data['Result'] == '0':
+                return {
+                    "speech": "Your date is OK"
+                }
+            else:
+                return {
+                    "speech": "Already applied for leave"
+                }
+
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
