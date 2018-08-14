@@ -726,7 +726,7 @@ def processRequest(req):
             if data['Number of Rows'] == 0:
                 return {
                     "speech": "Sorry!! You're not eligible for " + leave_type + " . Your leave blance of "+leave_type+" is: "+data['Number of Rows'],
-                    "contextOut":[]
+
                 }
 
             query_dict = data['Query']
@@ -835,7 +835,14 @@ def processRequest(req):
                 leave_count = value;
 
             if leave_count=='0':
-                speech="Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave now!"
+                speech="Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave right now!"
+
+                return {
+
+                    "speech":speech,
+                    "contextOut": [{"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original": emp_id}}]
+                }
+
             else:
                 speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
 
