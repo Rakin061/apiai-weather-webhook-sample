@@ -755,7 +755,7 @@ def processRequest(req):
                     return {
 
                         "speech": speech,
-                        "contextOut":[]
+                        "contextOut":[{}]
                     }
 
                 else:
