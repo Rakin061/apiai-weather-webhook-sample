@@ -868,8 +868,10 @@ def processRequest(req):
     if req.get("result").get("action") == "Lv.App.03":
         result = req.get("result")
         parameters = result.get("parameters")
-        from_date=parameters.get("from_date").strip()
-        to_date=parameters.get("to_date").strip()
+        from_date=parameters.get("from_date")
+        from_date=from_date.strip()
+        to_date=parameters.get("to_date")
+        to_date=to_date.strip()
 
         cont = result.get("contexts")
         item_count = len(cont)
@@ -894,8 +896,8 @@ def processRequest(req):
         print("from_date:-",from_date)
         print("to_date:-",to_date)
 
-        holiday=holiday_check(from_date,to_date)
-        print (holiday)
+        holiday= holiday_check(from_date,to_date)
+        print(holiday)
 
         if holiday:
             speech="Sorry! Your specified date contains Holiday. I can't proceed. Please try other date except holidays."
@@ -2256,14 +2258,12 @@ def makeWebhookResult(data):
 
 def holiday_check(from_date,to_date):
 
-
-
     date_format = "%Y-%m-%d"
     from_date = datetime.strptime(from_date, date_format)
     to_date = datetime.strptime(to_date, date_format)
     delta = to_date - from_date
 
-    holiday_check=False
+    holiday_status=False
 
     print (delta.days)
 
@@ -2275,8 +2275,8 @@ def holiday_check(from_date,to_date):
     print('Day: ',day)
 
     if day==4 or day==5:
-        holiday_check=True
-        return holiday_check
+        holiday_status=True
+        return holiday_status
 
 
     fromdate=from_date
@@ -2287,11 +2287,11 @@ def holiday_check(from_date,to_date):
     hol_delta=sum(1 for day in daygenerator if day.weekday() < 5)
 
     if(delta.days>hol_delta):
-        holiday_check=True
-        return holiday_check
+        holiday_status=True
+        return holiday_status
     else:
-        holiday_check=False
-        return holiday_check
+        holiday_status=False
+        return holiday_status
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
