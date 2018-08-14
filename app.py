@@ -892,6 +892,8 @@ def processRequest(req):
             leave_type=str(leave_type).strip()
 
         print("Employee id:--",emp_id)
+        emp_id='001208'
+        print("Employee id:--", emp_id)
         print("Leave Type:--",leave_type)
         print("from_date:--",from_date)
         print("to_date:--",to_date)
