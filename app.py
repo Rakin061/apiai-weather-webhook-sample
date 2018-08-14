@@ -2263,7 +2263,7 @@ def holiday_check(from_date,to_date):
     to_date = datetime.strptime(to_date, date_format)
     delta = to_date - from_date
 
-    holiday_status=False
+    #holiday_status=False
 
     print (delta.days)
 
