@@ -840,7 +840,9 @@ def processRequest(req):
                 return {
 
                     "speech":speech,
-                    "contextOut": [{"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original": emp_id}}]
+                    "contextOut": [{"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original": emp_id}},
+                                   {"name": "test", "lifespan": 1, "parameters": {}}
+                                   ]
                 }
 
             else:
