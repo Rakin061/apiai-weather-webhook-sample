@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 
 import json
 import os
-import datetime
+#import datetime
 import re
 
 from flask import Flask
@@ -891,51 +891,15 @@ def processRequest(req):
             leave_type=cont[index]['parameters']['Type_of_Leave']
             leave_type=str(leave_type).strip()
 
-        print("Employee id:--",emp_id)
-        emp_id='001208'
-        print("Employee id:--", emp_id)
-        print("Leave Type:--",leave_type)
-        print("from_date:--",from_date)
-        print("to_date:--",to_date)
+        print("Employee id:-",emp_id)
+        print("Leave Type:-",leave_type)
+        print("from_date:-",from_date)
+        print("to_date:-",to_date)
 
-        date_format = "%Y-%m-%d"
-        print(date_format)
-        from_date = datetime.strptime(from_date, date_format)
-        print(from_date)
-        to_date = datetime.strptime(to_date, date_format)
-        print(to_date)
-        delta = to_date - from_date
+        holiday= holiday_check(from_date,to_date)
+        print(holiday)
 
-        holiday_status=False
-
-        print(delta.days)
-
-        day = 0
-
-        if delta.days == 0:
-            day = from_date.weekday()
-
-        print('Day: ', day)
-
-        if day == 4 or day == 5:
-            holiday_status = True
-            #return holiday_status
-
-        fromdate = from_date
-        todate = to_date
-
-        daygenerator = (fromdate + timedelta(x + 1) for x in range((todate - fromdate).days))
-
-        hol_delta = sum(1 for day in daygenerator if day.weekday() < 5)
-
-        if (delta.days > hol_delta):
-            holiday_status = True
-            #return holiday_status
-        else:
-            holiday_status = False
-            return holiday_status
-
-        if holiday_status:
+        if holiday:
             speech="Sorry! Your specified date contains Holiday. I can't proceed. Please try other date except holidays."
             return {
                 "speech":speech
