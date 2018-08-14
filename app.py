@@ -896,10 +896,41 @@ def processRequest(req):
         print("from_date:--",from_date)
         print("to_date:--",to_date)
 
-        holiday= holiday_check(from_date,to_date)
-        print(holiday)
+        date_format = "%Y-%m-%d"
+        from_date = datetime.strptime(from_date, date_format)
+        to_date = datetime.strptime(to_date, date_format)
+        delta = to_date - from_date
 
-        if holiday:
+        holiday_status=False
+
+        print(delta.days)
+
+        day = 0
+
+        if delta.days == 0:
+            day = from_date.weekday()
+
+        print('Day: ', day)
+
+        if day == 4 or day == 5:
+            holiday_status = True
+            #return holiday_status
+
+        fromdate = from_date
+        todate = to_date
+
+        daygenerator = (fromdate + timedelta(x + 1) for x in range((todate - fromdate).days))
+
+        hol_delta = sum(1 for day in daygenerator if day.weekday() < 5)
+
+        if (delta.days > hol_delta):
+            holiday_status = True
+            #return holiday_status
+        else:
+            holiday_status = False
+            return holiday_status
+
+        if holiday_status:
             speech="Sorry! Your specified date contains Holiday. I can't proceed. Please try other date except holidays."
             return {
                 "speech":speech
