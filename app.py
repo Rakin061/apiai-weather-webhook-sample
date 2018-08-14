@@ -701,6 +701,10 @@ def processRequest(req):
             }
 
         else:
+
+            if leave_type=='CL':
+                leave_context='casuale_leave'
+
             baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
             # yql_query=yql_query+id
@@ -752,7 +756,8 @@ def processRequest(req):
                     "speech": speech,
                     "contextOut": [{"name": "date_param", "lifespan": 19, "parameters": {}},
                                    {"name": "leave_type", "lifespan": 14, "parameters": {"Type_of_Leave":leave_type}},
-                                   {"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}}
+                                   {"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}},
+                                   {"name": leave_context, "lifespan": 24, "parameters": {}},
                                    ]
                 }
 
