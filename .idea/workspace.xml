@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/weather-python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/weather-python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -22,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="898" column="16" selection-start-line="898" selection-start-column="16" selection-end-line="898" selection-end-column="16" />
+            <state relative-caret-position="380">
+              <caret line="895" column="38" lean-forward="true" selection-start-line="895" selection-start-column="38" selection-end-line="895" selection-end-column="38" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -34,8 +32,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="643">
-              <caret line="832" selection-start-line="832" selection-end-line="832" />
+            <state relative-caret-position="592">
+              <caret line="829" selection-start-line="829" selection-end-line="829" />
             </state>
           </provider>
         </entry>
@@ -255,20 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00080" summary="leave.16">
-      <created>1530177133064</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1530177133064</updated>
-    </task>
-    <task id="LOCAL-00081" summary="leave.16">
-      <created>1530177659512</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1530177659512</updated>
     </task>
     <task id="LOCAL-00082" summary="leave.17">
       <created>1530177909182</created>
@@ -599,7 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534246949370</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Lv.App.03.07">
+      <created>1534247724635</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1534247724635</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Lv.App.03.08">
+      <created>1534248243656</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1534248243656</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -616,6 +614,7 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834985" weight="0.1732224" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info active="true" id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.1732224" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -628,7 +627,6 @@
       <window_info anchor="bottom" id="Messages" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,8 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.02.01" />
-    <MESSAGE value="Lv.App.02.02" />
     <MESSAGE value="Lv.App.02.03" />
     <MESSAGE value="Lv.App.02.04" />
     <MESSAGE value="Lv.App.02.05" />
@@ -709,7 +705,9 @@
     <MESSAGE value="Lv.App.03.04" />
     <MESSAGE value="Lv.App.03.05" />
     <MESSAGE value="Lv.App.03.06" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.03.06" />
+    <MESSAGE value="Lv.App.03.07" />
+    <MESSAGE value="Lv.App.03.08" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.03.08" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -934,8 +932,8 @@
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="832" selection-start-line="832" selection-end-line="832" />
+        <state relative-caret-position="592">
+          <caret line="829" selection-start-line="829" selection-end-line="829" />
         </state>
       </provider>
     </entry>
@@ -947,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="898" column="16" selection-start-line="898" selection-start-column="16" selection-end-line="898" selection-end-column="16" />
+        <state relative-caret-position="380">
+          <caret line="895" column="38" lean-forward="true" selection-start-line="895" selection-start-column="38" selection-end-line="895" selection-end-column="38" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
