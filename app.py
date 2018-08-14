@@ -893,6 +893,7 @@ def processRequest(req):
         # print("to_date:-", to_date)
 
         holiday=holiday_check(from_date,to_date)
+        print (holiday)
 
         if holiday:
             speech="Sorry! Your specified date contains Holiday. I can't proceed. Please try other date except holidays."
