@@ -704,6 +704,9 @@ def processRequest(req):
 
             if leave_type=='CL':
                 leave_context='casuale_leave'
+            elif leave_type=='EL':
+                leave_context='earn_leave'
+
 
             baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
