@@ -917,11 +917,11 @@ def processRequest(req):
 
             if data['Result'] == '0':
                 return {
-                    "speech": "Your date is OK"
+                    "speech": "Great! Now Enter the employee ID of your replacement person."
                 }
             else:
                 return {
-                    "speech": "Already applied for leave"
+                    "speech": "You already applied for a leave on the specified date you provided."
                 }
 
 
