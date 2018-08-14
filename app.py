@@ -864,6 +864,33 @@ def processRequest(req):
                 "speech": speech
             }
 
+    if req.get("result").get("action") == "Lv.App.03":
+        result = req.get("result")
+        parameters = result.get("parameters")
+        from_date=parameters.get("from_date")
+        to_date=parameters.get("to_date")
+
+        cont = result.get("contexts")
+        item_count = len(cont)
+        index = -1
+
+        for i in range(item_count):
+            if cont[i]['name'] == 'emp_id':
+                index = i
+
+        if (index == -1):
+            return {
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id = cont[index]['parameters']['emp_id.original']
+            leave_type=cont[index]['parameters']['Type_of_Leave']
+
+        print("Employee id:-", emp_id)
+        print("Leave Type:-", leave_type)
+        print("from_date:-", from_date)
+        print("to_date:-", to_date)
+
     elif req.get("result").get("action") == "loan.eligibilty":
 
         result = req.get("result")
