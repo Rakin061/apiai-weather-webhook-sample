@@ -897,7 +897,10 @@ def processRequest(req):
         if holiday:
             speech="Sorry! Your specified date contains Holiday. I can't proceed. Please try other date except holidays."
             return {
-                "speech":speech
+                "speech":speech,
+                "contextOut": [
+                               {"name": 'replacement', "lifespan": 0, "parameters": {}}
+                               ]
             }
         else:
             baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
