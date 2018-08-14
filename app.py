@@ -897,8 +897,11 @@ def processRequest(req):
         print("to_date:--",to_date)
 
         date_format = "%Y-%m-%d"
+        print(date_format)
         from_date = datetime.strptime(from_date, date_format)
+        print(from_date)
         to_date = datetime.strptime(to_date, date_format)
+        print(to_date)
         delta = to_date - from_date
 
         holiday_status=False
