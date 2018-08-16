@@ -924,9 +924,64 @@ def processRequest(req):
                 }
             else:
                 return {
-                    "speech": "You already applied for a leave on the specified date you provided."
+                    "speech": "You already applied for a leave on the specified date you provided. Please Enter another FROM date to continue!",
+                    "contextOut": [
+                                    {"name": 'replacement', "lifespan": 0, "parameters": {}}
+                                  ]
                 }
 
+
+    if req.get("result").get("action") == "Lv.App.04":
+        result = req.get("result")
+        parameters = result.get("parameters")
+        #from_date=parameters.get("from_date")
+        #to_date=parameters.get("to_date")
+
+        cont = result.get("contexts")
+        item_count = len(cont)
+        index = -1
+
+        for i in range(item_count):
+            if cont[i]['name'] == 'emp_id':
+                index = i
+
+        if (index == -1):
+            return {
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id = cont[index]['parameters']['emp_id.original']
+            leave_type=cont[index]['parameters']['Type_of_Leave']
+            from_date= cont[index]['parameters']['from_date']
+            to_date= cont[index]['parameters']['to_date']
+            replacement_id= cont[index]['parameters']['replacement_id.original']
+
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Lv.App.04"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode({'replacement_id': replacement_id}) + "&" + urlencode(
+            {'from_date': from_date}) + "&" + urlencode(
+            {'to_date': to_date}) + "&" + urlencode(
+            {'act': action}) + "&format=json"
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        if data['Result'] == '0':
+            return {
+                "speech": "Awesome! This replacement person "+data['Replacement_Name']+" of ID: "+data['Replacement_ID']+ "is "+data['Replacement_Status']+". Enter 'Yes' to confirm this person as your replacement or Enter another ID to continue "
+            }
+        else:
+            return {
+                "speech": "Oh! Owe! Your replacement person " +data['Replacement_Name']+" of ID: "+data['Replacement_ID']+" is also in leave form "+from_date+" - "+to_date+". Please enter another replacement ID to continue!",
+                "contextOut": [
+                    {"name": 'leave_info', "lifespan": 0, "parameters": {}}
+                ]
+            }
 
     elif req.get("result").get("action") == "loan.eligibilty":
 
