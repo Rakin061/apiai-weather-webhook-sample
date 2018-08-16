@@ -1033,6 +1033,66 @@ def processRequest(req):
                 ]
             }
 
+
+    if req.get("result").get("action") == "Lv.App.05":
+        result = req.get("result")
+        parameters = result.get("parameters")
+        #from_date=parameters.get("from_date")
+        #to_date=parameters.get("to_date")
+
+        cont = result.get("contexts")
+        item_count = len(cont)
+        index = -1
+
+        for i in range(item_count):
+            if cont[i]['name'] == 'emp_id':
+                index = i
+
+        if (index == -1):
+            return {
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id = cont[index]['parameters']['emp_id.original']
+            leave_type=cont[index]['parameters']['Type_of_Leave']
+            from_date= cont[index]['parameters']['from_date']
+            to_date= cont[index]['parameters']['to_date']
+            replacement_id= cont[index]['parameters']['replacement_id.original']
+            device_id= cont[index]['parameters']['device_id.original']
+            session_id= cont[index]['parameters']['session_id.original']
+            leave_purpose= cont[index]['parameters']['leave_purpose.original']
+            contact_no= cont[index]['parameters']['contact_no.original']
+            address= cont[index]['parameters']['address.original']
+
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Lv.App.05"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&"+ urlencode({'leave_type': leave_type}) + "&"+ urlencode({'device_id': device_id}) + "&"+ urlencode({'session_id': session_id}) + "&" + urlencode({'leave_purpose': leave_purpose}) + "&"+ urlencode({'contact_no': contact_no}) + "&"+ urlencode({'address': address}) + "&" + urlencode({'replacement_id': replacement_id}) + "&" + urlencode(
+            {'start_date': from_date}) + "&" + urlencode(
+            {'end_date': to_date}) + "&" + urlencode(
+            {'act': action}) + "&format=json"
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        if data['Flag'] == 'N':
+            return {
+                "speech": "Sorry! Problem in Data Insertion. Reason: "+data['Message']
+
+            }
+        elif data['Flag'] == 'Y':
+            return {
+                "speech": "Congratulations!!" + data['Message'] + " Enjoy your vacation!!"
+            }
+
+
+
+
+
     elif req.get("result").get("action") == "loan.eligibilty":
 
         result = req.get("result")

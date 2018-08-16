@@ -20,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="985" column="128" selection-start-line="985" selection-start-column="128" selection-end-line="985" selection-end-column="128" />
+            <state relative-caret-position="272">
+              <caret line="1087" column="20" lean-forward="true" selection-start-line="1087" selection-start-column="20" selection-end-line="1087" selection-end-column="20" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -253,20 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00094" summary="update">
-      <created>1530775034822</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1530775034822</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Lv.App.01">
-      <created>1534065790391</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1534065790392</updated>
     </task>
     <task id="LOCAL-00096" summary="Lv.App.01.01">
       <created>1534066432678</created>
@@ -597,7 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534405368499</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="Lv.App.04.03">
+      <created>1534406764906</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1534406764906</updated>
+    </task>
+    <task id="LOCAL-00144" summary="Employee.info">
+      <created>1534417168860</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1534417168861</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -605,10 +605,10 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.18667643" side_tool="true" weight="0.37828946" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.2730711" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.31188118" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32838285" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" sideWeight="0.7269289" visible="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.81332356" weight="0.3290938" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834985" weight="0.1732224" />
@@ -682,8 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.02.15" />
-    <MESSAGE value="Lv.App.02.16" />
     <MESSAGE value="Lv.App.02.17" />
     <MESSAGE value="Lv.App.02.18" />
     <MESSAGE value="Lv.App.02.19" />
@@ -707,7 +705,9 @@
     <MESSAGE value="Lv.App.03.18" />
     <MESSAGE value="Lv.App.04.01" />
     <MESSAGE value="Lv.App.04.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.04.02" />
+    <MESSAGE value="Lv.App.04.03" />
+    <MESSAGE value="Employee.info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Employee.info" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -945,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="985" column="128" selection-start-line="985" selection-start-column="128" selection-end-line="985" selection-end-column="128" />
+        <state relative-caret-position="272">
+          <caret line="1087" column="20" lean-forward="true" selection-start-line="1087" selection-start-column="20" selection-end-line="1087" selection-end-column="20" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
