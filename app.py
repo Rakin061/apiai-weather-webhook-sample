@@ -1064,6 +1064,9 @@ def processRequest(req):
             contact_no= cont[index]['parameters']['contact_no.original']
             address= cont[index]['parameters']['address.original']
 
+        print(emp_id, leave_type,from_date,to_date,replacement_id,device_id,session_id,leave_purpose,contact_no,address)
+
+
         baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
         # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
