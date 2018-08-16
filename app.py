@@ -972,9 +972,19 @@ def processRequest(req):
         data = json.loads(test_res)
 
         if data['Result'] == '0':
-            return {
-                "speech": "Awesome! This replacement person "+data['Replacement_Name']+" of ID: "+data['Replacement_ID']+ "is "+data['Replacement_Status']+". Enter 'Yes' to confirm this person as your replacement or Enter another ID to continue "
-            }
+
+            if data['Replacement_Status']=='Inactive':
+                return {
+                    "speech": "Oopss! I can't set" + data['Replacement_Name'] + " of ID: " + data['Replacement_ID'] + " as your replacement person. This employee might be inactive. You can Enter another replacment ID to continue ",
+                    "contextOut": [
+                        {"name": 'leave_info', "lifespan": 0, "parameters": {}}
+                    ]
+                }
+
+            else:
+                return {
+                    "speech": "Awesome! This replacement person "+data['Replacement_Name']+" of ID: "+data['Replacement_ID']+ "is "+data['Replacement_Status']+". Enter 'Yes' to confirm this person as your replacement or Enter another ID to continue "
+                }
         else:
             return {
                 "speech": "Oh! Owe! Your replacement person " +data['Replacement_Name']+" of ID: "+data['Replacement_ID']+" is also in leave form "+from_date+" - "+to_date+". Please enter another replacement ID to continue!",
