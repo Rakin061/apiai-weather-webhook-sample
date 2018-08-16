@@ -983,7 +983,7 @@ def processRequest(req):
 
             else:
                 return {
-                    "speech": "Awesome! This replacement person "+data['Replacement_Name']+" of ID: "+data['Replacement_ID']+ "is "+data['Replacement_Status']+". Enter 'Yes' to confirm this person as your replacement or Enter another ID to continue "
+                    "speech": "Awesome! This replacement person "+data['Replacement_Name']+" of ID: "+data['Replacement_ID']+ " is "+data['Replacement_Status']+". Enter 'Yes' to confirm this person as your replacement or Enter another ID to continue "
                 }
         else:
             return {
