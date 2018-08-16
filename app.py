@@ -95,7 +95,7 @@ def processRequest(req):
             }
         else:
             return {
-                "speech": "Welcome !! "+data['Employee_name']+". How can I help you !!",
+                "speech": "Welcome !!  "+data['Employee_name']+". How can I help you !!",
                 "contextOut": [
 
                                {"name": "emp_id", "lifespan": 249, "parameters": {"emp_id.name": data['Employee_name']}}
