@@ -1068,6 +1068,7 @@ def processRequest(req):
             leave_purpose= cont[index]['parameters']['leave_purpose.original']
             contact_no= cont[index]['parameters']['contact_no.original']
             address= cont[index]['parameters']['address.original']
+            emp_name= cont[index]['parameters']['emp_id.name']
 
         print(emp_id, leave_type,from_date,to_date,replacement_id,device_id,session_id,leave_purpose,contact_no,address)
 
@@ -1094,7 +1095,7 @@ def processRequest(req):
             }
         elif data['Flag'] == 'Y':
             return {
-                "speech": "Congratulations!!" + data['Message'] + " Enjoy your vacation!!"
+                "speech": "Congratulations!!" + data['Message'] + " Enjoy your vacation, "+emp_name+" !!"
             }
 
 
