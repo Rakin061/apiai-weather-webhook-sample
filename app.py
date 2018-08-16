@@ -95,7 +95,12 @@ def processRequest(req):
             }
         else:
             return {
-                "speech": "Welcome !! "+data['Employee_name']+". How can I help you !!"
+                "speech": "Welcome !! "+data['Employee_name']+". How can I help you !!",
+                "contextOut": [
+
+                               {"name": "emp_id", "lifespan": 249, "parameters": {"emp_id.name": data['Employee_name']}}
+
+                               ]
             }
 
 
@@ -892,7 +897,7 @@ def processRequest(req):
                     "speech":speech,
                     "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
                                    {"name": "leave_type", "lifespan": 0, "parameters": {}},
-                                   {"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}},
+                                   {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original":emp_id}},
                                    {"name": leave_context, "lifespan": 0, "parameters": {}},
                                    ]
                 }
