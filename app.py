@@ -1262,6 +1262,7 @@ def processRequest(req):
             contact_no= cont[index]['parameters']['contact_no.original']
             address= cont[index]['parameters']['address.original']
             emp_name= cont[index]['parameters']['emp_id.name']
+            lfa_type= cont[index]['parameters']['LFA_TYPE']
 
         print(emp_id, leave_type,from_date,to_date,replacement_id,device_id,session_id,leave_purpose,contact_no,address)
 
@@ -1274,7 +1275,7 @@ def processRequest(req):
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
         action = "Lv.App.05"
-        yql_url = baseurl + urlencode({'id': emp_id}) + "&"+ urlencode({'leave_type': leave_type}) + "&"+ urlencode({'device_id': device_id}) + "&"+ urlencode({'session_id': session_id}) + "&" + urlencode({'leave_purpose': leave_purpose}) + "&"+ urlencode({'contact_no': contact_no}) + "&"+ urlencode({'address': address}) + "&" + urlencode({'replacement_id': replacement_id}) + "&" + urlencode(
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&"+ urlencode({'leave_type': leave_type}) + "&"+ urlencode({'lfa_type': lfa_type}) + "&"+ urlencode({'device_id': device_id}) + "&"+ urlencode({'session_id': session_id}) + "&" + urlencode({'leave_purpose': leave_purpose}) + "&"+ urlencode({'contact_no': contact_no}) + "&"+ urlencode({'address': address}) + "&" + urlencode({'replacement_id': replacement_id}) + "&" + urlencode(
             {'start_date': from_date}) + "&" + urlencode(
             {'end_date': to_date}) + "&" + urlencode(
             {'act': action}) + "&format=json"
