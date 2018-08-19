@@ -802,8 +802,7 @@ def processRequest(req):
                         "speech": speech,
                         "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
                                    {"name": "leave_type", "lifespan": 0, "parameters": {}},
-                                   {"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}},
-                                   {"name": leave_context, "lifespan": 0, "parameters": {}},
+                                   {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original":emp_id,"leave_balance":leave_count}},
                                    ]
                     }
 
@@ -815,8 +814,7 @@ def processRequest(req):
                     "speech": speech,
                     "contextOut": [{"name": "date_param", "lifespan": 19, "parameters": {}},
                                    {"name": "leave_type", "lifespan": 14, "parameters": {"Type_of_Leave":leave_type}},
-                                   {"name": "emp_id", "lifespan": 49, "parameters": {"emp_id.original":emp_id}},
-                                   {"name": leave_context, "lifespan": 24, "parameters": {}},
+                                   {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original":emp_id,"leave_balance":leave_count}},
                                    ]
                 }
 
@@ -898,7 +896,6 @@ def processRequest(req):
                     "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
                                    {"name": "leave_type", "lifespan": 0, "parameters": {}},
                                    {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original":emp_id}},
-                                   {"name": leave_context, "lifespan": 0, "parameters": {}},
                                    ]
                 }
 
@@ -907,7 +904,10 @@ def processRequest(req):
 
             return {
 
-                "speech": speech
+                "speech": speech,
+                "contextOut": [
+                               {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original": emp_id,"leave_balance":leave_count}},
+                               ]
             }
 
     if req.get("result").get("action") == "Lv.App.03":
@@ -938,11 +938,7 @@ def processRequest(req):
         # print("to_date:-",to_date)
 
         holiday= holiday_check(from_date,to_date)
-        speech=''
-
-
-
-
+        #speech=''
 
 
         if holiday['holiday_check']:
@@ -1116,7 +1112,7 @@ def processRequest(req):
 
         if data['Flag'] == 'N':
             return {
-                "speech": "Sorry! Problem in Data Insertion. Reason: "+data['Message']
+                "speech": "Sorry! Problem in Data Insertion. Reason: "+data['Message']+" Plese enter re-submit to try again!! "
 
             }
         elif data['Flag'] == 'Y':
