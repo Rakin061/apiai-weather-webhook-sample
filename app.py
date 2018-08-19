@@ -959,6 +959,8 @@ def processRequest(req):
 
         from_date=datetime.now().strftime("%Y-%m-%d")
         to_date= data['LFA_DATE']
+        to_date = to_date.split(' ')
+        to_date=to_date[0]
 
         date_format = "%Y-%m-%d"
         from_date = datetime.strptime(from_date, date_format)
