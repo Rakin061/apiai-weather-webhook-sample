@@ -965,7 +965,7 @@ def processRequest(req):
                 }
         else:
             if holiday['difference'] > 3:
-                speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. So, Enter another FROM date to continue again!! ",
+                speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. So, Enter another FROM date to continue again!! "
                 return {
                     "speech": speech,
                     "contextOut": [
