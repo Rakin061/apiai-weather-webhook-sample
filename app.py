@@ -948,7 +948,7 @@ def processRequest(req):
         if holiday['holiday_check']:
 
             if holiday['difference'] > 3:
-                speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. And Your specified date contains Holiday as well. So, Enter another FROM date to continue again!!   ",
+                speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. And Your specified date contains Holiday as well. So, Enter another FROM date to continue again!! "
                 return {
                     "speech": speech,
                     "contextOut": [
@@ -956,9 +956,9 @@ def processRequest(req):
                                    ]
                 }
             else:
-                speech=speech+"Attention !! Your specified date contains Holiday. If you agree, Enter the employee ID of your replacement person. Or, Enter another FROM date to continue again!!  "
+                speech="Attention !! Your specified date contains Holiday. If you agree, Enter the employee ID of your replacement person. Or, Enter another FROM date to continue again!!  "
                 return {
-                    "speech":speech,
+                    "speech":speech
                     # "contextOut": [
                     #                {"name": 'replacement', "lifespan": 0, "parameters": {}}
                     #                ]
