@@ -931,6 +931,8 @@ def processRequest(req):
         else:
             emp_id = cont[index]['parameters']['emp_id.original']
             leave_type=cont[index]['parameters']['Type_of_Leave']
+            leave_balance=cont[index]['parameters']['leave_balance']
+            leave_balance=int(leave_balance)
 
         # print("Employee id:-",emp_id)
         # print("Leave Type:-",leave_type)
@@ -940,6 +942,15 @@ def processRequest(req):
         holiday= holiday_check(from_date,to_date)
         #speech=''
 
+
+        if holiday['difference']>leave_balance:
+            speech=" Oopss!! You have applied "+leave_type+" for "+ str(holiday['difference'])+" .But I have already showed your leave balance for "+leave_type+" is: "+str(leave_balance)+".So, Enter another FROM date to continue again!! "
+            return {
+                "speech": speech,
+                "contextOut": [
+                    {"name": 'replacement', "lifespan": 0, "parameters": {}}
+                ]
+            }
 
         if holiday['holiday_check']:
 
