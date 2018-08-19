@@ -23,8 +23,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="971" column="87" selection-start-line="971" selection-start-column="87" selection-end-line="971" selection-end-column="87" />
+            <state relative-caret-position="422">
+              <caret line="830" column="25" selection-start-line="830" selection-start-column="25" selection-end-line="830" selection-end-column="25" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -253,20 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Lv.App.02.08">
-      <created>1534219965782</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1534219965782</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Lv.App.02.09">
-      <created>1534220128973</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1534220128973</updated>
     </task>
     <task id="LOCAL-00110" summary="Lv.App.02.10">
       <created>1534239727070</created>
@@ -597,7 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534670463300</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="Lv.App.02.LFA">
+      <created>1534674351239</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1534674351239</updated>
+    </task>
+    <task id="LOCAL-00158" summary="Lv.App.02.LFA.01">
+      <created>1534675224084</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1534675224084</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -615,7 +615,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.17776097" />
+      <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.17776097" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -682,8 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.03.10" />
-    <MESSAGE value="Lv.App.03.11" />
     <MESSAGE value="Lv.App.03.12" />
     <MESSAGE value="Lv.App.03.13" />
     <MESSAGE value="Lv.App.03.14" />
@@ -707,7 +705,9 @@
     <MESSAGE value="Lv.App.05.10" />
     <MESSAGE value="Lv.App.05.11" />
     <MESSAGE value="Lv.App.05.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.05.12" />
+    <MESSAGE value="Lv.App.02.LFA" />
+    <MESSAGE value="Lv.App.02.LFA.01" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.02.LFA.01" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -945,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="971" column="87" selection-start-line="971" selection-start-column="87" selection-end-line="971" selection-end-column="87" />
+        <state relative-caret-position="422">
+          <caret line="830" column="25" selection-start-line="830" selection-start-column="25" selection-end-line="830" selection-end-column="25" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>

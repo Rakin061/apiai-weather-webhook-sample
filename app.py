@@ -801,22 +801,35 @@ def processRequest(req):
                     return {
                         "speech": speech,
                         "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
-                                   {"name": "leave_type", "lifespan": 0, "parameters": {}},
                                    {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original":emp_id,"leave_balance":leave_count}},
                                    ]
                     }
 
                 else:
-                    speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
+                    if leave_type == 'LFA':
+                        speech = " Great!! Your leave balance for Earned Leave is :- " + leave_count + "Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
+                        return {
 
-                return {
+                            "speech": speech,
+                            "contextOut": [
+                                {"name": "emp_id", "lifespan": 149,
+                                 "parameters": {"emp_id.original": emp_id, "leave_balance": leave_count}},
+                                {"name": "date_param", "lifespan": 0, "parameters": {}}
+                            ]
+                        }
 
-                    "speech": speech,
-                    "contextOut": [{"name": "date_param", "lifespan": 19, "parameters": {}},
-                                   {"name": "leave_type", "lifespan": 14, "parameters": {"Type_of_Leave":leave_type}},
-                                   {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original":emp_id,"leave_balance":leave_count}},
-                                   ]
-                }
+                    else:
+                        speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
+
+                        return {
+
+                            "speech": speech,
+                            "contextOut": [
+                                {"name": "emp_id", "lifespan": 149,
+                                 "parameters": {"emp_id.original": emp_id, "leave_balance": leave_count}},
+                                {"name": "date_param", "lifespan": 0, "parameters": {}}
+                            ]
+                        }
 
 
 
@@ -900,15 +913,27 @@ def processRequest(req):
                 }
 
             else:
-                speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
+                if leave_type=='LFA':
+                    speech=" Great!! Your leave balance for Earned Leave is :- " + leave_count + "Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
+                    return {
 
-            return {
+                        "speech": speech,
+                        "contextOut": [
+                            {"name": "emp_id", "lifespan": 149,
+                             "parameters": {"emp_id.original": emp_id, "leave_balance": leave_count}},
+                        ]
+                    }
 
-                "speech": speech,
-                "contextOut": [
-                               {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original": emp_id,"leave_balance":leave_count}},
-                               ]
-            }
+                else:
+                    speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
+
+                    return {
+
+                        "speech": speech,
+                        "contextOut": [
+                                       {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original": emp_id,"leave_balance":leave_count}},
+                                       ]
+                    }
 
 
 
