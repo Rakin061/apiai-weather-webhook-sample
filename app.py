@@ -1001,10 +1001,38 @@ def processRequest(req):
                                ]
             }
         else:
-            speech = "Sure! You're eligible for LFA! Now . Now enter the FROM DATE of your leave"
+            speech = "Sure! You're eligible for LFA! "
+
+            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+            # yql_query=yql_query+id
+            # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+            # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+            # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+            action = "Leave.03"
+            yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode(
+                {'leave_type': leave_type}) + "&" + urlencode(
+                {'act': action}) + "&format=json"
+
+            test_res = urlopen(yql_url).read()
+            data = json.loads(test_res)
+
+
+            query_dict = data['Query']
+
+
+            for key, value in query_dict.items():
+                    leave_count = value;
+
+
             return {
 
-                "speech": speech
+                "speech": speech+" Your leave balance for Earned Leave: "+leave_count+" Now enter the FROM DATE of your leave",
+                "contextOut": [
+                    {"name": "emp_id", "lifespan": 149,
+                     "parameters": {"emp_id.original": emp_id, "leave_balance": leave_count}},
+                ]
             }
 
 
