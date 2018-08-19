@@ -910,6 +910,82 @@ def processRequest(req):
                                ]
             }
 
+
+
+    if req.get("result").get("action") == "Lv.App.02.LFA":
+        result = req.get("result")
+        parameters = result.get("parameters")
+        leave_type=parameters.get("Type_of_Leave")
+
+        cont = result.get("contexts")
+        item_count = len(cont)
+        index = -1
+
+        for i in range(item_count):
+            if cont[i]['name'] == 'emp_id':
+                index = i
+
+        if (index == -1):
+            return {
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id = cont[index]['parameters']['emp_id.original']
+            lfa_type= cont[index]['parameters']['LFA_TYPE']
+
+        print("Employee id:-", emp_id)
+
+        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+        # yql_query=yql_query+id
+        # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+        # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+        action = "Leave.08"
+        yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode({'act': action}) + "&format=json"
+
+        test_res = urlopen(yql_url).read()
+        data = json.loads(test_res)
+
+        if data == {}:
+            return {
+                "speech": "Sorry!! You're not eligible for LFA yet! Try with other kind of leaves",
+                "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
+                               {"name": "leave_type", "lifespan": 0, "parameters": {}},
+                               {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original": emp_id}},
+                               ]
+            }
+
+        from_date=datetime.now().strftime("%Y-%m-%d")
+        to_date= data['LFA_DATE']
+
+        date_format = "%Y-%m-%d"
+        from_date = datetime.strptime(from_date, date_format)
+        to_date = datetime.strptime(to_date, date_format)
+
+        if from_date<to_date:
+            speech="Sorry!! You're not eligible for LFA yet! "+" You will be eligible for LFA on:-  " + data['LFA_DATE']+". You can try with other kind of leaves."
+            return {
+
+                "speech": speech,
+                "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
+                               {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original": emp_id}},
+                               ]
+            }
+        else:
+            speech = "Sure! You're eligible for LFA! Now . Now enter the FROM DATE of your leave"
+            return {
+
+                "speech": speech
+            }
+
+
+
+
+
+
+
     if req.get("result").get("action") == "Lv.App.03":
         result = req.get("result")
         parameters = result.get("parameters")
