@@ -827,7 +827,7 @@ def processRequest(req):
                             "contextOut": [
                                 {"name": "emp_id", "lifespan": 149,
                                  "parameters": {"emp_id.original": emp_id, "leave_balance": leave_count}},
-                                {"name": "date_param", "lifespan": 0, "parameters": {}}
+                                {"name": "date_param", "lifespan": 50, "parameters": {}}
                             ]
                         }
 
