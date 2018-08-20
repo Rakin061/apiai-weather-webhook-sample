@@ -23,8 +23,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="719" column="71" selection-start-line="719" selection-start-column="71" selection-end-line="719" selection-end-column="71" />
+            <state relative-caret-position="224">
+              <caret line="738" column="105" selection-start-line="738" selection-start-column="105" selection-end-line="738" selection-end-column="105" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -63,16 +63,17 @@
       <find>http://202.40.190.116:8086/BotAPI/ApplicationStatus?</find>
       <find>http://202.40.190.114:8086/BotAPI-L/ApplicationStatus?</find>
       <find>http://10.11.1.154/BotAPI/ApplicationStatus?</find>
-      <find>http://202.40.190.114:8084</find>
       <find>baseurl = &quot;http://202.40.190.114:8084/BotAPI/ApplicationStatus?&quot;</find>
       <find>baseurl = &quot;http://103.17.69.35:81/BotAPI/ApplicationStatus?&quot;</find>
       <find>print</find>
       <find>Leave.16</find>
+      <find>http://202.40.190.114:8084</find>
     </findStrings>
     <replaceStrings>
       <replace>strftime(&quot;%m/%d/%Y&quot;)</replace>
       <replace>http://202.40.190.114:8086/BotAPI/ApplicationStatus?</replace>
       <replace>http://103.17.69.35:81/BotAPI/ApplicationStatus?</replace>
+      <replace>http://202.40.190.116:8086</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -253,20 +254,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00119" summary="Lv.App.02.16">
-      <created>1534241668111</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1534241668112</updated>
-    </task>
-    <task id="LOCAL-00120" summary="Lv.App.02.17">
-      <created>1534242372429</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1534242372429</updated>
     </task>
     <task id="LOCAL-00121" summary="Lv.App.02.18">
       <created>1534242467030</created>
@@ -597,7 +584,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534737477651</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="Stopping-Update">
+      <created>1534740602879</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1534740602879</updated>
+    </task>
+    <task id="LOCAL-00169" summary="Updating tomcat">
+      <created>1534742344802</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1534742344802</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -682,8 +683,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.04.03" />
-    <MESSAGE value="Employee.info" />
     <MESSAGE value="Lv.App.05.01" />
     <MESSAGE value="Lv.App.05.02" />
     <MESSAGE value="Lv.App.05.03" />
@@ -707,7 +706,9 @@
     <MESSAGE value="LFA-RANGE" />
     <MESSAGE value="LFA-update" />
     <MESSAGE value="LFA-update,01" />
-    <option name="LAST_COMMIT_MESSAGE" value="LFA-update,01" />
+    <MESSAGE value="Stopping-Update" />
+    <MESSAGE value="Updating tomcat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating tomcat" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -945,8 +946,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="719" column="71" selection-start-line="719" selection-start-column="71" selection-end-line="719" selection-end-column="71" />
+        <state relative-caret-position="224">
+          <caret line="738" column="105" selection-start-line="738" selection-start-column="105" selection-end-line="738" selection-end-column="105" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
