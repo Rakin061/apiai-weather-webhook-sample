@@ -1140,7 +1140,45 @@ def processRequest(req):
                                             {"name": 'replacement', "lifespan": 0, "parameters": {}}
                                           ]
                         }
-        else:
+
+        elif leave_type=='EL':
+            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
+            # yql_query=yql_query+id
+            # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
+            # baseurl = "https://query.yahooapis.com/v1/public/yql?"
+            # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
+
+            action = "Lv.App.03"
+            yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode(
+                {'from_date': from_date}) + "&" + urlencode(
+                {'to_date': to_date}) + "&" + urlencode(
+                {'act': action}) + "&format=json"
+            test_res = urlopen(yql_url).read()
+            data = json.loads(test_res)
+
+            if data['Result'] == '0':
+                return {
+                    "speech": "Great! Now Enter the employee ID of your replacement person."
+                }
+            else:
+                return {
+                    "speech": "You already applied for a leave on the specified date you provided. Please Enter another FROM date to continue!",
+                    "contextOut": [
+                        {"name": 'replacement', "lifespan": 0, "parameters": {}}
+                    ]
+                }
+
+        elif leave_type=='LFA':
+
+            if holiday['difference'] < 5 or holiday['difference'] >15:
+                speech = "Sorry!! You should apply for a LFA between 5-15 days. So, Enter another FROM date to continue again!! "
+                return {
+                    "speech": speech,
+                    "contextOut": [
+                        {"name": 'replacement', "lifespan": 0, "parameters": {}}
+                    ]
+                }
             baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
             # yql_query=yql_query+id
