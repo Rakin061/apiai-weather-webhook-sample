@@ -1075,7 +1075,7 @@ def processRequest(req):
 
 
         if holiday['difference']>leave_balance:
-            speech=" Oopss!! You have applied "+leave_type+" for "+ str(holiday['difference'])+" .But I have already showed your leave balance for "+leave_type+" is: "+str(leave_balance)+".So, Enter another FROM date to continue again!! "
+            speech=" Oopss!! You have applied "+leave_type+" for "+ str(holiday['difference'])+" days!! .But I have already shown your leave balance for "+leave_type+" is: "+str(leave_balance)+".So, Enter another FROM date to continue again!! "
             return {
                 "speech": speech,
                 "contextOut": [
