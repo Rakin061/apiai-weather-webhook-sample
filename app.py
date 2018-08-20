@@ -687,6 +687,39 @@ def processRequest(req):
             }
 
 
+    elif req.get("result").get("action")=="smalltalk.confirmation.cancel":
+
+        result = req.get("result")
+        cont = result.get("contexts")
+
+        item_count = len(cont)
+        index = -1
+
+        for i in range(item_count):
+            if cont[i]['name'] == 'emp_id':
+                index = i
+
+        if (index == -1):
+            return {
+                "speech": "No context named emp_id found. So, I can't proceed. Please contact developer."
+            }
+        else:
+            emp_id = cont[index]['parameters']['emp_id.original']
+
+
+        speech="OK! Stopped. Proceed with otehr queries"
+        return {
+
+            "speech": speech,
+            "contextOut": [
+                {"name": "emp_id", "lifespan": 149,
+                 "parameters": {"emp_id.original": emp_id}},
+                {"name": "date_param", "lifespan": 0, "parameters": {}},
+                {"name": "leave_type", "lifespan": 0, "parameters": {}},
+                {"name": 'replacement', "lifespan": 0, "parameters": {}},
+                {"name": 'leave_info', "lifespan": 0, "parameters": {}}
+            ]
+        }
 
     elif req.get("result").get("action")=="Lv.App.01":
         result=req.get("result")
@@ -907,7 +940,6 @@ def processRequest(req):
 
                     "speech":speech,
                     "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
-                                   {"name": "leave_type", "lifespan": 0, "parameters": {}},
                                    {"name": "emp_id", "lifespan": 149, "parameters": {"emp_id.original":emp_id}},
                                    ]
                 }

@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app.py" line="431" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="LFA-RANGE">
+    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -23,8 +23,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="809" column="81" selection-start-line="809" selection-start-column="81" selection-end-line="809" selection-end-column="81" />
+            <state relative-caret-position="397">
+              <caret line="719" column="71" selection-start-line="719" selection-start-column="71" selection-end-line="719" selection-end-column="71" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -35,8 +35,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14093">
-              <caret line="829" selection-start-line="829" selection-end-line="829" />
+            <state relative-caret-position="14110">
+              <caret line="830" selection-start-line="830" selection-end-line="830" />
             </state>
           </provider>
         </entry>
@@ -253,20 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Lv.App.02.15">
-      <created>1534241319350</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1534241319351</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Lv.App.02.15">
-      <created>1534241498562</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1534241498562</updated>
     </task>
     <task id="LOCAL-00119" summary="Lv.App.02.16">
       <created>1534241668111</created>
@@ -597,7 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534736517595</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="LFA-update">
+      <created>1534736691682</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1534736691682</updated>
+    </task>
+    <task id="LOCAL-00167" summary="LFA-update,01">
+      <created>1534737477650</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1534737477651</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -615,7 +615,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.18003026" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.18003026" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -682,8 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.04.01" />
-    <MESSAGE value="Lv.App.04.02" />
     <MESSAGE value="Lv.App.04.03" />
     <MESSAGE value="Employee.info" />
     <MESSAGE value="Lv.App.05.01" />
@@ -707,7 +705,9 @@
     <MESSAGE value="Lv.App.02.LFA.06" />
     <MESSAGE value="Context Fix" />
     <MESSAGE value="LFA-RANGE" />
-    <option name="LAST_COMMIT_MESSAGE" value="LFA-RANGE" />
+    <MESSAGE value="LFA-update" />
+    <MESSAGE value="LFA-update,01" />
+    <option name="LAST_COMMIT_MESSAGE" value="LFA-update,01" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -932,8 +932,8 @@
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14093">
-          <caret line="829" selection-start-line="829" selection-end-line="829" />
+        <state relative-caret-position="14110">
+          <caret line="830" selection-start-line="830" selection-end-line="830" />
         </state>
       </provider>
     </entry>
@@ -945,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="809" column="81" selection-start-line="809" selection-start-column="81" selection-end-line="809" selection-end-column="81" />
+        <state relative-caret-position="397">
+          <caret line="719" column="71" selection-start-line="719" selection-start-column="71" selection-end-line="719" selection-end-column="71" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
