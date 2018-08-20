@@ -807,7 +807,7 @@ def processRequest(req):
 
                 else:
                     if leave_type == 'LFA':
-                        speech = " Great!! Your leave balance for Earned Leave is :- " + leave_count + "Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
+                        speech = "Sure! First I will check your LFA eligibility. Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
                         return {
 
                             "speech": speech,

@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app.py" line="431" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
+    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="LFA-RANGE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -23,8 +23,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4588">
-              <caret line="462" column="29" selection-start-line="462" selection-start-column="29" selection-end-line="462" selection-end-column="29" />
+            <state relative-caret-position="274">
+              <caret line="809" column="81" selection-start-line="809" selection-start-column="81" selection-end-line="809" selection-end-column="81" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -253,20 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Lv.App.02.14">
-      <created>1534241005951</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1534241005951</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Lv.App.02.14">
-      <created>1534241275211</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1534241275211</updated>
     </task>
     <task id="LOCAL-00117" summary="Lv.App.02.15">
       <created>1534241319350</created>
@@ -597,7 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534679252302</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="Context Fix">
+      <created>1534735633724</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1534735633725</updated>
+    </task>
+    <task id="LOCAL-00165" summary="LFA-RANGE">
+      <created>1534736517595</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1534736517595</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -682,8 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.03.17" />
-    <MESSAGE value="Lv.App.03.18" />
     <MESSAGE value="Lv.App.04.01" />
     <MESSAGE value="Lv.App.04.02" />
     <MESSAGE value="Lv.App.04.03" />
@@ -707,7 +705,9 @@
     <MESSAGE value="Lv.App.02.LFA.04" />
     <MESSAGE value="Lv.App.02.LFA.05" />
     <MESSAGE value="Lv.App.02.LFA.06" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv.App.02.LFA.06" />
+    <MESSAGE value="Context Fix" />
+    <MESSAGE value="LFA-RANGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="LFA-RANGE" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -945,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4588">
-          <caret line="462" column="29" selection-start-line="462" selection-start-column="29" selection-end-line="462" selection-end-column="29" />
+        <state relative-caret-position="274">
+          <caret line="809" column="81" selection-start-line="809" selection-start-column="81" selection-end-line="809" selection-end-column="81" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
