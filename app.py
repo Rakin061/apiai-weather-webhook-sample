@@ -1334,7 +1334,7 @@ def processRequest(req):
             emp_name= cont[index]['parameters']['emp_id.name']
             lfa_type= cont[index]['parameters']['LFA_TYPE']
 
-        print(emp_id, leave_type,from_date,to_date,replacement_id,device_id,session_id,leave_purpose,contact_no,address)
+        print(emp_id, leave_type,from_date,to_date,replacement_id,device_id,session_id,leave_purpose,contact_no,address,lfa_type)
 
 
         baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
