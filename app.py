@@ -76,7 +76,7 @@ def processRequest(req):
         else:
             emp_id = cont[0]['parameters']['emp_id.original']
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -125,7 +125,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -179,7 +179,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -252,7 +252,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -338,7 +338,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -399,7 +399,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -467,7 +467,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -557,7 +557,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
 
         #yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
@@ -640,7 +640,7 @@ def processRequest(req):
 
         #speech=
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
 
         action = "Leave.17"
         yql_url = baseurl + urlencode({'id': emp_id}) + "&" +urlencode({'time_frame':time_frame})+"&"+urlencode({'start_date':date_1})+"&"+urlencode({'end_date':date_2})+"&" +urlencode({'act': action}) +"&format=json"
@@ -751,7 +751,7 @@ def processRequest(req):
         # }
 
         if leave_type=="":
-            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
             # yql_query=yql_query+id
             # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -787,7 +787,7 @@ def processRequest(req):
                 leave_context='earn_leave'
 
 
-            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
             # yql_query=yql_query+id
             # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -888,7 +888,7 @@ def processRequest(req):
 
         print("Employee id:-", emp_id)
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -992,7 +992,7 @@ def processRequest(req):
 
         print("Employee id:-", emp_id)
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -1035,7 +1035,7 @@ def processRequest(req):
         else:
             speech = "Sure! You're eligible for LFA! "
 
-            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
             # yql_query=yql_query+id
             # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -1146,7 +1146,7 @@ def processRequest(req):
                     }
 
                 else:
-                    baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+                    baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
                     # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
                     # yql_query=yql_query+id
                     # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -1174,7 +1174,7 @@ def processRequest(req):
                         }
 
         elif leave_type=='EL':
-            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
             # yql_query=yql_query+id
             # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -1211,7 +1211,7 @@ def processRequest(req):
                         {"name": 'replacement', "lifespan": 0, "parameters": {}}
                     ]
                 }
-            baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+            baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
             # yql_query=yql_query+id
             # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -1264,7 +1264,7 @@ def processRequest(req):
             to_date= cont[index]['parameters']['to_date']
             replacement_id= cont[index]['parameters']['replacement_id.original']
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
@@ -1337,7 +1337,7 @@ def processRequest(req):
         print(emp_id, leave_type,from_date,to_date,replacement_id,device_id,session_id,leave_purpose,contact_no,address)
 
 
-        baseurl = "http://202.40.190.114:8084/BotAPI-HR/ApplicationStatus?"
+        baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
         # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
         # yql_query=yql_query+id
         # yql_query=yql_query+"'AND application_type_code IN (+appl_type_code+)AND createby = DECODE ("+"corp_flag_code+,'N',+user_id+,createby)"
