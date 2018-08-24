@@ -23,8 +23,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="1339" column="45" selection-start-line="1339" selection-start-column="45" selection-end-line="1339" selection-end-column="45" />
+            <state relative-caret-position="194">
+              <caret line="1275" column="145" lean-forward="true" selection-start-line="1275" selection-start-column="145" selection-end-line="1275" selection-end-column="145" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -255,13 +255,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Lv.App.03.03">
-      <created>1534246361860</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1534246361860</updated>
     </task>
     <task id="LOCAL-00126" summary="Lv.App.03.04">
       <created>1534246475780</created>
@@ -599,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534744757742</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Updating tomcat.05">
+      <created>1534747005826</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1534747005826</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -617,7 +617,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.18003026" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.18229954" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -684,7 +684,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.05.05" />
     <MESSAGE value="Lv.App.05.06" />
     <MESSAGE value="Lv.App.05.07" />
     <MESSAGE value="Lv.App.05.08" />
@@ -709,7 +708,8 @@
     <MESSAGE value="Updating tomcat.02" />
     <MESSAGE value="Updating tomcat.03" />
     <MESSAGE value="Updating tomcat.04" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating tomcat.04" />
+    <MESSAGE value="Updating tomcat.05" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating tomcat.05" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -947,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="1339" column="45" selection-start-line="1339" selection-start-column="45" selection-end-line="1339" selection-end-column="45" />
+        <state relative-caret-position="194">
+          <caret line="1275" column="145" lean-forward="true" selection-start-line="1275" selection-start-column="145" selection-end-line="1275" selection-end-column="145" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>

@@ -1271,6 +1271,14 @@ def processRequest(req):
         # baseurl = "https://query.yahooapis.com/v1/public/yql?"
         # yql_query="select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='Dhaka')"
 
+        if emp_id==replacement_id:
+            return {
+                "speech": "Woohoo ! You Yourslef can't be the replacment person for your leave. Please Enter another replacment ID to continue ",
+                "contextOut": [
+                    {"name": 'leave_info', "lifespan": 0, "parameters": {}}
+                ]
+            }
+
         action = "Lv.App.04"
         yql_url = baseurl + urlencode({'id': emp_id}) + "&" + urlencode({'replacement_id': replacement_id}) + "&" + urlencode(
             {'from_date': from_date}) + "&" + urlencode(
