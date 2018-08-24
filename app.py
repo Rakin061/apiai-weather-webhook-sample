@@ -1273,7 +1273,7 @@ def processRequest(req):
 
         if emp_id==replacement_id:
             return {
-                "speech": "Woohoo ! You Yourslef can't be the replacment person for your leave. Please Enter another replacment ID to continue ",
+                "speech": "Wohoo !! You Yourslef can't be the replacment person for your leave. Please Enter another replacment ID to continue ",
                 "contextOut": [
                     {"name": 'leave_info', "lifespan": 0, "parameters": {}}
                 ]
