@@ -707,7 +707,7 @@ def processRequest(req):
             emp_id = cont[index]['parameters']['emp_id.original']
 
 
-        speech="OK! Stopped. Proceed with otehr queries"
+        speech="OK! Stopped. Proceed with otehr queries.."
         return {
 
             "speech": speech,
@@ -1367,7 +1367,15 @@ def processRequest(req):
             }
         elif data['Flag'] == 'Y':
             return {
-                "speech": "Congratulations!!" + data['Message'] + " Enjoy your vacation, "+emp_name+" !!"
+                "speech": "Congratulations!!" + data['Message'] + " Hope you recovered well, "+emp_name+" !!",
+                "contextOut": [
+                    {"name": "emp_id", "lifespan": 149,
+                     "parameters": {"emp_id.original": emp_id}},
+                    {"name": "date_param", "lifespan": 0, "parameters": {}},
+                    {"name": "leave_type", "lifespan": 0, "parameters": {}},
+                    {"name": 'replacement', "lifespan": 0, "parameters": {}},
+                    {"name": 'leave_info', "lifespan": 0, "parameters": {}}
+                ]
             }
 
 

@@ -23,8 +23,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="1275" column="145" lean-forward="true" selection-start-line="1275" selection-start-column="145" selection-end-line="1275" selection-end-column="145" />
+            <state relative-caret-position="282">
+              <caret line="1374" column="76" lean-forward="true" selection-start-line="1374" selection-start-column="76" selection-end-line="1374" selection-end-column="76" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -255,20 +255,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Lv.App.03.04">
-      <created>1534246475780</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1534246475780</updated>
-    </task>
-    <task id="LOCAL-00127" summary="Lv.App.03.05">
-      <created>1534246703337</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1534246703337</updated>
     </task>
     <task id="LOCAL-00128" summary="Lv.App.03.06">
       <created>1534246949370</created>
@@ -599,7 +585,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534747005826</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="Updating replacement checking">
+      <created>1535100744294</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1535100744295</updated>
+    </task>
+    <task id="LOCAL-00176" summary="Updating replacement checking.01">
+      <created>1535100853140</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1535100853140</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -684,8 +684,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.05.06" />
-    <MESSAGE value="Lv.App.05.07" />
     <MESSAGE value="Lv.App.05.08" />
     <MESSAGE value="Lv.App.05.09" />
     <MESSAGE value="Lv.App.05.10" />
@@ -709,7 +707,9 @@
     <MESSAGE value="Updating tomcat.03" />
     <MESSAGE value="Updating tomcat.04" />
     <MESSAGE value="Updating tomcat.05" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating tomcat.05" />
+    <MESSAGE value="Updating replacement checking" />
+    <MESSAGE value="Updating replacement checking.01" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating replacement checking.01" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.json">
@@ -947,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="1275" column="145" lean-forward="true" selection-start-line="1275" selection-start-column="145" selection-end-line="1275" selection-end-column="145" />
+        <state relative-caret-position="282">
+          <caret line="1374" column="76" lean-forward="true" selection-start-line="1374" selection-start-column="76" selection-end-line="1374" selection-end-column="76" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
