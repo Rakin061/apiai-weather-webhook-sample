@@ -772,11 +772,11 @@ def processRequest(req):
             leaves = ""
 
             for i in range(1, len(data)):
-                leaves += data['Leave' + str(i)] + " , "
+                leaves += data['Leave' + str(i)] + " ,\\n "
 
             return {
 
-                "speech": "Sure. Your available leaves are :-  " + leaves + " Which leave you wanna take now ? "
+                "speech": "Sure. Your available leaves are :- \\n" + leaves + " Which leave you wanna take now ? "
             }
 
         else:
