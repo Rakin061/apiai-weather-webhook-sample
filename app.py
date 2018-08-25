@@ -146,12 +146,12 @@ def processRequest(req):
         leaves=""
 
         for i in range(1, len(data)):
-            leaves += data['Leave' + str(i)] + " , "
+            leaves += data['Leave' + str(i)] + " \\n "
 
 
         return {
 
-            "speech": "Your available leaves are :-  "+leaves + " Thanks!"
+            "speech": "Your available leaves are :- \\n "+leaves + " \\n Thanks!"
         }
 
 
@@ -203,12 +203,12 @@ def processRequest(req):
         speech=""
 
         if data['Number of Rows']> 1:
-            speech=" Here's your leave balance for all kind of leaves:-  "
+            speech=" Here's your leave balance for all kind of leaves:- \\n "
 
             for key, value in query_dict.items():
-                speech = speech+" .. " + key + " : " + value + " ;  "
+                speech = speech+" .. " + key + " : " + value + " \\n  "
 
-            speech=speech+" Thanks!!"
+            speech=speech+" \\n Thanks!!"
 
             return {
 
@@ -218,7 +218,7 @@ def processRequest(req):
 
             for key,value in query_dict.items():
                 leave_count=value;
-            speech=" Your leave balance for "+leave_type+" is :- "+leave_count+". Thanks!!"
+            speech=" Your leave balance for "+leave_type+" is :- "+leave_count+". \\n Thanks!!"
 
             return{
 
@@ -276,24 +276,24 @@ def processRequest(req):
         speech=""
 
         if data['Number of Rows']> 1:
-            speech=" Here's your leave balance for all kind of leaves:-  "
+            speech=" Here's your leave balance for all kind of leaves:-  \\n"
 
             elig_lv=[]
 
             for key, value in query_dict.items():
-                speech = speech+" .. " + key + " : " + value + " ;  "
+                speech = speech+" .. " + key + " : " + value + " \\n  "
                 if int(value)>0:
                     elig_lv.append(key)
 
 
             if len(elig_lv)==0:
-                speech=speech+" You're not eligible for any kind of Leave!!"
+                speech=speech+ " \\n So, You're not eligible for any kind of Leave!!"
             else:
                 speech = speech + " So, You can take "
                 for i in range(len(elig_lv)):
                     speech=speech+ elig_lv[i]+" , "
 
-            speech=speech+" Thanks!!"
+            speech=speech+" \\nThanks!!"
 
             return {
 
@@ -303,7 +303,7 @@ def processRequest(req):
 
             for key,value in query_dict.items():
                 leave_count=value;
-            speech=" Your leave balance for "+leave_type+" is :- "+leave_count
+            speech=" Your leave balance for "+leave_type+" is :- "+leave_count+". \\n Thanks!!"
 
 
             if int(leave_count)>0:
@@ -500,12 +500,12 @@ def processRequest(req):
                 "speech": speech
             }
         else:
-            speech=" Here's the details of your all kind of availed leaves:- "
+            speech=" Here's the details of your all kind of availed leaves:- \\n "
 
             for key,value in query_dict.items():
-                speech=speech + key+" : "+ value+"   ..   "
+                speech=speech + key+" : "+ value+"   \\n   "
 
-            speech = speech + "  Thanks!!"
+            speech = speech + "  \\n Thanks!!"
 
             return {
                 "speech": speech
@@ -590,7 +590,7 @@ def processRequest(req):
 
         else:
 
-            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + "."
+            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave " + time_frame + ".\\n"
 
             print(speech)
             query_dict = data['Query']
@@ -598,10 +598,10 @@ def processRequest(req):
             for i in range(data['Number of Records']):
                 rec.append(query_dict['Record' + str(i + 1)])
                 for key, value in rec[i].items():
-                    speech = speech+" "+ value+ " "
+                    speech = speech+" "+ value+ " \\n"
 
 
-            speech = speech + " Thanks!!"
+            speech = speech + " \\n Thanks!!"
 
             #print(speech)
 
@@ -667,7 +667,7 @@ def processRequest(req):
 
         else:
 
-            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave. Here's the list:- "
+            speech = "Yes, Total " + str(data['Number of Records']) + " employees are on leave. \\n Here's the list:- "
 
             print(speech)
             query_dict = data['Query']
@@ -675,10 +675,10 @@ def processRequest(req):
             for i in range(data['Number of Records']):
                 rec.append(query_dict['Record' + str(i + 1)])
                 for key, value in rec[i].items():
-                    speech = speech+" "+ value+ " "
+                    speech = speech+" "+ value+ " \\n "
 
 
-            speech = speech + " Thanks!!"
+            speech = speech + "  \\n Thanks!!"
 
             #print(speech)
 
@@ -772,7 +772,7 @@ def processRequest(req):
             leaves = ""
 
             for i in range(1, len(data)):
-                leaves += data['Leave' + str(i)] + " ,\\n "
+                leaves += data['Leave' + str(i)] + " .\\n "
 
             return {
 
@@ -804,7 +804,7 @@ def processRequest(req):
 
             if data['Number of Rows'] == 0:
                 return {
-                    "speech": "Sorry!! You're not eligible for " + leave_type + " . Your leave blance of "+leave_type+" is: "+data['Number of Rows'],
+                    "speech": "Sorry!! You're not eligible for " + leave_type + " .\\n Your leave blance of "+leave_type+" is: "+data['Number of Rows'],
 
                 }
 
@@ -813,12 +813,12 @@ def processRequest(req):
             speech = ""
 
             if data['Number of Rows'] > 1:
-                speech = " Here's your leave balance for all kind of leaves:-  "
+                speech = " Here's your leave balance for all kind of leaves:- \\n "
 
                 for key, value in query_dict.items():
-                    speech = speech + " .. " + key + " : " + value + " ;  "
+                    speech = speech + " .. " + key + " : " + value + " \\n  "
 
-                speech = speech + " Thanks!!"
+                speech = speech + " \\nThanks!!"
 
                 return {
 
@@ -830,7 +830,7 @@ def processRequest(req):
                     leave_count = value;
 
                 if leave_count == '0':
-                    speech = "Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave right now!"
+                    speech = "Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + ".\\n You can't take this leave right now!"
                     return {
                         "speech": speech,
                         "contextOut": [{"name": "date_param", "lifespan": 0, "parameters": {}},
@@ -840,7 +840,7 @@ def processRequest(req):
 
                 else:
                     if leave_type == 'LFA':
-                        speech = "Sure! First I will check your LFA eligibility. Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
+                        speech = "Sure! First I will check your LFA eligibility.\\n Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
                         return {
 
                             "speech": speech,
@@ -852,7 +852,7 @@ def processRequest(req):
                         }
 
                     else:
-                        speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
+                        speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". \\n Now enter the FROM DATE of your leave "
 
                         return {
 
@@ -912,12 +912,12 @@ def processRequest(req):
         speech = ""
 
         if data['Number of Rows'] > 1:
-            speech = " Here's your leave balance for all kind of leaves:-  "
+            speech = " Here's your leave balance for all kind of leaves:- \\n"
 
             for key, value in query_dict.items():
-                speech = speech + " .. " + key + " : " + value + " ;  "
+                speech = speech + " .. " + key + " : " + value + " \\n  "
 
-            speech = speech + " Thanks!!"
+            speech = speech + " \\nThanks!!"
 
             return {
 
@@ -934,7 +934,7 @@ def processRequest(req):
                 leave_count = value;
 
             if leave_count=='0':
-                speech="Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " You can't take this leave right now!!"
+                speech="Sorry!! Your leave balance for " + leave_type + " is :- " + leave_count + " \\n You can't take this leave right now!!"
 
                 return {
 
@@ -946,7 +946,7 @@ def processRequest(req):
 
             else:
                 if leave_type=='LFA':
-                    speech=" Great!! Your leave balance for Earned Leave is :- " + leave_count + ".  Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
+                    speech=" Great!! Your leave balance for Earned Leave is :- " + leave_count + ". \\n Now tell me, do you want to take Only LFA Leave / LFA with money / Only money ?"
                     return {
 
                         "speech": speech,
@@ -957,7 +957,7 @@ def processRequest(req):
                     }
 
                 else:
-                    speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". Now enter the FROM DATE of your leave "
+                    speech = " Great!! Your leave balance for " + leave_type + " is :- " + leave_count + ". \\n Now enter the FROM DATE of your leave "
 
                     return {
 
@@ -1024,7 +1024,7 @@ def processRequest(req):
         to_date = datetime.strptime(to_date, date_format)
 
         if from_date<to_date:
-            speech="Sorry!! You're not eligible for LFA yet! "+" You will be eligible for LFA on:-  " + data['LFA_DATE']+". You can try with other kind of leaves."
+            speech="Sorry!! You're not eligible for LFA yet! "+" \\n You will be eligible for LFA on:-  " + data['LFA_DATE']+". \\n You can try with other kind of leaves."
             return {
 
                 "speech": speech,
@@ -1033,7 +1033,7 @@ def processRequest(req):
                                ]
             }
         else:
-            speech = "Sure! You're eligible for LFA! "
+            speech = "Sure! You're eligible for LFA! \\n"
 
             baseurl = "http://202.40.190.116:8086/BotAPI-HR/ApplicationStatus?"
             # yql_query = "SELECT DISTINCT appl_status_desc FROM ocasmn.vw_appl_sts_info WHERE application_id = '" + id + "'"
@@ -1060,7 +1060,7 @@ def processRequest(req):
 
             return {
 
-                "speech": speech+" Your leave balance for Earned Leave: "+leave_count+" Now enter the FROM DATE of your leave",
+                "speech": speech+" Your leave balance for Earned Leave: "+leave_count+" \\n Now enter the FROM DATE of your leave",
                 "contextOut": [
                     {"name": "emp_id", "lifespan": 149,
                      "parameters": {"emp_id.original": emp_id, "leave_balance": leave_count}},
@@ -1107,7 +1107,7 @@ def processRequest(req):
 
 
         if holiday['difference']>leave_balance:
-            speech=" Oopss!! You have applied "+leave_type+" for "+ str(holiday['difference'])+" days!! .But I have already shown your leave balance for "+leave_type+" is: "+str(leave_balance)+".So, Enter another FROM date to continue again!! "
+            speech=" Oopss!! You have applied "+leave_type+" for "+ str(holiday['difference'])+" days!!. \\n But I have already shown your leave balance for "+leave_type+" is: "+str(leave_balance)+".\\n So, Enter another FROM date to continue again!! "
             return {
                 "speech": speech,
                 "contextOut": [
@@ -1120,7 +1120,7 @@ def processRequest(req):
             if holiday['holiday_check']:
 
                 if holiday['difference'] > 3:
-                    speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. And Your specified date contains Holiday as well. So, Enter another FROM date to continue again!! "
+                    speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. And Your specified date contains Holiday as well. \\n So, Enter another FROM date to continue again!! "
                     return {
                         "speech": speech,
                         "contextOut": [
@@ -1128,7 +1128,7 @@ def processRequest(req):
                                        ]
                     }
                 else:
-                    speech="Attention !! Your specified date contains Holiday. If you agree, Enter the employee ID of your replacement person. Or, Enter another FROM date to continue again!!  "
+                    speech="Attention !! Your specified date contains Holiday. \\n If you agree, Enter the employee ID of your replacement person. \\n Or, Enter another FROM date to continue again!!  "
                     return {
                         "speech":speech
                         # "contextOut": [
@@ -1137,7 +1137,7 @@ def processRequest(req):
                     }
             else:
                 if holiday['difference'] > 3:
-                    speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. So, Enter another FROM date to continue again!! "
+                    speech = "Sorry!! You should apply for a casual leave no longer than 3 days period. \\n So, Enter another FROM date to continue again!! "
                     return {
                         "speech": speech,
                         "contextOut": [
@@ -1167,7 +1167,7 @@ def processRequest(req):
                         }
                     else:
                         return {
-                            "speech": "You already applied for a leave on the specified date you provided. Please Enter another FROM date to continue!",
+                            "speech": "Hey !! You already applied for a leave on the specified date you provided. \\n Please Enter another FROM date to continue!",
                             "contextOut": [
                                             {"name": 'replacement', "lifespan": 0, "parameters": {}}
                                           ]
@@ -1195,7 +1195,7 @@ def processRequest(req):
                 }
             else:
                 return {
-                    "speech": "You already applied for a leave on the specified date you provided. Please Enter another FROM date to continue!",
+                    "speech": "Hey!! You already applied for a leave on the specified date you provided. \\n Please Enter another FROM date to continue!",
                     "contextOut": [
                         {"name": 'replacement', "lifespan": 0, "parameters": {}}
                     ]
@@ -1204,7 +1204,7 @@ def processRequest(req):
         elif leave_type=='LFA':
 
             if holiday['difference'] < 5 or holiday['difference'] >15:
-                speech = "Sorry!! You should apply for a LFA between 5-15 days. So, Enter another FROM date to continue again!! "
+                speech = "Sorry!! You should apply for a LFA between 5-15 days. \\n So, Enter another FROM date to continue again!! "
                 return {
                     "speech": speech,
                     "contextOut": [
@@ -1232,7 +1232,7 @@ def processRequest(req):
                 }
             else:
                 return {
-                    "speech": "You already applied for a leave on the specified date you provided. Please Enter another FROM date to continue!",
+                    "speech": "Hey !! You already applied for a leave on the specified date you provided. \\n Please Enter another FROM date to continue!",
                     "contextOut": [
                         {"name": 'replacement', "lifespan": 0, "parameters": {}}
                     ]
@@ -1273,7 +1273,7 @@ def processRequest(req):
 
         if emp_id==replacement_id:
             return {
-                "speech": "Wohoo !! You Yourslef can't be the replacment person for your leave. Please Enter another replacment ID to continue ",
+                "speech": "Wohoo !! You Yourslef can't be the replacment person for your leave. \\n Please Enter another replacment ID to continue ",
                 "contextOut": [
                     {"name": 'leave_info', "lifespan": 0, "parameters": {}}
                 ]
@@ -1291,7 +1291,7 @@ def processRequest(req):
 
             if data['Replacement_Status']=='Inactive':
                 return {
-                    "speech": "Oopss! I can't set" + data['Replacement_Name'] + " of ID: " + data['Replacement_ID'] + " as your replacement person. This employee might be inactive. You can Enter another replacment ID to continue ",
+                    "speech": "Oopss! I can't set" + data['Replacement_Name'] + " of ID: " + data['Replacement_ID'] + " as your replacement person.\\n This employee might be inactive. You can Enter another replacment ID to continue ",
                     "contextOut": [
                         {"name": 'leave_info', "lifespan": 0, "parameters": {}}
                     ]
@@ -1299,11 +1299,11 @@ def processRequest(req):
 
             else:
                 return {
-                    "speech": "Awesome! This replacement person "+data['Replacement_Name']+" of ID: "+data['Replacement_ID']+ " is "+data['Replacement_Status']+". Enter 'Yes' to confirm this person as your replacement or Enter another ID to continue "
+                    "speech": "Awesome! This replacement person "+data['Replacement_Name']+" of ID: "+data['Replacement_ID']+ " is "+data['Replacement_Status']+". \\n Enter 'Yes' to confirm this person as your replacement or You can Enter another replacement ID to continue "
                 }
         else:
             return {
-                "speech": "Oh! Owe! Your replacement person " +data['Replacement_Name']+" of ID: "+data['Replacement_ID']+" is also in leave form "+from_date+" - "+to_date+". Please enter another replacement ID to continue!",
+                "speech": "Oh! Owe! Your replacement person " +data['Replacement_Name']+" of ID: "+data['Replacement_ID']+" is also in leave form "+from_date+" - "+to_date+".\\n Please enter another replacement ID to continue!",
                 "contextOut": [
                     {"name": 'leave_info', "lifespan": 0, "parameters": {}}
                 ]
@@ -1362,12 +1362,12 @@ def processRequest(req):
 
         if data['Flag'] == 'N':
             return {
-                "speech": "Sorry! Problem in Data Insertion. Reason: "+data['Message']+" Plese enter re-submit to try again!! "
+                "speech": "Sorry! Problem in Data Insertion. Reason: "+data['Message']+" \\n Plese enter re-submit to try again!! "
 
             }
         elif data['Flag'] == 'Y':
             return {
-                "speech": "Congratulations!!" + data['Message'] + " Hope you recovered well, "+emp_name+" !!",
+                "speech": "Congratulations!!" + data['Message'] + " \\n Hope you recovered well, "+emp_name+" !!",
                 "contextOut": [
                     {"name": "emp_id", "lifespan": 149,
                      "parameters": {"emp_id.original": emp_id}},
