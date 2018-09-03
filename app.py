@@ -103,6 +103,9 @@ def processRequest(req):
 
         return {
             "fulfillmentText": speech,
+            "outputContexts": [
+                {"name": 'new_context', "lifespanCount": 5, "parameters": {}}
+            ]
             # "data": {},
             # "contextOut": [],
             #"source": "apiai-onlinestore-shipping"
