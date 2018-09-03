@@ -102,7 +102,7 @@ def processRequest(req):
         print(speech)
 
         return {
-            "fulfillmentTextText": speech,
+            "fulfillmentText": speech,
             # "data": {},
             # "contextOut": [],
             #"source": "apiai-onlinestore-shipping"
