@@ -79,9 +79,9 @@ def processRequest(req):
         return res
 
 
-    elif req.get("result").get("action") == "loan.eligibilty":
+    elif req.get("queryResult").get("action") == "loan.eligibilty":
 
-        result = req.get("result")
+        result = req.get("queryResult")
         parameters = result.get("parameters")
         zone = str(parameters.get("Numbers"))
 
@@ -102,8 +102,7 @@ def processRequest(req):
         print(speech)
 
         return {
-            "speech": speech,
-            "displayText": speech,
+            "fulfillmentTextText": speech,
             # "data": {},
             # "contextOut": [],
             #"source": "apiai-onlinestore-shipping"
