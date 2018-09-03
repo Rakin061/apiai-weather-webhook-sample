@@ -104,7 +104,7 @@ def processRequest(req):
         return {
             "fulfillmentText": speech,
             "outputContexts": [
-                {"name": 'new_context', "lifespanCount": 5, "parameters": {}}
+                {"name": 'new_context', "lifespanCount": 5, "parameters": {"emp_id.original": '001208'}}
             ]
             # "data": {},
             # "contextOut": [],
