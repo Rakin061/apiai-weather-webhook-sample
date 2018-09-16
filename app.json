@@ -3,5 +3,5 @@
   "description": "API.AI webhook demonstration",
   "repository": "https://github.com/api-ai/apiai-weather-webhook-sample",
   "logo": "http://xvir.github.io/img/apiai.png",
-  "keywords": ["api.ai", "natural language"]
+  "keywords": ["api.ai", "natural language","Dialogflow"]
 }
