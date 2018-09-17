@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app.py" line="431" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +39,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
+            <state relative-caret-position="70">
               <caret line="2721" column="24" selection-start-line="2721" selection-start-column="24" selection-end-line="2721" selection-end-column="24" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
@@ -54,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14178">
-              <caret line="844" selection-start-line="844" selection-end-line="844" />
+            <state relative-caret-position="11781">
+              <caret line="695" selection-start-line="695" selection-end-line="695" />
             </state>
           </provider>
         </entry>
@@ -154,7 +151,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="weather-python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weather-python" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -630,7 +640,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834985" weight="0.1732224" />
       <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.1913767" />
@@ -648,7 +657,7 @@
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.7269289" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.2730711" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.3114754" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.30983606" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -746,7 +755,7 @@
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="70">
           <caret line="2721" column="24" selection-start-line="2721" selection-start-column="24" selection-end-line="2721" selection-end-column="24" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
@@ -756,8 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14178">
-          <caret line="844" selection-start-line="844" selection-end-line="844" />
+        <state relative-caret-position="11781">
+          <caret line="695" selection-start-line="695" selection-end-line="695" />
         </state>
       </provider>
     </entry>
