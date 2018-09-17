@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/app.py" line="431" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="" />
+    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +27,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -40,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="70">
-              <caret line="2721" column="24" selection-start-line="2721" selection-start-column="24" selection-end-line="2721" selection-end-column="24" />
+              <caret line="2721" column="19" selection-start-line="2721" selection-start-column="19" selection-end-line="2721" selection-end-column="19" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -51,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11781">
-              <caret line="695" selection-start-line="695" selection-end-line="695" />
+            <state relative-caret-position="12325">
+              <caret line="735" selection-start-line="735" selection-end-line="735" />
             </state>
           </provider>
         </entry>
@@ -95,6 +98,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <favorite-branches>
       <branch-storage>
         <map>
@@ -164,6 +168,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,8 +645,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834985" weight="0.1732224" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834985" weight="0.17549168" />
       <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.1913767" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -657,7 +663,7 @@
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.7269289" weight="0.32838285" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.2730711" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.30983606" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.30983606" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -668,6 +674,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -683,6 +699,13 @@
                   <UserGroup>
                     <option name="users">
                       <list>
+                        <option value="origin/master" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
                         <option value="heroku/master" />
                       </list>
                     </option>
@@ -694,7 +717,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="heroku/master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -756,7 +779,7 @@
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
-          <caret line="2721" column="24" selection-start-line="2721" selection-start-column="24" selection-end-line="2721" selection-end-column="24" />
+          <caret line="2721" column="19" selection-start-line="2721" selection-start-column="19" selection-end-line="2721" selection-end-column="19" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
@@ -765,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11781">
-          <caret line="695" selection-start-line="695" selection-end-line="695" />
+        <state relative-caret-position="12325">
+          <caret line="735" selection-start-line="735" selection-end-line="735" />
         </state>
       </provider>
     </entry>
