@@ -4,9 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/app.py" line="431" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="">
+    <list default="true" id="c05388cc-6ad4-4a1f-a5fa-d5952195189c" name="Default" comment="updating response">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,18 +20,28 @@
     <session id="-1068752103">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5" />
+          <entry key="py" value="15" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5" />
+          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="Python" value="15" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.compare" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -42,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="2721" column="19" selection-start-line="2721" selection-start-column="19" selection-end-line="2721" selection-end-column="19" />
+            <state relative-caret-position="221">
+              <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
               <folding>
                 <element signature="e#53#90#0" expanded="true" />
               </folding>
@@ -54,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12325">
-              <caret line="735" selection-start-line="735" selection-end-line="735" />
+            <state relative-caret-position="13464">
+              <caret line="792" selection-start-line="792" selection-end-line="792" />
             </state>
           </provider>
         </entry>
@@ -168,7 +177,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,13 +304,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1495001525198</updated>
-    </task>
-    <task id="LOCAL-00131" summary="Lv.App.03.09">
-      <created>1534248622409</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1534248622409</updated>
     </task>
     <task id="LOCAL-00132" summary="Lv.App.03.10">
       <created>1534248766173</created>
@@ -640,15 +641,22 @@
       <option name="project" value="LOCAL" />
       <updated>1535166144848</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="updating response">
+      <created>1537157813950</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1537157813950</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834985" weight="0.17549168" />
-      <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" visible="true" weight="0.1913767" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49643704" visible="true" weight="0.17549168" />
+      <window_info id="Structure" order="1" sideWeight="0.5035629" side_tool="true" visible="true" weight="0.17549168" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
@@ -661,9 +669,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.7269289" weight="0.32838285" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.2730711" side_tool="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.2730711" side_tool="true" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.30983606" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" sideWeight="0.6444781" visible="true" weight="0.30983606" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -699,6 +707,20 @@
                   <UserGroup>
                     <option name="users">
                       <list>
+                        <option value="master" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
                         <option value="origin/master" />
                       </list>
                     </option>
@@ -717,7 +739,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -742,7 +764,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="Lv.App.05.11" />
     <MESSAGE value="Lv.App.05.12" />
     <MESSAGE value="Lv.App.02.LFA" />
     <MESSAGE value="Lv.App.02.LFA.01" />
@@ -767,7 +788,8 @@
     <MESSAGE value="reseting contexts final procedure" />
     <MESSAGE value="New line feature" />
     <MESSAGE value="New line feature.01" />
-    <option name="LAST_COMMIT_MESSAGE" value="New line feature.01" />
+    <MESSAGE value="updating response" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating response" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Procfile">
@@ -778,8 +800,8 @@
     <entry file="file://F:/DME/DME/k-nn, naibe-bayes, ann, random-rorest algorithm V-1/ann_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="2721" column="19" selection-start-line="2721" selection-start-column="19" selection-end-line="2721" selection-end-column="19" />
+        <state relative-caret-position="221">
+          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
           <folding>
             <element signature="e#53#90#0" expanded="true" />
           </folding>
@@ -788,8 +810,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12325">
-          <caret line="735" selection-start-line="735" selection-end-line="735" />
+        <state relative-caret-position="13464">
+          <caret line="792" selection-start-line="792" selection-end-line="792" />
         </state>
       </provider>
     </entry>
